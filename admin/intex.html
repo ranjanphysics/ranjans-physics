@@ -30,13 +30,113 @@ input,select,textarea{width:100%;padding:12px;border:1px solid #dce8f5;border-ra
 <div class="panel">Courses<br><strong id="cc">0</strong></div><div class="panel">Materials<br><strong id="mc">0</strong></div><div class="panel">Blogs<br><strong id="bc">0</strong></div></div>
 <div class="panel"><h2>Supabase Connected</h2><p>Admin authentication and Study Material storage/database are connected to Supabase. Courses and Blog use the database tables created by <b>setup.sql</b>.</p></div></section>
 
-<section id="courses" class="hide"><h1>Courses</h1><div id="courseMsg"></div><div class="formgrid">
-<div class="panel"><h2>Add Course</h2><div class="field"><label>Name</label><input id="cn" placeholder="Sarthak Batch"></div><div class="field"><label>Class</label><select id="cl"><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>JEE</option><option>NEET</option></select></div><div class="field"><label>Description</label><textarea id="cd"></textarea></div><button class="btn primary" onclick="addCourse()">Save Course</button></div>
-<div class="panel"><h2>Course List</h2><div id="coursesList" class="list"></div></div></div></section>
+<section id="courses" class="hide">
+<h1>Courses</h1>
+<div class="note">Course ek baar banao. Isi Course ko Study Material me select karke uske chapters, lectures, PDFs aur videos add karte raho.</div>
+<div id="courseMsg"></div>
+<div class="formgrid">
+<div class="panel">
+<h2>Add Course</h2>
 
-<section id="materials" class="hide"><h1>Study Material</h1><div id="materialMsg"></div><div class="formgrid">
-<div class="panel"><h2>Add Material</h2><div class="field"><label>Title</label><input id="mt" placeholder="Light — Notes"></div><div class="field"><label>Class</label><select id="ml"><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>JEE</option><option>NEET</option><option>PYQ</option></select></div><div class="field"><label>Subject</label><input id="ms" placeholder="Physics"></div><div class="field"><label>Chapter</label><input id="mch" placeholder="Light"></div><div class="field"><label>Lecture No.</label><input id="mln" type="number" min="1" placeholder="1"></div><div class="field"><label>PDF</label><input id="mf" type="file" accept=".pdf,application/pdf"></div><div class="field"><label>YouTube URL</label><input id="my" type="url" placeholder="https://youtube.com/watch?v=..."></div><div class="field"><label><input id="mp" type="checkbox" checked style="width:auto;margin-right:8px"> Published</label></div><button class="btn primary" onclick="addMaterial()">Upload & Save Material</button></div>
-<div class="panel"><h2>Material List</h2><div id="materialsList" class="list"></div></div></div></section>
+<div class="field">
+<label>Course Name</label>
+<input id="cn" placeholder="Sarthak Batch">
+</div>
+
+<div class="field">
+<label>Class</label>
+<select id="cl">
+<option>9th</option>
+<option>10th</option>
+<option>11th</option>
+<option>12th</option>
+<option>JEE</option>
+<option>NEET</option>
+</select>
+</div>
+
+<div class="field">
+<label>Subject</label>
+<input id="cs" placeholder="Physics">
+</div>
+
+<div class="field">
+<label>Description</label>
+<textarea id="cd" placeholder="Complete Physics course for Class 9"></textarea>
+</div>
+
+<button class="btn primary" onclick="addCourse()">Save Course</button>
+</div>
+
+<div class="panel">
+<h2>Course List</h2>
+<div id="coursesList" class="list"></div>
+</div>
+</div>
+</section>
+
+<section id="materials" class="hide">
+<h1>Study Material</h1>
+<div class="note">Pehle Courses me Course banao. Yahan Course select karke existing Chapter choose karo ya naya Chapter banao. Phir Lecture + PDF + Video add karo.</div>
+<div id="materialMsg"></div>
+
+<div class="formgrid">
+<div class="panel">
+<h2>Add Lecture / Material</h2>
+
+<div class="field">
+<label>Course</label>
+<select id="mcourse">
+<option value="">Select Course</option>
+</select>
+</div>
+
+<div id="courseInfo" class="note hide"></div>
+
+<div class="field">
+<label>Chapter</label>
+<select id="mchSelect">
+<option value="">Select Existing Chapter</option>
+</select>
+<input id="mch" placeholder="New Chapter (only if creating a new chapter)">
+</div>
+
+<div class="field">
+<label>Lecture No.</label>
+<input id="mln" type="number" min="1" placeholder="1">
+</div>
+
+<div class="field">
+<label>Lecture Title</label>
+<input id="mt" placeholder="Lecture 01 — Introduction">
+</div>
+
+<div class="field">
+<label>PDF</label>
+<input id="mf" type="file" accept=".pdf,application/pdf">
+</div>
+
+<div class="field">
+<label>YouTube URL</label>
+<input id="my" type="url" placeholder="https://youtube.com/watch?v=...">
+</div>
+
+<div class="field">
+<label>
+<input id="mp" type="checkbox" checked style="width:auto;margin-right:8px">
+Published
+</label>
+</div>
+
+<button class="btn primary" onclick="addMaterial()">Upload & Save Lecture</button>
+</div>
+
+<div class="panel">
+<h2>Course Material Structure</h2>
+<div id="materialsList" class="list"></div>
+</div>
+</div>
+</section>
 
 <section id="blogs" class="hide"><h1>Blog</h1><div id="blogMsg"></div><div class="formgrid">
 <div class="panel"><h2>Add Blog</h2><div class="field"><label>Title</label><input id="bt"></div><div class="field"><label>Category</label><input id="bcat" placeholder="Physics / Exam Tips"></div><div class="field"><label>Article</label><textarea id="bb"></textarea></div><button class="btn primary" onclick="addBlog()">Save Draft</button></div>
@@ -75,8 +175,211 @@ async function loadCounts(){
  document.getElementById('cc').textContent=c.error?'—':(c.count??0);document.getElementById('mc').textContent=m.error?'—':(m.count??0);document.getElementById('bc').textContent=b.error?'—':(b.count??0);
  const errors=[c.error,m.error,b.error].filter(Boolean);if(errors.length)msg('dashMsg','Some optional tables are not created yet. Run setup.sql in Supabase SQL Editor.','error');else msg('dashMsg','');
 }
-async function loadCourses(){const el=document.getElementById('coursesList');const {data,error}=await db.from('courses').select('*').order('id',{ascending:false});if(error){el.innerHTML='<p>Courses table not configured yet.</p>';msg('courseMsg','Run setup.sql in Supabase SQL Editor to enable Courses.','error');return}msg('courseMsg','');el.innerHTML=(data||[]).map(x=>`<div class=item><div><b>${esc(x.name)}</b><small>${esc(x.class_name)} · ${esc(x.description||'')}</small></div><button class="btn danger" onclick="delCourse('${x.id}')">Delete</button></div>`).join('')||'<p>No courses yet.</p>'}
-async function loadMaterials(){const el=document.getElementById('materialsList');const {data,error}=await db.from('study_materials').select('*').order('id',{ascending:false});if(error){el.innerHTML='<p>Unable to load materials.</p>';msg('materialMsg',error.message,'error');return}msg('materialMsg','');el.innerHTML=(data||[]).map(x=>`<div class=item><div><b>${esc(x.title)}</b><small>${esc(x.class_name)} · ${esc(x.subject)} · ${esc(x.chapter)}${x.lecture_no?` · Lecture ${String(x.lecture_no).padStart(2,'0')}`:''} ${x.published?'· Published':'· Unpublished'}</small>${x.pdf_url?`<small><a href="${esc(x.pdf_url)}" target="_blank" rel="noopener">Open PDF</a></small>`:''}</div><button class="btn danger" onclick="delMaterial(${x.id},'${esc(x.pdf_url||'')}')">Delete</button></div>`).join('')||'<p>No materials yet.</p>'}
+async function loadCourses(){
+ const el=document.getElementById('coursesList');
+ const {data,error}=await db.from('courses').select('*').order('id',{ascending:false});
+ if(error){
+   el.innerHTML='<p>Courses table not configured yet.</p>';
+   msg('courseMsg','Courses table error: '+error.message,'error');
+   return;
+ }
+ msg('courseMsg','');
+ el.innerHTML=(data||[]).map(x=>`
+ <div class="item">
+   <div>
+     <b>${esc(x.name)}</b>
+     <small>${esc(x.class_name)} · ${esc(x.subject||'')} ${x.description?'· '+esc(x.description):''}</small>
+   </div>
+   <button class="btn danger" onclick="delCourse('${x.id}')">Delete</button>
+ </div>`).join('')||'<p>No courses yet.</p>';
+
+ const select=document.getElementById('mcourse');
+ if(select){
+   const old=select.value;
+   select.innerHTML='<option value="">Select Course</option>'+
+     (data||[]).map(x=>`<option value="${esc(x.id)}">${esc(x.name)} — ${esc(x.class_name)} — ${esc(x.subject||'')}</option>`).join('');
+   if((data||[]).some(x=>String(x.id)===String(old)))select.value=old;
+ }
+}
+
+async function loadMaterials(){
+ const el=document.getElementById('materialsList');
+ const {data,error}=await db.from('study_materials').select('*').order('id',{ascending:true});
+ if(error){
+   el.innerHTML='<p>Unable to load materials.</p>';
+   msg('materialMsg','Study material table error: '+error.message,'error');
+   return;
+ }
+ msg('materialMsg','');
+
+ const courseRows=await db.from('courses').select('id,name,class_name,subject');
+ const courses=courseRows.data||[];
+ const courseMap={};
+ courses.forEach(c=>courseMap[String(c.id)]=c);
+
+ const groups={};
+ (data||[]).forEach(x=>{
+   const c=courseMap[String(x.course_id)];
+   const courseName=c ? `${c.name} — ${c.class_name} — ${c.subject||''}` : 'Course not found';
+   const chapter=x.chapter||'General';
+   if(!groups[courseName])groups[courseName]={};
+   if(!groups[courseName][chapter])groups[courseName][chapter]=[];
+   groups[courseName][chapter].push(x);
+ });
+
+ let out='';
+ Object.entries(groups).forEach(([course,chapters])=>{
+   out+=`<div class="item"><div><b>🎓 ${esc(course)}</b><small>Course</small></div></div>`;
+   Object.entries(chapters).forEach(([chapter,items])=>{
+     out+=`<div style="margin-left:18px"><div class="item"><div><b>📚 ${esc(chapter)}</b><small>Chapter</small></div></div>`;
+     items.forEach((x,i)=>{
+       const lecture=x.lecture_no||i+1;
+       out+=`<div style="margin-left:18px" class="item">
+         <div>
+           <b>🎬 Lecture ${String(lecture).padStart(2,'0')} — ${esc(x.title)}</b>
+           <small>${x.pdf_url?'PDF ✓ ':''}${x.youtube_url?'· Video ✓ ':''}${x.published?'· Published':'· Unpublished'}</small>
+           ${x.pdf_url?`<small><a href="${esc(x.pdf_url)}" target="_blank" rel="noopener">Open PDF</a></small>`:''}
+         </div>
+         <button class="btn danger" onclick="delMaterial(${x.id})">Delete</button>
+       </div>`;
+     });
+     out+='</div>';
+   });
+ });
+ el.innerHTML=out||'<p>No study material yet.</p>';
+ await loadChapterOptions();
+}
+
+async function loadChapterOptions(){
+ const courseId=document.getElementById('mcourse')?.value;
+ const select=document.getElementById('mchSelect');
+ const info=document.getElementById('courseInfo');
+ if(!select)return;
+
+ if(!courseId){
+   select.innerHTML='<option value="">Select Existing Chapter</option>';
+   if(info){info.classList.add('hide');info.textContent='';}
+   return;
+ }
+
+ const {data:course}=await db.from('courses').select('id,name,class_name,subject').eq('id',courseId).maybeSingle();
+ if(course && info){
+   info.textContent=`Selected: ${course.name} · ${course.class_name} · ${course.subject||''}`;
+   info.classList.remove('hide');
+ }
+
+ const {data}=await db.from('study_materials').select('chapter').eq('course_id',courseId);
+ const chapters=[...new Set((data||[]).map(x=>x.chapter).filter(Boolean))];
+ select.innerHTML='<option value="">Select Existing Chapter</option>'+
+   chapters.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+}
+
+document.getElementById('mcourse').addEventListener('change',loadChapterOptions);
+
+async function addCourse(){
+ const name=document.getElementById('cn').value.trim();
+ const className=document.getElementById('cl').value;
+ const subject=document.getElementById('cs').value.trim();
+ const description=document.getElementById('cd').value.trim();
+
+ if(!name)return alert('Course name required');
+ if(!subject)return alert('Subject required');
+
+ const {error}=await db.from('courses').insert({
+   name,
+   class_name:className,
+   subject,
+   description
+ });
+
+ if(error){
+   msg('courseMsg',error.message,'error');
+   return;
+ }
+
+ document.getElementById('cn').value='';
+ document.getElementById('cs').value='';
+ document.getElementById('cd').value='';
+ msg('courseMsg','Course saved successfully.');
+ await render();
+}
+
+async function addMaterial(){
+ const courseId=document.getElementById('mcourse').value;
+ const selectedChapter=document.getElementById('mchSelect').value;
+ const newChapter=document.getElementById('mch').value.trim();
+ const chapter=newChapter||selectedChapter;
+
+ const lectureNo=parseInt(document.getElementById('mln').value,10)||1;
+ const title=document.getElementById('mt').value.trim();
+ const file=document.getElementById('mf').files[0];
+ const youtube=document.getElementById('my').value.trim();
+ const published=document.getElementById('mp').checked;
+
+ if(!courseId)return alert('Please select a Course');
+ if(!chapter)return alert('Please select an existing Chapter or enter a new Chapter');
+ if(!title)return alert('Lecture title required');
+ if(!file)return alert('Please select a PDF');
+ if(file.type!=='application/pdf')return alert('Only PDF files are allowed');
+
+ const {data:course,error:courseErr}=await db.from('courses').select('id,class_name,subject').eq('id',courseId).maybeSingle();
+ if(courseErr||!course){
+   msg('materialMsg','Selected Course could not be found.','error');
+   return;
+ }
+
+ msg('materialMsg','Uploading PDF...');
+
+ const {data:userData,error:userErr}=await db.auth.getUser();
+ if(userErr||!userData.user){
+   msg('materialMsg','Please log in again.','error');
+   return;
+ }
+
+ const path=`${userData.user.id}/${Date.now()}-${safeFileName(file.name)}`;
+ const {error:upErr}=await db.storage.from(BUCKET).upload(
+   path,file,{contentType:'application/pdf',upsert:false}
+ );
+
+ if(upErr){
+   msg('materialMsg',upErr.message,'error');
+   return;
+ }
+
+ const {data:urlData}=db.storage.from(BUCKET).getPublicUrl(path);
+ const pdfUrl=urlData.publicUrl;
+
+ const payload={
+   course_id:courseId,
+   class_name:course.class_name,
+   subject:course.subject,
+   chapter,
+   lecture_no:lectureNo,
+   title,
+   pdf_url:pdfUrl,
+   youtube_url:youtube,
+   published
+ };
+
+ const {error:insertErr}=await db.from('study_materials').insert(payload);
+
+ if(insertErr){
+   await db.storage.from(BUCKET).remove([path]);
+   msg('materialMsg',insertErr.message,'error');
+   return;
+ }
+
+ document.getElementById('mt').value='';
+ document.getElementById('mch').value='';
+ document.getElementById('mln').value='';
+ document.getElementById('my').value='';
+ document.getElementById('mf').value='';
+ document.getElementById('mp').checked=true;
+
+ msg('materialMsg','Lecture uploaded and saved successfully.');
+ await render();
+}
+
 async function loadBlogs(){const el=document.getElementById('blogsList');const {data,error}=await db.from('blogs').select('*').order('id',{ascending:false});if(error){el.innerHTML='<p>Blog table not configured yet.</p>';msg('blogMsg','Run setup.sql in Supabase SQL Editor to enable Blog.','error');return}msg('blogMsg','');el.innerHTML=(data||[]).map(x=>`<div class=item><div><b>${esc(x.title)}</b><small>${esc(x.category||'General')}</small></div><button class="btn danger" onclick="delBlog(${x.id})">Delete</button></div>`).join('')||'<p>No blogs yet.</p>'}
 
 async function addCourse(){if(!cn.value.trim())return alert('Course name required');const {error}=await db.from('courses').insert({name:cn.value.trim(),class_name:cl.value,description:cd.value.trim()});if(error){msg('courseMsg',error.message,'error');return}cn.value=cd.value='';msg('courseMsg','Course saved.');await render()}
@@ -89,15 +392,25 @@ async function addMaterial(){
  const {error:upErr}=await db.storage.from(BUCKET).upload(path,file,{contentType:'application/pdf',upsert:false});
  if(upErr){msg('materialMsg',upErr.message,'error');return}
  const {data:urlData}=db.storage.from(BUCKET).getPublicUrl(path);const pdfUrl=urlData.publicUrl;
- const lectureNo=parseInt(document.getElementById('mln').value,10)||1;
- const {error:insertErr}=await db.from('study_materials').insert({class_name:ml.value,subject,chapter,lecture_no:lectureNo,title,pdf_url:pdfUrl,youtube_url:youtube,published:mp.checked});
+ const {error:insertErr}=await db.from('study_materials').insert({class_name:ml.value,subject,chapter,title,pdf_url:pdfUrl,youtube_url:youtube,published:mp.checked});
  if(insertErr){await db.storage.from(BUCKET).remove([path]);msg('materialMsg',insertErr.message,'error');return}
- mt.value=ms.value=mch.value=my.value='';document.getElementById('mln').value='';mf.value='';mp.checked=true;msg('materialMsg','PDF uploaded and material saved successfully.');await render()
+ mt.value=ms.value=mch.value=my.value='';mf.value='';mp.checked=true;msg('materialMsg','PDF uploaded and material saved successfully.');await render()
 }
 async function addBlog(){if(!bt.value.trim())return alert('Title required');const {error}=await db.from('blogs').insert({title:bt.value.trim(),category:bcat.value.trim()||'General',body:bb.value.trim(),published:false});if(error){msg('blogMsg',error.message,'error');return}bt.value=bcat.value=bb.value='';msg('blogMsg','Blog draft saved.');await render()}
-async function delCourse(id){if(!confirm('Delete this course?'))return;const {error}=await db.from('courses').delete().eq('id',id);if(error)msg('courseMsg',error.message,'error');await render()}
+async function delCourse(id){
+ if(!confirm('Delete this course? Its study materials may also be affected by the database relationship. Continue?'))return;
+ const {error}=await db.from('courses').delete().eq('id',id);
+ if(error){msg('courseMsg',error.message,'error');return}
+ await render();
+}
 async function delBlog(id){if(!confirm('Delete this blog?'))return;const {error}=await db.from('blogs').delete().eq('id',id);if(error)msg('blogMsg',error.message,'error');await render()}
-async function delMaterial(id,url){if(!confirm('Delete this material?'))return;const {error}=await db.from('study_materials').delete().eq('id',id);if(error){msg('materialMsg',error.message,'error');return}await render()}
+async function delMaterial(id){
+ if(!confirm('Delete this material?'))return;
+ const {data:item}=await db.from('study_materials').select('pdf_url').eq('id',id).maybeSingle();
+ const {error}=await db.from('study_materials').delete().eq('id',id);
+ if(error){msg('materialMsg',error.message,'error');return}
+ await render();
+}
 
 (async()=>{const {data}=await db.auth.getSession();if(data.session?.user?.email?.toLowerCase()===ADMIN_EMAIL)await loginEl()})();
 </script></body></html>
