@@ -1,0 +1,3453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Ranjan's Physics - Quality education for Classes 9th to 12th, Board Exams, JEE and NEET.">
+
+<title>Ranjan's Physics | Complete Education System</title>
+
+
+<style>
+
+.hybrid-line{
+    white-space:nowrap;
+    color:var(--blue);
+    font-size:clamp(14px,2.0vw,32px);
+    line-height:1.25;
+    font-weight:800;
+    margin:10px 0 0;
+}
+
+/* =========================
+   RESET
+========================= */
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7faff;
+    color:#111827;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   COLORS
+===================================================== */
+
+:root{
+    --navy:#071b3b;
+    --blue:#1769b0;
+    --blue-light:#eaf4ff;
+    --text:#111827;
+    --muted:#617083;
+    --white:#ffffff;
+    --line:#dce8f5;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(12px);
+}
+
+.nav{
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.brand img{
+    width:56px;
+    height:56px;
+    display:block;
+    object-fit:contain;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.nav-links a{
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.nav-cta{
+    background:var(--blue);
+    color:#fff !important;
+    padding:11px 18px;
+    border-radius:30px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:30px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#f7fbff,#e7f2ff);
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:35px;
+}
+
+.eyebrow{
+    color:var(--blue);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    color:var(--navy);
+    font-size:clamp(42px,5vw,68px);
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero-text{
+    color:var(--muted);
+    font-size:18px;
+    max-width:620px;
+    margin:22px 0 28px;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 21px;
+    border-radius:12px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+.btn-light{
+    background:#fff;
+    color:var(--navy);
+    border:1px solid var(--line);
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-visual{
+    min-height:370px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.hero-circle{
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:#d9ecff;
+}
+
+.hero-teacher{
+    position:relative;
+    z-index:2;
+    max-height:430px;
+    width:auto;
+    max-width:100%;
+    object-fit:contain;
+}
+
+.hero-card{
+    position:absolute;
+    z-index:5;
+    right:-5px;
+    bottom:10px;
+    background:#fff;
+    padding:17px 20px;
+    border-radius:17px;
+    box-shadow:0 15px 40px rgba(7,27,59,.12);
+}
+
+.hero-card strong{
+    display:block;
+    color:var(--navy);
+}
+
+.hero-card span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+section{
+    padding:20px 0;
+}
+
+.section-head{
+    max-width:760px;
+    margin:0 auto 16px;
+    text-align:center;
+}
+
+.section-tag{
+    color:var(--blue);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.section-head h2{
+    color:var(--navy);
+    font-size:clamp(34px,4vw,52px);
+    line-height:1.1;
+    margin:9px 0 14px;
+}
+
+.section-head p{
+    color:var(--muted);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section{
+    padding-top:18px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-image{
+    border-radius:28px;
+    overflow:hidden;
+    background:#eaf3ff;
+    box-shadow:0 15px 45px rgba(7,27,59,.10);
+}
+
+.about-image img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    object-position:center;
+}
+
+.about-content h3{
+    color:var(--navy);
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+.mini-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:20px;
+}
+
+.mini-card strong{
+    display:block;
+    color:var(--navy);
+}
+
+.mini-card span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+
+/* =====================================================
+   COURSES
+===================================================== */
+
+.courses{
+    background:var(--navy);
+}
+
+.courses .section-head h2{
+    color:#fff;
+}
+
+.courses .section-head p{
+    color:#c8d8eb;
+}
+
+.courses .section-tag{
+    color:#8dc5ff;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.course-card{
+    background:linear-gradient(145deg,#237ac4,#07528f);
+    color:#fff;
+    border-radius:24px;
+    padding:28px;
+    min-height:310px;
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+.course-number{
+    width:43px;
+    height:43px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:rgba(255,255,255,.16);
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.course-card h3{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.course-card p{
+    color:#e4f1ff;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.course-card ul{
+    list-style:none;
+}
+
+.course-card li{
+    position:relative;
+    padding-left:20px;
+    margin:8px 0;
+    font-size:14px;
+}
+
+.course-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#a9d6ff;
+    font-weight:900;
+}
+
+
+/* =====================================================
+   WHY US
+===================================================== */
+
+.strength-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.strength-card{
+    display:flex;
+    gap:18px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 8px 28px rgba(7,27,59,.05);
+}
+
+.strength-number{
+    width:45px;
+    height:45px;
+    flex:0 0 45px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-weight:900;
+}
+
+.strength-card h3{
+    color:var(--navy);
+    font-size:19px;
+}
+
+.strength-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/* =====================================================
+   METHODOLOGY
+===================================================== */
+
+.method-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    align-items:center;
+    background:#eaf3ff;
+    padding:35px;
+    border-radius:30px;
+}
+
+.method-box h2{
+    color:var(--navy);
+    font-size:45px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.step{
+    display:grid;
+    grid-template-columns:50px 1fr;
+    gap:15px;
+    padding:17px 0;
+    border-bottom:1px solid #cadced;
+}
+
+.step:last-child{
+    border-bottom:0;
+}
+
+.step-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid #8fc3ee;
+    color:var(--blue);
+    display:grid;
+    place-items:center;
+    font-weight:900;
+}
+
+.step h3{
+    color:var(--navy);
+}
+
+.step p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.method-image{
+    width:100%;
+    height:auto;
+    min-height:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:visible;
+}
+
+.method-image img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:100%;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+}
+
+/* Methodology: keep the complete artwork visible before the next section. */
+.methodology-section{
+    padding-bottom:28px;
+}
+
+/* =====================================================
+   BATCHES
+===================================================== */
+
+.batch-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+}
+
+.batch-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:5px solid var(--blue);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 28px rgba(7,27,59,.06);
+}
+
+.batch-card h3{
+    color:var(--navy);
+    font-size:21px;
+}
+
+.batch-card strong{
+    color:var(--blue);
+}
+
+.batch-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   YOUTUBE
+===================================================== */
+
+.youtube-section{
+    background:#f0f6ff;
+}
+
+.youtube-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+    background:#fff;
+    padding:30px;
+    border:1px solid var(--line);
+    border-radius:30px;
+    box-shadow:0 15px 45px rgba(7,27,59,.08);
+}
+
+.youtube-copy h2{
+    color:var(--navy);
+    font-size:clamp(34px,4vw,50px);
+    line-height:1.1;
+    margin:10px 0 15px;
+}
+
+.youtube-copy p{
+    color:var(--muted);
+    margin-bottom:23px;
+}
+
+.subscribe-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#ff0000;
+    color:#fff;
+    padding:14px 23px;
+    border-radius:12px;
+    font-weight:900;
+    box-shadow:0 10px 25px rgba(255,0,0,.18);
+}
+
+.video-wrap{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:20px;
+    background:#000;
+    box-shadow:0 15px 35px rgba(7,27,59,.16);
+}
+
+.video-wrap iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+
+/* =====================================================
+   STUDY MATERIAL + BLOG
+===================================================== */
+
+.resources{
+    background:#fff;
+}
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.resource-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 8px 28px rgba(7,27,59,.06);
+}
+
+.resource-icon{
+    width:55px;
+    height:55px;
+    display:grid;
+    place-items:center;
+    border-radius:16px;
+    background:#e8f2ff;
+    color:var(--blue);
+    font-size:13px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.resource-card h3{
+    color:var(--navy);
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.resource-card p{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.coming{
+    display:inline-flex;
+    padding:8px 13px;
+    border-radius:30px;
+    background:#eef5ff;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:900;
+}
+
+
+/* =====================================================
+   GOOGLE MAP
+===================================================== */
+
+.location{
+    background:#f4f8fd;
+}
+
+.map-box{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+.map-info{
+    background:var(--navy);
+    color:#fff;
+    border-radius:24px;
+    padding:30px;
+}
+
+.map-info h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.map-info p{
+    color:#c9d9ec;
+    margin-bottom:20px;
+}
+
+.address{
+    margin:18px 0;
+    color:#e7f2ff;
+}
+
+.map-frame{
+    width:100%;
+    min-height:380px;
+    border:0;
+    border-radius:24px;
+    background:#e9eef5;
+    box-shadow:0 12px 35px rgba(7,27,59,.10);
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+
+.social-section{
+    background:#fff;
+}
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.social-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    box-shadow:0 8px 25px rgba(7,27,59,.05);
+    transition:.2s;
+}
+
+.social-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(7,27,59,.12);
+}
+
+.social-icon{
+    width:46px;
+    height:46px;
+    flex:0 0 46px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:#eaf3ff;
+    color:var(--blue);
+}
+
+.social-icon svg{
+    width:24px;
+    height:24px;
+    fill:currentColor;
+}
+
+.social-card strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+}
+
+.social-card span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-wrap{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:30px;
+    background:#fff;
+    padding:32px;
+    border:1px solid var(--line);
+    border-radius:30px;
+    box-shadow:0 15px 45px rgba(7,27,59,.08);
+}
+
+.contact-info{
+    background:var(--navy);
+    color:#fff;
+    border-radius:22px;
+    padding:30px;
+}
+
+.contact-info h3{
+    font-size:30px;
+}
+
+.contact-info > p{
+    color:#c9d9ec;
+    margin:8px 0 25px;
+}
+
+.contact-item{
+    display:flex;
+    gap:13px;
+    margin:18px 0;
+}
+
+.contact-icon{
+    width:40px;
+    height:40px;
+    flex:0 0 40px;
+    border-radius:11px;
+    background:rgba(255,255,255,.12);
+    display:grid;
+    place-items:center;
+}
+
+.contact-item strong{
+    display:block;
+}
+
+.contact-item span{
+    color:#c9d9ec;
+    font-size:13px;
+}
+
+form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.field{
+    display:grid;
+    gap:7px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    color:var(--navy);
+    font-size:13px;
+    font-weight:900;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#f9fbff;
+    font:inherit;
+    outline:none;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#75afe4;
+    box-shadow:0 0 0 4px #eaf3ff;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06172f;
+    color:#cbd9ea;
+    padding:35px 0 20px;
+}
+
+.footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.footer-logo img{
+    width:60px;
+}
+
+.footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:17px;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    margin-top:25px;
+    padding-top:20px;
+    font-size:13px;
+}
+
+
+/* =====================================================
+   FLOATING BUTTONS
+===================================================== */
+
+.floating{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.float-btn{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:0 10px 25px rgba(7,27,59,.16);
+    display:grid;
+    place-items:center;
+    color:var(--blue);
+}
+
+.float-btn svg{
+    width:22px;
+    height:22px;
+    fill:currentColor;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .method-box,
+    .youtube-box,
+    .map-box,
+    .contact-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .course-grid{
+        grid-template-columns:1fr;
+    }
+
+    .strength-grid{
+        grid-template-columns:1fr;
+    }
+
+    .batch-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        padding:10px 0 10px;
+    }
+
+    .hero-visual{
+        min-height:460px;
+    }
+}
+
+/* Prevent large images/sections from creating accidental overflow on laptops. */
+@media(max-width:1100px) and (min-width:601px){
+    .method-image{
+        height:auto;
+    }
+
+    .method-image img{
+        width:100%;
+        height:auto;
+        max-height:none;
+    }
+
+    .hero{
+        min-height:350px;
+    }
+
+    .hero-visual{
+        min-height:350px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    section{
+        padding:24px 0;
+    }
+
+    .section-head{
+        margin-bottom:22px;
+    }
+
+    .brand img{
+        width:190px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:28px 0 6px;
+    }
+
+    .hero-grid{
+        transform:none;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.05;
+        letter-spacing:-1.5px;
+    }
+
+    .hybrid-line{
+        font-size:18px;
+        line-height:1.3;
+        margin-top:10px;
+        white-space:normal;
+        letter-spacing:-0.2px;
+    }
+
+    .hero-text{
+        font-size:16px;
+        line-height:1.55;
+        margin:18px 0 24px;
+    }
+
+    .actions{
+        gap:10px;
+    }
+
+    .btn{
+        min-height:46px;
+        padding:0 17px;
+        font-size:14px;
+    }
+
+    .hero-visual{
+        min-height:330px;
+        margin-top:6px;
+    }
+
+    .hero-circle{
+        width:330px;
+        height:330px;
+    }
+
+    .hero-teacher{
+        max-height:370px;
+        max-width:90%;
+    }
+
+    .hero-card{
+        right:5px;
+        top:20px;
+        padding:12px 14px;
+        border-radius:14px;
+    }
+
+    .hero-card strong{
+        font-size:13px;
+    }
+
+    .hero-card span{
+        font-size:10px;
+    }
+
+    .mini-grid,
+    .batch-grid,
+    .social-grid,
+    form,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .contact-wrap{
+        padding:18px;
+    }
+
+    .method-box,
+    .youtube-box{
+        padding:22px;
+    }
+
+    .method-image{
+        height:auto;
+        min-height:0;
+        overflow:visible;
+    }
+
+    .method-image img{
+        width:100%;
+        height:auto;
+        max-height:none;
+        object-fit:contain;
+    }
+
+    .method-box h2,
+    .youtube-copy h2{
+        font-size:37px;
+    }
+
+    .footer-grid{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+/* =====================================================
+   FINAL RESPONSIVE PATCH — MOBILE / TABLET / DESKTOP
+   Keeps the existing design/content intact.
+===================================================== */
+
+html, body{
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+@media (max-width:1100px){
+    .container{
+        width:min(94%, 900px);
+    }
+
+    .hero-grid{
+        gap:24px;
+    }
+
+    .hero h1{
+        font-size:clamp(38px,5.5vw,58px);
+    }
+
+    .hero-visual{
+        min-height:420px;
+    }
+
+    .hero-circle{
+        width:360px;
+        height:360px;
+    }
+
+    .hero-teacher{
+        max-height:390px;
+    }
+
+    .hero-card{
+        right:0;
+        bottom:12px;
+    }
+
+    .method-box{
+        gap:22px;
+    }
+
+    .youtube-box{
+        gap:24px;
+    }
+
+    .map-frame{
+        min-height:340px;
+    }
+}
+
+@media (max-width:600px){
+
+    .container{
+        width:calc(100% - 32px);
+    }
+
+    /* Header */
+    .nav{
+        min-height:68px;
+        gap:10px;
+    }
+
+    .brand img,
+    .footer-logo img{
+        width:50px;
+        height:50px;
+        object-fit:contain;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    /* Sections */
+    section{
+        padding:30px 0;
+    }
+
+    .section-head{
+        margin-bottom:24px;
+    }
+
+    .section-head h2{
+        font-size:34px;
+    }
+
+    .section-head p{
+        font-size:15px;
+        line-height:1.55;
+    }
+
+    /* Hero */
+    .hero{
+        min-height:auto;
+        padding:30px 0 22px;
+    }
+
+    .hero-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .eyebrow{
+        font-size:11px;
+        letter-spacing:1.1px;
+        line-height:1.5;
+        margin-bottom:10px;
+    }
+
+    .hero h1{
+        font-size:40px;
+        line-height:1.08;
+        letter-spacing:-1.4px;
+    }
+
+    .hybrid-line{
+        white-space:normal;
+        font-size:17px;
+        line-height:1.35;
+        margin-top:10px;
+    }
+
+    .hero-text{
+        font-size:15.5px;
+        line-height:1.55;
+        margin:16px 0 22px;
+    }
+
+    .actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .actions .btn{
+        width:100%;
+        min-height:48px;
+        padding:0 10px;
+        font-size:14px;
+    }
+
+    .actions .btn-light{
+        grid-column:1/-1;
+    }
+
+    /* Hero visual: no accidental overlap */
+    .hero-visual{
+        min-height:355px;
+        height:355px;
+        margin-top:2px;
+        overflow:hidden;
+    }
+
+    .hero-circle{
+        width:285px;
+        height:285px;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-48%);
+    }
+
+    .hero-teacher{
+        position:absolute;
+        left:50%;
+        bottom:0;
+        transform:translateX(-50%);
+        width:auto;
+        max-width:92%;
+        max-height:330px;
+        object-fit:contain;
+        z-index:2;
+    }
+
+    .hero-card{
+        top:12px;
+        right:0;
+        bottom:auto;
+        z-index:5;
+        max-width:190px;
+        padding:12px 14px;
+        border-radius:14px;
+    }
+
+    .hero-card strong{
+        font-size:13px;
+    }
+
+    .hero-card span{
+        display:block;
+        font-size:10px;
+        line-height:1.45;
+        margin-top:2px;
+    }
+
+    /* About */
+    .about-section{
+        padding-top:30px;
+    }
+
+    .about-grid{
+        gap:24px;
+    }
+
+    .about-image{
+        border-radius:20px;
+    }
+
+    .about-content h3{
+        font-size:27px;
+        margin-bottom:10px;
+    }
+
+    .about-content p{
+        font-size:15px;
+    }
+
+    .mini-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:18px;
+    }
+
+    .mini-card{
+        padding:16px;
+        border-radius:15px;
+    }
+
+    /* Courses */
+    .course-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .course-card{
+        min-height:0;
+        padding:22px;
+        border-radius:20px;
+    }
+
+    .course-card h3{
+        font-size:24px;
+    }
+
+    /* Why Us */
+    .strength-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .strength-card{
+        padding:18px;
+        gap:13px;
+        border-radius:16px;
+    }
+
+    .strength-number{
+        width:40px;
+        height:40px;
+        flex-basis:40px;
+    }
+
+    /* Methodology */
+    .method-box{
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:20px;
+        border-radius:22px;
+    }
+
+    .method-box h2{
+        font-size:34px;
+        margin-bottom:12px;
+    }
+
+    .step{
+        grid-template-columns:42px 1fr;
+        gap:12px;
+        padding:13px 0;
+    }
+
+    .step-icon{
+        width:38px;
+        height:38px;
+    }
+
+    .method-image{
+        width:100%;
+        min-height:0;
+        height:auto;
+        overflow:hidden;
+    }
+
+    .method-image img{
+        width:100%;
+        height:auto;
+        max-width:100%;
+        object-fit:contain;
+    }
+
+    /* Batches */
+    .batch-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .batch-card{
+        padding:19px;
+        border-radius:16px;
+    }
+
+    /* YouTube */
+    .youtube-box{
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:20px;
+        border-radius:22px;
+    }
+
+    .youtube-copy h2{
+        font-size:34px;
+    }
+
+    .youtube-copy p{
+        font-size:15px;
+        line-height:1.55;
+    }
+
+    .subscribe-btn{
+        width:100%;
+        justify-content:center;
+        padding:13px 15px;
+    }
+
+    .video-wrap{
+        border-radius:16px;
+    }
+
+    /* Resources */
+    .resource-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .resource-card{
+        padding:22px;
+        border-radius:20px;
+    }
+
+    .resource-card h3{
+        font-size:23px;
+    }
+
+    /* Location */
+    .map-box{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .map-info{
+        padding:22px;
+        border-radius:20px;
+    }
+
+    .map-info h3{
+        font-size:26px;
+    }
+
+    .map-frame{
+        min-height:300px;
+        height:300px;
+        border-radius:20px;
+    }
+
+    /* Social */
+    .social-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .social-card{
+        padding:16px;
+        border-radius:16px;
+    }
+
+    /* Contact */
+    .contact-wrap{
+        grid-template-columns:1fr;
+        gap:16px;
+        padding:14px;
+        border-radius:22px;
+    }
+
+    .contact-info{
+        padding:22px;
+        border-radius:18px;
+    }
+
+    .contact-info h3{
+        font-size:26px;
+    }
+
+    form{
+        grid-template-columns:1fr;
+        gap:13px;
+        padding:4px;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:16px; /* prevents iOS/Android browser zoom */
+    }
+
+    form .btn{
+        width:100%;
+    }
+
+    /* Footer */
+    footer{
+        padding:28px 0 18px;
+    }
+
+    .footer-grid{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+    }
+
+    .footer-links{
+        gap:12px 16px;
+    }
+
+    /* Floating buttons stay clear of the screen edge */
+    .floating{
+        right:12px;
+        bottom:12px;
+        gap:8px;
+    }
+
+    .float-btn{
+        width:48px;
+        height:48px;
+    }
+}
+
+@media (max-width:360px){
+    .container{
+        width:calc(100% - 24px);
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+
+    .actions .btn-light{
+        grid-column:auto;
+    }
+
+    .hero-visual{
+        min-height:330px;
+        height:330px;
+    }
+
+    .hero-circle{
+        width:260px;
+        height:260px;
+    }
+
+    .hero-teacher{
+        max-height:305px;
+    }
+
+    .hero-card{
+        max-width:175px;
+    }
+
+    .floating{
+        right:8px;
+    }
+
+    .float-btn{
+        width:44px;
+        height:44px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#home" class="brand">
+
+<img
+src="./assets/logo.png"
+alt="Ranjan's Physics Logo">
+
+</a>
+
+
+<nav class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#courses">Courses</a>
+
+<a href="#method">Methodology</a>
+
+<a href="#study-material">Study Material</a>
+
+<a
+href="#contact"
+class="nav-cta">
+
+Contact Us
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+
+<div>
+
+<div class="eyebrow">
+Where Quality Education Meets Next-Gen Technology
+</div>
+
+
+<h1>
+Sasaram’s First Hybrid Classroom.
+</h1>
+
+<p class="hybrid-line">
+Online + Offline • One Complete Learning System
+</p>
+
+
+<p class="hero-text">
+
+Concept-focused education for school students and serious
+aspirants preparing for Board Exams, IIT-JEE and NEET.
+
+</p>
+
+
+<div class="actions">
+
+<a
+href="#contact"
+class="btn btn-primary">
+
+Enquire Now
+
+</a>
+
+
+<a
+href="tel:+919065050637"
+class="btn btn-dark">
+
+Call 90650 50637
+
+</a>
+
+
+<a
+href="https://maps.app.goo.gl/2Ke24z2RGYDs7oyn6"
+target="_blank"
+rel="noopener"
+class="btn btn-light">
+
+Google Maps
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-visual">
+
+<div class="hero-circle"></div>
+
+
+<div class="hero-card">
+
+<strong>
+Classes 9th–12th
+</strong>
+
+<span>
+Foundation • Boards • JEE • NEET
+</span>
+
+</div>
+
+
+<img
+src="./assets/teacher_app.png"
+alt="Ranjan's Physics Faculty"
+class="hero-teacher">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="about-section">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Who We Are
+</div>
+
+<h2>
+Built for Concepts. Designed for Results.
+</h2>
+
+<p>
+At Ranjan's Physics, we are more than just a coaching institute —
+we are a trusted education partner dedicated to quality and success.
+</p>
+
+</div>
+
+
+
+<div class="about-grid">
+
+
+<div class="about-image">
+
+<img
+src="./assets/classroom.png"
+alt="Ranjan's Physics Classroom">
+
+</div>
+
+
+
+<div class="about-content">
+
+<h3>
+Our Vision & Mission
+</h3>
+
+<p>
+
+To be the leading institute known for nurturing outstanding
+talent in Physics and preparing students for success in
+competitive exams and life.
+
+</p>
+
+
+<div class="mini-grid">
+
+
+<div class="mini-card">
+
+<strong>
+Trusted Name
+</strong>
+
+<span>
+Quality education with a disciplined learning environment.
+</span>
+
+</div>
+
+
+<div class="mini-card">
+
+<strong>
+Strong Fundamentals
+</strong>
+
+<span>
+Concept clarity and problem-solving skills at the core.
+</span>
+
+</div>
+
+
+<div class="mini-card">
+
+<strong>
+Competitive Focus
+</strong>
+
+<span>
+JEE, NEET and other competitive exam preparation.
+</span>
+
+</div>
+
+
+<div class="mini-card">
+
+<strong>
+Student Excellence
+</strong>
+
+<span>
+Consistent assessment, revision and mentorship.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COURSES
+===================================================== -->
+
+<section class="courses" id="courses">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Our Courses
+</div>
+
+<h2>
+Structured Learning for Every Stage
+</h2>
+
+<p>
+Courses are designed for students from Class 9th to 12th
+with school curriculum and competitive exams in focus.
+</p>
+
+</div>
+
+
+
+<div class="course-grid">
+
+
+<div class="course-card">
+
+<div class="course-number">
+01
+</div>
+
+<h3>
+JEE Course
+</h3>
+
+<p>
+Expert training for IIT-JEE Main & Advanced along with Board Exams.
+</p>
+
+<ul>
+
+<li>
+Concept-Based Physics, Chemistry & Mathematics
+</li>
+
+<li>
+Intensive Test Series & Revision Classes
+</li>
+
+<li>
+Personalized Mentorship & Doubt Clearing
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="course-card">
+
+<div class="course-number">
+02
+</div>
+
+<h3>
+NEET Course
+</h3>
+
+<p>
+Comprehensive coaching for NEET along with Board Exams.
+</p>
+
+<ul>
+
+<li>
+In-Depth Biology, Physics & Chemistry
+</li>
+
+<li>
+Regular Tests & Full-Length Mock Exams
+</li>
+
+<li>
+Special Focus on NCERT & Application-Based Questions
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="course-card">
+
+<div class="course-number">
+03
+</div>
+
+<h3>
+Foundation
+</h3>
+
+<p>
+Class 9th–10th foundation for stronger concepts and early preparation.
+</p>
+
+<ul>
+
+<li>
+Maths, Science & Mental Ability
+</li>
+
+<li>
+NCERT & Conceptual Clarity
+</li>
+
+<li>
+Olympiad & Scholarship Foundation
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section id="strengths">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Why Choose Ranjan's Physics?
+</div>
+
+<h2>
+Our Strengths
+</h2>
+
+<p>
+A complete learning ecosystem built around attention,
+practice, mentorship and measurable improvement.
+</p>
+
+</div>
+
+
+
+<div class="strength-grid">
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+1
+</div>
+
+<div>
+
+<h3>
+Experienced Faculty
+</h3>
+
+<p>
+Personalised attention from highly qualified and dedicated teachers.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+2
+</div>
+
+<div>
+
+<h3>
+Comprehensive Study Material
+</h3>
+
+<p>
+Detailed notes and assignments aligned with syllabus and exams.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+3
+</div>
+
+<div>
+
+<h3>
+Motivational Environment
+</h3>
+
+<p>
+A positive learning environment that builds confidence.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+4
+</div>
+
+<div>
+
+<h3>
+Doubt Clearing Sessions
+</h3>
+
+<p>
+Individual attention to solve doubts with concept clarity.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+5
+</div>
+
+<div>
+
+<h3>
+Proven Track Record
+</h3>
+
+<p>
+Consistent focus on Board, JEE and NEET performance.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="strength-card">
+
+<div class="strength-number">
+6
+</div>
+
+<div>
+
+<h3>
+Disciplined Learning
+</h3>
+
+<p>
+Regular tests, revision and structured academic progress.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     METHODOLOGY
+===================================================== -->
+
+<section id="method" class="methodology-section">
+
+<div class="container">
+
+
+<div class="method-box">
+
+
+<div>
+
+<div class="eyebrow">
+Our Teaching Methodology
+</div>
+
+<h2>
+From Concept to Result
+</h2>
+
+
+
+<div class="step">
+
+<div class="step-icon">
+1
+</div>
+
+<div>
+
+<h3>
+Concept
+</h3>
+
+<p>
+Clear explanation of core concepts.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-icon">
+2
+</div>
+
+<div>
+
+<h3>
+Practice
+</h3>
+
+<p>
+Topic-wise questions and practice sheets.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-icon">
+3
+</div>
+
+<div>
+
+<h3>
+Test
+</h3>
+
+<p>
+Regular mock tests and performance analysis.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-icon">
+4
+</div>
+
+<div>
+
+<h3>
+Result
+</h3>
+
+<p>
+Performance monitoring and improvement.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="method-image">
+
+<img
+src="./assets/teacher_method.png"
+alt="Ranjan's Physics Teaching Methodology">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BATCHES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Structured Learning Program
+</div>
+
+<h2>
+Right Batch. Right Preparation.
+</h2>
+
+<p>
+Structured batches for each class level.
+</p>
+
+</div>
+
+
+
+<div class="batch-grid">
+
+
+<div class="batch-card">
+
+<h3>
+Sarthak Batch
+</h3>
+
+<strong>
+Class 9
+</strong>
+
+<p>
+For strong foundation building.
+</p>
+
+</div>
+
+
+
+<div class="batch-card">
+
+<h3>
+Sankalp Batch
+</h3>
+
+<strong>
+Class 10
+</strong>
+
+<p>
+For Board preparation.
+</p>
+
+</div>
+
+
+
+<div class="batch-card">
+
+<h3>
+Samarth Batch
+</h3>
+
+<strong>
+Class 11
+</strong>
+
+<p>
+For advanced concepts.
+</p>
+
+</div>
+
+
+
+<div class="batch-card">
+
+<h3>
+Shikhar Batch
+</h3>
+
+<strong>
+Class 12
+</strong>
+
+<p>
+For the final push to achieve your goals.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     YOUTUBE VIDEO
+===================================================== -->
+
+<section class="youtube-section" id="youtube">
+
+<div class="container">
+
+
+<div class="youtube-box">
+
+
+<div class="youtube-copy">
+
+<div class="section-tag">
+Ranjan's Physics on YouTube
+</div>
+
+
+<h2>Learn. Understand. Achieve More.</h2>
+
+
+<p>
+
+Watch 9th-12th | JEE | NEET classes, concept explanations,
+exam preparation and useful learning content
+from Ranjan's Physics.
+
+</p>
+
+
+<a
+href="https://www.youtube.com/@RANJANPHYSICS"
+target="_blank"
+rel="noopener"
+class="subscribe-btn">
+
+▶ &nbsp; Subscribe on YouTube
+
+</a>
+
+</div>
+
+
+
+<div class="video-wrap">
+
+<iframe
+
+src="https://www.youtube.com/embed/Vpt4hUkUyN0?rel=0"
+
+title="Ranjan's Physics YouTube Video"
+
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+referrerpolicy="strict-origin-when-cross-origin"
+
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STUDY MATERIAL + BLOG
+===================================================== -->
+
+<section class="resources" id="study-material">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Student Resources
+</div>
+
+<h2>
+Study Material & Blog
+</h2>
+
+<p>
+Notes, PDFs, important questions and educational articles
+will be available here.
+</p>
+
+</div>
+
+
+
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+PDF
+</div>
+
+<h3>
+Study Material
+</h3>
+
+<p>
+
+Class-wise notes, NCERT resources,
+important questions, PYQs and practice sheets.
+
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+
+<div class="resource-card" id="blog">
+
+<div class="resource-icon">
+BLOG
+</div>
+
+<h3>
+Physics Blog
+</h3>
+
+<p>
+
+Physics concepts, exam strategies,
+preparation tips and educational articles.
+
+</p>
+
+<span class="coming">
+Blogs Coming Soon
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GOOGLE MAP
+===================================================== -->
+
+<section class="location" id="location">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Our Location
+</div>
+
+<h2>
+Find Ranjan's Physics
+</h2>
+
+<p>
+Visit us in Sasaram or open our Google Business listing
+for directions and location details.
+</p>
+
+</div>
+
+
+
+<div class="map-box">
+
+
+<div class="map-info">
+
+<h3>
+Ranjan's Physics
+</h3>
+
+<p>
+Quality education for Classes 9th–12th,
+Board Exams, JEE and NEET.
+</p>
+
+
+<div class="address">
+
+<strong>
+📍 Shanti Complex
+</strong>
+
+<br>
+
+Ara Gumti, Gaurakshii,
+<br>
+Sasaram – 821115
+
+</div>
+
+
+<div class="address">
+
+<strong>
+📍 Nirwana Netralaya
+</strong>
+
+<br>
+
+Maa Tarachandi Road,
+Athkhanmwa,
+<br>
+Sasaram – 821115
+
+</div>
+
+
+<a
+href="https://maps.app.goo.gl/2Ke24z2RGYDs7oyn6"
+target="_blank"
+rel="noopener"
+class="btn btn-light">
+
+Open Google Business
+
+</a>
+
+</div>
+
+
+
+<iframe
+
+class="map-frame"
+
+title="Ranjan's Physics Google Maps"
+
+src="https://www.google.com/maps?q=Ranjan%27s%20Physics%2C%20Sasaram%2C%20Bihar&output=embed"
+
+loading="lazy"
+
+allowfullscreen>
+
+</iframe>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOCIAL MEDIA
+===================================================== -->
+
+<section class="social-section" id="social">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Connect With Us
+</div>
+
+<h2>
+Follow Ranjan's Physics
+</h2>
+
+<p>
+Stay connected for classes, updates, announcements and learning content.
+</p>
+
+</div>
+
+
+
+<div class="social-grid">
+
+
+<!-- YOUTUBE -->
+
+<a
+href="https://www.youtube.com/@RANJANPHYSICS"
+target="_blank"
+rel="noopener"
+class="social-card">
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.9V8.1l6.8 3.9-6.8 3.9z"/>
+
+</svg>
+
+</div>
+
+<div>
+
+<strong>
+YouTube
+</strong>
+
+<span>
+Subscribe & Watch
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- INSTAGRAM -->
+
+<a
+href="https://www.instagram.com/ranjansphysics"
+target="_blank"
+rel="noopener"
+class="social-card">
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5zM17.5 6.2A1.3 1.3 0 1 1 16.2 7.5a1.3 1.3 0 0 1 1.3-1.3z"/>
+
+</svg>
+
+</div>
+
+<div>
+
+<strong>
+Instagram
+</strong>
+
+<span>
+Follow Us
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- FACEBOOK -->
+
+<a
+href="https://www.facebook.com/RANJANPHYSICSCLASSES"
+target="_blank"
+rel="noopener"
+class="social-card">
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H7.7v3h2.7v8h3.1z"/>
+
+</svg>
+
+</div>
+
+<div>
+
+<strong>
+Facebook
+</strong>
+
+<span>
+Follow Our Page
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://whatsapp.com/channel/0029VaCJ5ADEQIaiaA1ZS03N"
+target="_blank"
+rel="noopener"
+class="social-card">
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 3.5A11.9 11.9 0 0 0 12 0 12 12 0 0 0 1.6 18.2L0 24l5.9-1.5A12 12 0 0 0 24 12c0-3.2-1.2-6.2-3.5-8.5zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21.8zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.7.1-.3.1-.5 0-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.2 2.4 3.7 5.8 5.1.8.3 1.5.5 2 .6.8.1 1.6.1 2.2-.1.7-.2 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4z"/>
+
+</svg>
+
+</div>
+
+<div>
+
+<strong>
+WhatsApp Channel
+</strong>
+
+<span>
+Join Updates
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- GOOGLE MAPS -->
+
+<a
+href="https://maps.app.goo.gl/2Ke24z2RGYDs7oyn6"
+target="_blank"
+rel="noopener"
+class="social-card">
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 3.5 15 5.8 9 3.5 3.5 5.8v15L9 18.5l6 2.3 5.5-2.3v-15zM9 5.8l6 2.3v10.4l-6-2.3V5.8zm-3.5 1.3L7 6.5v10.4l-1.5.6V7.1zm13 0v10.4l-1.5.6V7.7l1.5-.6z"/>
+
+</svg>
+
+</div>
+
+<div>
+
+<strong>
+Google Business
+</strong>
+
+<span>
+Find Us on Maps
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="section-tag">
+Contact Us
+</div>
+
+<h2>
+Let's Talk
+</h2>
+
+<p>
+Fill in your details and our team will get in touch with you.
+</p>
+
+</div>
+
+
+
+<div class="contact-wrap">
+
+
+<div class="contact-info">
+
+<h3>
+Ranjan's Physics
+</h3>
+
+<p>
+Where Quality Education Meets Next-Gen Technology.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+☎
+</div>
+
+<div>
+
+<strong>
+Call Us
+</strong>
+
+<span>
+90650 50637 · 91225 57077
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+⌖
+</div>
+
+<div>
+
+<strong>
+Address 1
+</strong>
+
+<span>
+Shanti Complex, Ara Gumti,
+Gaurakshii, Sasaram – 821115
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+⌖
+</div>
+
+<div>
+
+<strong>
+Address 2
+</strong>
+
+<span>
+Nirwana Netralaya,
+Maa Tarachandi Road,
+Athkhanmwa, Sasaram – 821115
+</span>
+
+</div>
+
+</div>
+
+
+<a
+href="https://maps.app.goo.gl/2Ke24z2RGYDs7oyn6"
+target="_blank"
+rel="noopener"
+class="btn btn-light">
+
+Open Google Maps
+
+</a>
+
+</div>
+
+
+
+<!-- CONTACT FORM -->
+
+<form id="enquiryForm">
+
+
+<div class="field">
+
+<label>
+Full Name
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Your name"
+required>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Class
+</label>
+
+<select
+id="studentClass"
+required>
+
+<option value="">
+Select Class
+</option>
+
+<option>9th</option>
+
+<option>10th</option>
+
+<option>11th</option>
+
+<option>12th</option>
+
+<option>JEE</option>
+
+<option>NEET</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Mobile Number
+</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="10-digit mobile number"
+required>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Email
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="Email address">
+
+</div>
+
+
+
+<div class="field full">
+
+<label>
+Message
+</label>
+
+<textarea
+id="message"
+placeholder="Your enquiry..."></textarea>
+
+</div>
+
+
+
+<div class="field full">
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Submit Enquiry on WhatsApp
+
+</button>
+
+</div>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<a
+href="#home"
+class="footer-logo">
+
+<img
+src="./assets/logo.png"
+alt="Ranjan's Physics">
+
+</a>
+
+
+<div class="footer-links">
+
+<a href="#about">
+About
+</a>
+
+<a href="#courses">
+Courses
+</a>
+
+<a href="#strengths">
+Why Us
+</a>
+
+<a href="#study-material">
+Study Material
+</a>
+
+<a href="#blog">
+Blog
+</a>
+
+<a href="#social">
+Social
+</a>
+
+<a href="#location">
+Location
+</a>
+
+<a href="tel:+919065050637">
+Call
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© <span id="year"></span>
+Ranjan's Physics. All Rights Reserved.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING BUTTONS
+===================================================== -->
+
+<div class="floating">
+
+
+<a
+href="tel:+919065050637"
+class="float-btn"
+aria-label="Call">
+
+☎
+
+</a>
+
+
+<a
+href="https://wa.me/919065050637"
+target="_blank"
+rel="noopener"
+class="float-btn"
+aria-label="WhatsApp">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 3.5A11.9 11.9 0 0 0 12 0 12 12 0 0 0 1.6 18.2L0 24l5.9-1.5A12 12 0 0 0 24 12c0-3.2-1.2-6.2-3.5-8.5zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21.8zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.7.1-.3.1-.5 0-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.2 2.4 3.7 5.8 5.1.8.3 1.5.5 2 .6.8.1 1.6.1 2.2-.1.7-.2 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4z"/>
+
+</svg>
+
+</a>
+
+
+<a
+href="https://www.youtube.com/@RANJANPHYSICS"
+target="_blank"
+rel="noopener"
+class="float-btn"
+aria-label="YouTube">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.9V8.1l6.8 3.9-6.8 3.9z"/>
+
+</svg>
+
+</a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+document.getElementById("enquiryForm")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById("name").value.trim();
+
+const studentClass =
+document.getElementById("studentClass").value;
+
+const phone =
+document.getElementById("phone").value.trim();
+
+const email =
+document.getElementById("email").value.trim();
+
+const message =
+document.getElementById("message").value.trim();
+
+
+const text =
+
+"Hello Ranjan's Physics,%0A%0A" +
+
+"Name: " +
+encodeURIComponent(name) +
+"%0A" +
+
+"Class: " +
+encodeURIComponent(studentClass) +
+"%0A" +
+
+"Mobile: " +
+encodeURIComponent(phone) +
+"%0A" +
+
+"Email: " +
+encodeURIComponent(
+email || "Not provided"
+) +
+
+"%0A" +
+
+"Message: " +
+encodeURIComponent(
+message || "Admission enquiry"
+);
+
+
+window.open(
+"https://wa.me/919065050637?text=" +
+text,
+"_blank"
+);
+
+});
+
+</script>
+
+
+</body>
+</html>
