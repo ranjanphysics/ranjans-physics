@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <meta charset="UTF-8">
 
@@ -1794,6 +1795,28 @@ html, body{
     }
 }
 
+
+
+.batch-material-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:16px;
+    padding:11px 16px;
+    border-radius:10px;
+    background:var(--blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:900;
+    text-decoration:none;
+    box-shadow:0 7px 18px rgba(16,103,201,.18);
+    transition:transform .2s ease,box-shadow .2s ease;
+}
+.batch-material-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(16,103,201,.24);
+}
+
 </style>
 
 </head>
@@ -2572,6 +2595,9 @@ Class 9
 <p>
 For strong foundation building.
 </p>
+<a href="material.html?class=Class%209" class="batch-material-btn">
+Study Material →
+</a>
 
 </div>
 
@@ -2590,6 +2616,9 @@ Class 10
 <p>
 For Board preparation.
 </p>
+<a href="material.html?class=Class%2010" class="batch-material-btn">
+Study Material →
+</a>
 
 </div>
 
@@ -2608,6 +2637,9 @@ Class 11
 <p>
 For advanced concepts.
 </p>
+<a href="material.html?class=Class%2011" class="batch-material-btn">
+Study Material →
+</a>
 
 </div>
 
@@ -2626,6 +2658,9 @@ Class 12
 <p>
 For the final push to achieve your goals.
 </p>
+<a href="material.html?class=Class%2012" class="batch-material-btn">
+Study Material →
+</a>
 
 </div>
 
@@ -2710,6 +2745,7 @@ allowfullscreen>
 
 
 
+
 <!-- =====================================================
      STUDY MATERIAL + BLOG
 ===================================================== -->
@@ -2718,28 +2754,23 @@ allowfullscreen>
 
 <div class="container">
 
-
 <div class="section-head">
 
 <div class="section-tag">
-Student Resources
+STUDENT RESOURCES
 </div>
 
 <h2>
-Study Material & Blog
+Study Material &amp; Blog
 </h2>
 
 <p>
-Notes, PDFs, important questions and educational articles
-will be available here.
+Notes, PDFs, important questions and educational articles will be available here.
 </p>
 
 </div>
 
-
-
 <div class="resource-grid">
-
 
 <div class="resource-card">
 
@@ -2752,21 +2783,21 @@ Study Material
 </h3>
 
 <p>
-
-Class-wise notes, NCERT resources,
-important questions, PYQs and practice sheets.
-
+Class-wise notes, NCERT resources, important questions, PYQs and practice sheets.
 </p>
 
-<span class="coming">
-Coming Soon
-</span>
+<a
+href="material.html"
+class="batch-material-btn"
+aria-label="Open Study Material">
+
+Open Study Material →
+
+</a>
 
 </div>
 
-
-
-<div class="resource-card" id="blog">
+<div class="resource-card">
 
 <div class="resource-icon">
 BLOG
@@ -2777,25 +2808,25 @@ Physics Blog
 </h3>
 
 <p>
-
-Physics concepts, exam strategies,
-preparation tips and educational articles.
-
+Physics concepts, exam strategies, preparation tips and educational articles.
 </p>
 
-<span class="coming">
-Blogs Coming Soon
-</span>
+<a
+href="blog.html"
+class="batch-material-btn"
+aria-label="Open Physics Blog">
+
+Open Physics Blog →
+
+</a>
 
 </div>
-
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -3400,7 +3431,7 @@ Why Us
 Study Material
 </a>
 
-<a href="#blog">
+<a href="material.html#blog">
 Blog
 </a>
 
@@ -3579,6 +3610,7 @@ text,
 );
 
 });
+
 
 </script>
 
