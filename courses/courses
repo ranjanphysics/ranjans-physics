@@ -277,12 +277,17 @@ footer{background:#06172f;color:#cbd9ea;padding:28px 0 18px}
 })();
 </script>
 
+
+<style id="path-safe-mobile-overflow">
+html,body{max-width:100%;overflow-x:hidden}
+img,iframe{max-width:100%}
+</style>
 </head><body>
 <header>
   <div class="container nav">
-    <a href="../../index.html" class="brand"><img src="../logo.png" alt="Ranjan's Physics Logo"></a>
+    <a href="../index.html" class="brand"><img src="../logo.png" alt="Ranjan's Physics Logo"></a>
     <nav class="nav-links">
-      <a href="../../index.html">Home</a>
+      <a href="../index.html">Home</a>
       <div class="nav-dropdown">
         <a href="courses.html" class="nav-drop-link">Courses <span class="nav-arrow">⌄</span></a>
         <div class="dropdown-menu mega-menu">
@@ -292,42 +297,42 @@ footer{background:#06172f;color:#cbd9ea;padding:28px 0 18px}
         </div>
       </div>
       <div class="nav-dropdown">
-        <a href="../../material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
-        <div class="dropdown-menu"><a href="../../material.html?class=9">Class 9th</a><a href="../../material.html?class=10">Class 10th</a><a href="../../material.html?class=11">Class 11th</a><a href="../../material.html?class=12">Class 12th</a></div>
+        <a href="../material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
+        <div class="dropdown-menu"><a href="material.html?class=9">Class 9th</a><a href="material.html?class=10">Class 10th</a><a href="material.html?class=11">Class 11th</a><a href="material.html?class=12">Class 12th</a></div>
       </div>
-      <a href="../../faculty.html">Faculty</a><a href="../../gallery.html">Gallery</a>
+      <a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
       <div class="nav-dropdown">
-        <a href="../../about.html" class="nav-drop-link">About Us <span class="nav-arrow">⌄</span></a>
-        <div class="dropdown-menu"><a href="../../about.html">Why Ranjan's Physics</a><a href="../../about-ranjan-sir.html">About Ranjan Sir</a><a href="../../academic-team.html">Academic Team</a><a href="../../e-brochure.html">E-Brochure</a></div>
+        <a href="../about.html" class="nav-drop-link">About Us <span class="nav-arrow">⌄</span></a>
+        <div class="dropdown-menu"><a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a></div>
       </div>
-      <a href="../../contact.html" class="nav-cta">Contact Us</a>
+      <a href="../contact.html" class="nav-cta">Contact Us</a>
     </nav>
   </div>
 
   <div class="mobile-header">
     <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-    <a class="mobile-brand" href="../../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
-    <a class="mobile-contact" href="../../contact.html">Contact Us</a>
+    <a class="mobile-brand" href="../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
+    <a class="mobile-contact" href="../contact.html">Contact Us</a>
   </div>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../../index.html">Home</a>
+    <a href="../index.html">Home</a>
     <details><summary>Courses <span>⌄</span></summary><div class="mobile-submenu">
       <div class="mobile-subtitle">JEE</div><a href="jee-11.html">Class 11th</a><a href="jee-12.html">Class 12th</a>
       <div class="mobile-subtitle">NEET</div><a href="neet-11.html">Class 11th</a><a href="neet-12.html">Class 12th</a>
       <div class="mobile-subtitle">Foundation</div><a href="foundation-9.html">Class 9th</a><a href="foundation-10.html">Class 10th</a>
     </div></details>
     <details><summary>Study Material <span>⌄</span></summary><div class="mobile-submenu">
-      <a href="../../material.html?class=9">Class 9th</a><a href="../../material.html?class=10">Class 10th</a><a href="../../material.html?class=11">Class 11th</a><a href="../../material.html?class=12">Class 12th</a>
+      <a href="material.html?class=9">Class 9th</a><a href="material.html?class=10">Class 10th</a><a href="material.html?class=11">Class 11th</a><a href="material.html?class=12">Class 12th</a>
     </div></details>
-    <a href="../../faculty.html">Faculty</a><a href="../../gallery.html">Gallery</a>
+    <a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
     <details><summary>About Us <span>⌄</span></summary><div class="mobile-submenu">
-      <a href="../../about.html">Why Ranjan's Physics</a><a href="../../about-ranjan-sir.html">About Ranjan Sir</a><a href="../../academic-team.html">Academic Team</a><a href="../../e-brochure.html">E-Brochure</a>
+      <a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a>
     </div></details>
   </div>
 </header>
 
-<section class="page-hero"><div class="container"><div class="crumb">Ranjan's Physics • Courses</div><h1>Choose Your <span>Learning Path</span></h1><p>Structured programs for Foundation, Board preparation, JEE and NEET — designed around concept clarity, practice, revision and assessment.</p><div class="hero-actions"><a class="btn primary" href="../../contact.html">Enquire Now</a><a class="btn dark" href="../../index.html">Back to Home</a></div></div></section>
+<section class="page-hero"><div class="container"><div class="crumb">Ranjan's Physics • Courses</div><h1>Choose Your <span>Learning Path</span></h1><p>Structured programs for Foundation, Board preparation, JEE and NEET — designed around concept clarity, practice, revision and assessment.</p><div class="hero-actions"><a class="btn primary" href="../contact.html">Enquire Now</a><a class="btn dark" href="../index.html">Back to Home</a></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div class="tag">Our Programs</div><h2>Find the Right Course</h2><p>Select your target program and class to view its dedicated course page.</p></div>
 <div class="class-grid">
 <a class="class-card" href="jee-11.html"><div class="class-number">01</div><h3>JEE • Class 11th</h3><p>Build strong concepts and start competitive preparation with a structured Class 11 pathway.</p><ul class="class-list"><li>Concept-focused learning</li><li>Practice and revision</li><li>JEE + school preparation</li></ul><span class="btn primary">View Course →</span></a>
@@ -339,10 +344,10 @@ footer{background:#06172f;color:#cbd9ea;padding:28px 0 18px}
 </div></div></section>
 <section class="program-strip"><div class="container"><div class="program-strip-grid"><div class="strip-item"><strong>9th–10th</strong><span>Foundation</span></div><div class="strip-item"><strong>11th–12th</strong><span>Senior Classes</span></div><div class="strip-item"><strong>JEE</strong><span>Competitive Preparation</span></div><div class="strip-item"><strong>NEET</strong><span>Competitive Preparation</span></div></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div class="tag">Learning System</div><h2>What Every Program Includes</h2></div><div class="feature-grid"><div class="feature"><div class="feature-icon">01</div><h3>Concept Clarity</h3><p>Focused learning that builds a strong understanding of fundamentals.</p></div><div class="feature"><div class="feature-icon">02</div><h3>Practice</h3><p>Topic-wise questions and regular practice to improve application.</p></div><div class="feature"><div class="feature-icon">03</div><h3>Revision & Tests</h3><p>Revision and assessment to track progress and prepare for exams.</p></div></div></div></section>
-<section class="cta"><div class="container"><div class="cta-box"><div><h2>Ready to choose your course?</h2><p>Explore your class-specific program or contact the Ranjan's Physics team.</p></div><div class="cta-actions"><a class="btn light" href="../../contact.html">Contact Us</a><a class="btn light" href="../../index.html">Home</a></div></div></div></section>
+<section class="cta"><div class="container"><div class="cta-box"><div><h2>Ready to choose your course?</h2><p>Explore your class-specific program or contact the Ranjan's Physics team.</p></div><div class="cta-actions"><a class="btn light" href="../contact.html">Contact Us</a><a class="btn light" href="../index.html">Home</a></div></div></div></section>
 <footer><div class="container">
- <div class="footer-row"><a class="footer-logo" href="../../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
- <div class="footer-links"><a href="../../index.html">Home</a><a href="courses.html">Courses</a><a href="../../material.html">Study Material</a><a href="../../faculty.html">Faculty</a><a href="../../gallery.html">Gallery</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a></div></div>
+ <div class="footer-row"><a class="footer-logo" href="../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
+ <div class="footer-links"><a href="../index.html">Home</a><a href="courses.html">Courses</a><a href="../material.html">Study Material</a><a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a><a href="../about.html">About Us</a><a href="../contact.html">Contact</a></div></div>
  <div class="copyright">© <span id="year"></span> Ranjan's Physics. All Rights Reserved.</div>
 </div></footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
