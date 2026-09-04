@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RANJAN'S PHYSICS SCHOLARSHIP TEST — RPST 2027. Free registration, two phases, online and offline modes.">
+<title>RPST 2027 | Ranjan's Physics Scholarship Test</title>
+
+<style>
+:root{
+  --navy:#071b3b;
+  --blue:#1769b0;
+  --blue2:#237ac4;
+  --light:#f5f9ff;
+  --line:#e3ebf4;
+  --text:#52627a;
+  --white:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  background:#f7faff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* ================= HEADER ================= */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10000;
+  box-shadow:0 4px 18px rgba(7,27,59,.04);
+}
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.brand img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  display:block;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  white-space:nowrap;
+  font-size:14px;
+  font-weight:800;
+}
+.nav-links>a,
+.nav-drop-link{
+  transition:.2s ease;
+}
+.nav-links>a:hover,
+.nav-drop-link:hover{color:var(--blue)}
+
+.nav-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:78px;
+}
+.nav-drop-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.nav-arrow{font-size:13px;transition:.2s}
+.nav-dropdown:hover .nav-arrow{transform:rotate(180deg)}
+
+.dropdown-menu{
+  position:absolute;
+  left:50%;
+  top:calc(100% - 2px);
+  transform:translate(-50%,-8px);
+  min-width:245px;
+  padding:10px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 20px 50px rgba(7,27,59,.16);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.18s ease;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0);
+}
+.dropdown-menu:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:-12px;height:12px;
+}
+.dropdown-menu a{
+  display:block;
+  padding:11px 13px;
+  border-radius:9px;
+  font-size:13px;
+}
+.dropdown-menu a:hover{
+  background:#edf6ff;
+  color:var(--blue);
+}
+.courses-menu{
+  min-width:600px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.mega-column{
+  padding:4px 8px;
+  border-right:1px solid #edf1f6;
+}
+.mega-column:last-child{border-right:0}
+.mega-title{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:7px 12px 9px;
+}
+.nav-cta{
+  background:var(--blue);
+  color:#fff !important;
+  padding:11px 19px;
+  border-radius:25px;
+  box-shadow:0 8px 20px rgba(23,105,176,.18);
+}
+.nav-cta:hover{
+  background:var(--navy);
+  transform:translateY(-1px);
+}
+
+/* ================= MOBILE HEADER ================= */
+.mobile-header,.mobile-menu{display:none}
+@media(max-width:850px){
+  header>.nav{display:none}
+  .mobile-header{
+    min-height:72px;
+    padding:10px 14px;
+    display:grid;
+    grid-template-columns:48px 1fr auto;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+  }
+  .mobile-menu-toggle{
+    width:48px;height:48px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    cursor:pointer;
+  }
+  .mobile-menu-toggle span{
+    width:22px;height:2px;
+    background:var(--navy);
+    border-radius:2px;
+  }
+  .mobile-brand{
+    justify-self:center;
+    width:52px;height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-brand img{width:50px;height:50px;object-fit:contain}
+  .mobile-contact{
+    background:var(--blue);
+    color:#fff;
+    padding:11px 16px;
+    border-radius:24px;
+    font-size:14px;
+    font-weight:800;
+    white-space:nowrap;
+  }
+  .mobile-menu{
+    flex-direction:column;
+    gap:3px;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:0 16px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease,padding .25s ease;
+  }
+  .mobile-menu.open{
+    display:flex;
+    max-height:600px;
+    padding:10px 16px 16px;
+  }
+  .mobile-menu>a,
+  .mobile-menu summary{
+    padding:12px 14px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:800;
+    list-style:none;
+    cursor:pointer;
+  }
+  .mobile-menu>a:hover,
+  .mobile-menu summary:hover{background:#edf6ff}
+  .mobile-submenu{
+    display:flex;
+    flex-direction:column;
+    padding:0 0 5px 20px;
+  }
+  .mobile-submenu a{
+    padding:8px 12px;
+    color:var(--text);
+    font-size:14px;
+    font-weight:700;
+  }
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:78px 0 55px;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(35,122,196,.13),transparent 30%),
+    linear-gradient(180deg,#fff 0%,#f5f9ff 100%);
+  text-align:center;
+}
+.eyebrow{
+  display:inline-block;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  color:var(--navy);
+}
+.hero h1 span{color:var(--blue)}
+.hero p{
+  max-width:760px;
+  margin:18px auto 0;
+  color:var(--text);
+  font-size:17px;
+}
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 25px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:900;
+  transition:.2s ease;
+}
+.btn-primary{
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(23,105,176,.20);
+}
+.btn-primary:hover{transform:translateY(-2px);background:var(--navy)}
+.btn-secondary{
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--navy);
+}
+.btn-secondary:hover{border-color:#a9c8e4;color:var(--blue)}
+
+/* ================= CONTENT ================= */
+.section{padding:65px 0}
+.section.alt{background:#fff}
+.section-head{text-align:center;margin-bottom:32px}
+.section-kicker{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.section-head h2{
+  margin-top:7px;
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.12;
+}
+.section-head p{
+  color:var(--text);
+  max-width:700px;
+  margin:10px auto 0;
+}
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+  transition:.2s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 42px rgba(7,27,59,.10);
+}
+.card-icon{
+  width:44px;height:44px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#edf6ff;
+  color:var(--blue);
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+.card h3{font-size:20px;margin-bottom:7px}
+.card p{color:var(--text);font-size:14px}
+
+.details-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.details-panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+}
+.details-panel h3{font-size:25px;margin-bottom:16px}
+.detail-list{list-style:none}
+.detail-list li{
+  display:flex;
+  gap:12px;
+  padding:11px 0;
+  border-bottom:1px solid #edf1f6;
+  color:var(--text);
+  font-size:14px;
+}
+.detail-list li:last-child{border-bottom:0}
+.tick{
+  color:var(--blue);
+  font-weight:900;
+  flex:0 0 auto;
+}
+
+.cta{
+  padding:70px 0;
+  background:linear-gradient(135deg,#071b3b,#1769b0);
+  color:#fff;
+  text-align:center;
+}
+.cta h2{font-size:clamp(30px,4vw,48px);line-height:1.1}
+.cta p{
+  color:#dcecff;
+  max-width:650px;
+  margin:12px auto 0;
+}
+.cta .btn-primary{
+  background:#fff;
+  color:var(--navy);
+  margin-top:25px;
+  box-shadow:none;
+}
+.cta .btn-primary:hover{background:#edf6ff}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#06172f;
+  color:#cbd9ea;
+  padding:35px 0 20px;
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+.footer-logo img{width:60px;height:60px;object-fit:contain}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:17px;
+  font-size:13px;
+}
+.footer-links a:hover{color:#fff}
+.copyright{
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  margin-top:25px;
+  padding-top:20px;
+  font-size:13px;
+}
+
+/* ================= FLOATING ================= */
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.float-btn{
+  width:50px;height:50px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 10px 25px rgba(7,27,59,.16);
+  display:grid;
+  place-items:center;
+  color:var(--blue);
+  font-size:20px;
+}
+.float-btn:hover{background:var(--blue);color:#fff}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:850px){
+  .hero{padding:52px 0 42px}
+  .hero p{font-size:16px}
+  .info-grid,.details-box{grid-template-columns:1fr}
+  .section{padding:50px 0}
+  .details-panel{padding:23px}
+}
+@media(max-width:520px){
+  .container{width:calc(100% - 30px)}
+  .mobile-contact{padding:10px 13px;font-size:13px}
+  .hero h1{letter-spacing:-1.2px}
+  .hero-actions .btn{width:100%}
+  .card{padding:22px}
+  .footer-grid{flex-direction:column;align-items:flex-start}
+  .footer-links{gap:12px}
+  .floating{right:12px;bottom:12px}
+}
+
+/* ===== RPST 2027 — PW-INSPIRED PREMIUM LAYOUT ===== */
+.rpst-hero{
+  position:relative;
+  overflow:hidden;
+  padding:76px 0 58px;
+  background:
+    radial-gradient(circle at 90% 12%,rgba(35,122,196,.16),transparent 28%),
+    radial-gradient(circle at 5% 90%,rgba(23,105,176,.08),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f5f9ff 100%);
+}
+.rpst-hero:before{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;
+  border:1px solid rgba(23,105,176,.10);
+  border-radius:50%;
+  right:-190px;top:-180px;
+}
+.rpst-hero .container{position:relative;z-index:1}
+.rpst-hero-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  align-items:center;
+  gap:55px;
+}
+.rpst-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid #dbe8f5;
+  border-radius:999px;
+  background:#fff;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  box-shadow:0 8px 25px rgba(7,27,59,.05);
+}
+.rpst-eyebrow i{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 5px rgba(23,105,176,.10);
+}
+.rpst-hero h1{
+  margin-top:20px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,5.3vw,72px);
+  line-height:.98;
+  letter-spacing:-2.5px;
+  font-style:italic;
+  font-weight:900;
+  color:var(--navy);
+}
+.rpst-hero h1 span{
+  display:block;
+  color:var(--blue);
+  font-size:.62em;
+  letter-spacing:1px;
+  margin-top:10px;
+}
+.rpst-animated{
+  background:linear-gradient(90deg,var(--navy),var(--blue),var(--navy),var(--blue));
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent!important;
+  animation:rpstShimmer 7s linear infinite;
+}
+@keyframes rpstShimmer{to{background-position:300% center}}
+.rpst-hero .lead{
+  max-width:650px;
+  margin:20px 0 0;
+  color:var(--text);
+  font-size:17px;
+}
+.rpst-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:27px;
+}
+.rpst-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:23px;
+}
+.rpst-point{
+  padding:8px 11px;
+  border-radius:9px;
+  background:#edf6ff;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:900;
+}
+.rpst-hero-card{
+  background:#fff;
+  border:1px solid #dce8f4;
+  border-radius:26px;
+  padding:25px;
+  box-shadow:0 25px 65px rgba(7,27,59,.11);
+}
+.rpst-hero-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:19px;
+}
+.rpst-mini-title{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.13em;
+  color:var(--blue);
+  text-transform:uppercase;
+}
+.rpst-free{
+  padding:7px 10px;
+  border-radius:8px;
+  background:#eaf8f0;
+  color:#1b7b45;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.rpst-phase{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:17px;
+}
+.rpst-phase + .rpst-phase{margin-top:12px}
+.rpst-phase-label{
+  font-size:10px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.rpst-phase-date{
+  margin-top:3px;
+  font-size:21px;
+  line-height:1.2;
+  font-weight:950;
+  color:var(--navy);
+}
+.rpst-phase-mode{
+  margin-top:6px;
+  font-size:12px;
+  color:var(--text);
+  font-weight:800;
+}
+.rpst-mode-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:16px;
+}
+.rpst-mode{
+  text-align:center;
+  padding:11px;
+  border-radius:11px;
+  background:#f5f9ff;
+  border:1px solid #e4edf6;
+  font-size:12px;
+  font-weight:900;
+  color:var(--navy);
+}
+.rpst-section{padding:70px 0}
+.rpst-section.alt{background:#fff}
+.rpst-head{text-align:center;max-width:760px;margin:0 auto 35px}
+.rpst-kicker{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.rpst-head h2{
+  margin-top:7px;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.08;
+  letter-spacing:-1px;
+}
+.rpst-head p{margin:12px auto 0;color:var(--text);font-size:15px}
+.rpst-feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.rpst-feature{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:23px;
+  box-shadow:0 12px 32px rgba(7,27,59,.055);
+  transition:.22s ease;
+}
+.rpst-feature:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(7,27,59,.10)}
+.rpst-icon{
+  width:45px;height:45px;
+  display:grid;place-items:center;
+  border-radius:13px;
+  background:#edf6ff;
+  color:var(--blue);
+  font-weight:950;
+  margin-bottom:15px;
+}
+.rpst-feature h3{font-size:18px;margin-bottom:5px}
+.rpst-feature p{font-size:13px;color:var(--text)}
+.rpst-exam-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.rpst-exam-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:27px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+}
+.rpst-exam-card.online{border-top:4px solid var(--blue)}
+.rpst-exam-card.offline{border-top:4px solid var(--navy)}
+.rpst-exam-card h3{font-size:25px}
+.rpst-exam-sub{color:var(--text);font-size:13px;margin-top:3px}
+.rpst-exam-table{margin-top:19px}
+.rpst-exam-row{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  gap:15px;
+  padding:12px 0;
+  border-bottom:1px solid #edf1f6;
+}
+.rpst-exam-row:last-child{border-bottom:0}
+.rpst-exam-row b{font-size:12px;color:var(--text);text-transform:uppercase;letter-spacing:.05em}
+.rpst-exam-row span{font-size:14px;font-weight:850;color:var(--navy)}
+.rpst-about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:22px;
+  align-items:stretch;
+}
+.rpst-about-card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:23px;
+  padding:30px;
+}
+.rpst-about-card h3{font-size:26px;margin-bottom:11px}
+.rpst-about-card p{color:var(--text);font-size:14px}
+.rpst-highlight{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px;
+}
+.rpst-highlight div{
+  padding:17px;
+  border-radius:15px;
+  background:#f5f9ff;
+}
+.rpst-highlight strong{display:block;font-size:20px;color:var(--blue)}
+.rpst-highlight span{font-size:11px;color:var(--text);font-weight:800}
+.rpst-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.rpst-step{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:21px;
+  padding:27px;
+  box-shadow:0 12px 32px rgba(7,27,59,.055);
+}
+.rpst-step-num{
+  width:42px;height:42px;
+  border-radius:12px;
+  display:grid;place-items:center;
+  background:var(--navy);
+  color:#fff;
+  font-size:13px;
+  font-weight:950;
+  margin-bottom:15px;
+}
+.rpst-step h3{font-size:20px;margin-bottom:5px}
+.rpst-step p{font-size:13px;color:var(--text)}
+.rpst-faq{
+  max-width:850px;
+  margin:auto;
+}
+.rpst-faq details{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  margin-bottom:11px;
+  overflow:hidden;
+}
+.rpst-faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:18px 20px;
+  font-weight:900;
+  font-size:14px;
+}
+.rpst-faq summary::-webkit-details-marker{display:none}
+.rpst-faq details p{
+  padding:0 20px 18px;
+  color:var(--text);
+  font-size:13px;
+}
+.rpst-bottom-cta{
+  padding:68px 0;
+  background:linear-gradient(135deg,#071b3b,#1769b0);
+  color:#fff;
+  text-align:center;
+}
+.rpst-bottom-cta h2{font-size:clamp(31px,4vw,49px);line-height:1.05}
+.rpst-bottom-cta p{color:#dcecff;margin:12px auto 0;max-width:650px}
+.rpst-bottom-cta .btn{
+  background:#fff;
+  color:var(--navy);
+  margin-top:24px;
+}
+.rpst-note{
+  max-width:850px;
+  margin:25px auto 0;
+  padding:15px 18px;
+  border-radius:13px;
+  background:#edf6ff;
+  border:1px solid #d8e9f8;
+  color:#38516a;
+  font-size:12px;
+}
+@media(max-width:950px){
+  .rpst-hero-grid,.rpst-about-grid{grid-template-columns:1fr}
+  .rpst-feature-grid{grid-template-columns:repeat(2,1fr)}
+  .rpst-hero-card{max-width:650px}
+}
+@media(max-width:700px){
+  .rpst-hero{padding:55px 0 45px}
+  .rpst-hero-grid{gap:35px}
+  .rpst-hero h1{letter-spacing:-1.5px}
+  .rpst-feature-grid,.rpst-exam-grid,.rpst-steps{grid-template-columns:1fr}
+  .rpst-section{padding:52px 0}
+}
+@media(max-width:520px){
+  .rpst-hero h1{font-size:42px}
+  .rpst-hero .lead{font-size:15px}
+  .rpst-hero-actions .btn{width:100%}
+  .rpst-mode-row,.rpst-highlight{grid-template-columns:1fr}
+  .rpst-exam-card,.rpst-about-card,.rpst-step{padding:22px}
+}
+
+
+/* ================= SCHOLARSHIP PAGE BANNER ================= */
+.scholarship-banner{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto 32px;
+  line-height:0;
+  overflow:hidden;
+  border-radius:20px;
+}
+.scholarship-banner img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  object-fit:contain;
+}
+@media(max-width:520px){
+  .scholarship-banner{border-radius:14px;margin-bottom:24px}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand" aria-label="Ranjan's Physics Home">
+      <img src="../logo.png" alt="Ranjan's Physics Logo">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+
+      <div class="nav-dropdown">
+        <a href="../courses/courses.html" class="nav-drop-link">Courses <span class="nav-arrow">⌄</span></a>
+        <div class="dropdown-menu courses-menu">
+          <div class="mega-column">
+            <div class="mega-title">JEE</div>
+            <a href="../courses/jee-11.html">Class 11th</a>
+            <a href="../courses/jee-12.html">Class 12th</a>
+          </div>
+          <div class="mega-column">
+            <div class="mega-title">NEET</div>
+            <a href="../courses/neet-11.html">Class 11th</a>
+            <a href="../courses/neet-12.html">Class 12th</a>
+          </div>
+          <div class="mega-column">
+            <div class="mega-title">Foundation</div>
+            <a href="../courses/foundation-9.html">Class 9th</a>
+            <a href="../courses/foundation-10.html">Class 10th</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="../study material/study material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
+        <div class="dropdown-menu">
+          <a href="../study material/class-9.html">Class 9th</a>
+          <a href="../study material/class-10.html">Class 10th</a>
+          <a href="../study material/class-11.html">Class 11th</a>
+          <a href="../study material/class-12.html">Class 12th</a>
+        </div>
+      </div>
+
+      <a href="../faculty.html">Faculty</a>
+      <a href="../gallery.html">Gallery</a>
+
+      <div class="nav-dropdown">
+        <a href="../about.html" class="nav-drop-link">About Us <span class="nav-arrow">⌄</span></a>
+        <div class="dropdown-menu">
+          <a href="../about.html">Why Ranjan's Physics</a>
+          <a href="../about-ranjan-sir.html">About Ranjan Sir</a>
+          <a href="../academic-team.html">Academic Team</a>
+          <a href="../e-brochure.html">E-Brochure</a>
+        </div>
+      </div>
+
+      <a href="../contact.html" class="nav-cta">Contact Us</a>
+    </nav>
+  </div>
+
+  <div class="mobile-header">
+    <button class="mobile-menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="mobile-brand" href="../index.html" aria-label="Home">
+      <img src="../logo.png" alt="Ranjan's Physics">
+    </a>
+
+    <a class="mobile-contact" href="../contact.html">Contact Us</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+
+    <details>
+      <summary>Courses ⌄</summary>
+      <div class="mobile-submenu">
+        <a href="../courses/courses.html">All Courses</a>
+        <a href="../courses/jee-11.html">JEE • Class 11th</a>
+        <a href="../courses/jee-12.html">JEE • Class 12th</a>
+        <a href="../courses/neet-11.html">NEET • Class 11th</a>
+        <a href="../courses/neet-12.html">NEET • Class 12th</a>
+        <a href="../courses/foundation-9.html">Foundation • Class 9th</a>
+        <a href="../courses/foundation-10.html">Foundation • Class 10th</a>
+      </div>
+    </details>
+
+    <details>
+      <summary>Study Material ⌄</summary>
+      <div class="mobile-submenu">
+        <a href="../study material/class-9.html">Class 9th</a>
+        <a href="../study material/class-10.html">Class 10th</a>
+        <a href="../study material/class-11.html">Class 11th</a>
+        <a href="../study material/class-12.html">Class 12th</a>
+      </div>
+    </details>
+
+    <a href="../faculty.html">Faculty</a>
+    <a href="../gallery.html">Gallery</a>
+
+    <details>
+      <summary>About Us ⌄</summary>
+      <div class="mobile-submenu">
+        <a href="../about.html">Why Ranjan's Physics</a>
+        <a href="../about-ranjan-sir.html">About Ranjan Sir</a>
+        <a href="../academic-team.html">Academic Team</a>
+        <a href="../e-brochure.html">E-Brochure</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+
+<main>
+
+<section class="rpst-hero">
+  <div class="container">
+    <div class="scholarship-banner">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener" aria-label="Register for RPST 2027">
+      <img src="scholarship-banner.png" alt="RPST 2027 Scholarship Test">
+    </a>
+</div>
+  </div>
+  <div class="container rpst-hero-grid">
+    <div>
+      <div class="rpst-eyebrow"><i></i> Ranjan's Physics Presents</div>
+
+      <h1 class="rpst-animated">
+        SCHOLARSHIP TEST
+      </h1>
+
+      <p class="lead"><strong>RPST 2027</strong> — Talent Dikhao, Scholarship Pao!</p>
+      <p class="lead">A scholarship test designed to give students an opportunity to showcase their academic potential, evaluate their preparation and take the next step in their learning journey.</p>
+
+      <div class="rpst-hero-actions">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener">REGISTER FOR FREE →</a>
+        <a class="btn btn-secondary" href="#exam-details">VIEW EXAM DETAILS</a>
+      </div>
+
+      <div class="rpst-points">
+        <span class="rpst-point">✓ Free Registration</span>
+        <span class="rpst-point">✓ Online Mode</span>
+        <span class="rpst-point">✓ Offline Mode</span>
+        <span class="rpst-point">✓ 2 Phases</span>
+      </div>
+    </div>
+
+    <div class="rpst-hero-card">
+      <div class="rpst-hero-card-top">
+        <div class="rpst-mini-title">RPST 2027 Schedule</div>
+        <div class="rpst-free">REGISTRATION FREE</div>
+      </div>
+
+      <div class="rpst-phase">
+        <div class="rpst-phase-label">Phase 01</div>
+        <div class="rpst-phase-date">1 October – 15 October</div>
+        <div class="rpst-phase-mode">Online + Offline Scholarship Test</div>
+      </div>
+
+      <div class="rpst-phase">
+        <div class="rpst-phase-label">Phase 02</div>
+        <div class="rpst-phase-date">20 November – 5 December</div>
+        <div class="rpst-phase-mode">Online + Offline Scholarship Test</div>
+      </div>
+
+      <div class="rpst-mode-row">
+        <div class="rpst-mode">ONLINE</div>
+        <div class="rpst-mode">OFFLINE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rpst-section">
+  <div class="container">
+    <div class="rpst-head">
+      <div class="rpst-kicker">RPST 2027</div>
+      <h2>One Test. One Opportunity.</h2>
+      <p>RPST 2027 students ko apni talent aur academic potential ko showcase karne ka platform deta hai.</p>
+    </div>
+
+    <div class="rpst-feature-grid">
+      <article class="rpst-feature">
+        <div class="rpst-icon">01</div>
+        <h3>Scholarship Opportunity</h3>
+        <p>Test performance ke basis par scholarship opportunity ke liye participate karein.</p>
+      </article>
+      <article class="rpst-feature">
+        <div class="rpst-icon">02</div>
+        <h3>Free Registration</h3>
+        <p>RPST 2027 ke liye registration free hai.</p>
+      </article>
+      <article class="rpst-feature">
+        <div class="rpst-icon">03</div>
+        <h3>Online & Offline</h3>
+        <p>Students apni convenience ke according online ya offline mode choose kar sakte hain.</p>
+      </article>
+      <article class="rpst-feature">
+        <div class="rpst-icon">04</div>
+        <h3>Two Test Phases</h3>
+        <p>Students ke liye do scholarship test phases available hain.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="rpst-section alt" id="exam-details">
+  <div class="container">
+    <div class="rpst-head">
+      <div class="rpst-kicker">Exam Details</div>
+      <h2>Choose Your Test Phase</h2>
+      <p>RPST 2027 dono phases mein Online aur Offline mode mein conducted hoga.</p>
+    </div>
+
+    <div class="rpst-exam-grid">
+      <article class="rpst-exam-card online">
+        <h3>Phase 01</h3>
+        <div class="rpst-exam-sub">First Scholarship Test Window</div>
+        <div class="rpst-exam-table">
+          <div class="rpst-exam-row"><b>Date</b><span>1 October – 15 October</span></div>
+          <div class="rpst-exam-row"><b>Mode</b><span>Online + Offline</span></div>
+          <div class="rpst-exam-row"><b>Registration</b><span>FREE</span></div>
+        </div>
+      </article>
+
+      <article class="rpst-exam-card offline">
+        <h3>Phase 02</h3>
+        <div class="rpst-exam-sub">Second Scholarship Test Window</div>
+        <div class="rpst-exam-table">
+          <div class="rpst-exam-row"><b>Date</b><span>20 November – 5 December</span></div>
+          <div class="rpst-exam-row"><b>Mode</b><span>Online + Offline</span></div>
+          <div class="rpst-exam-row"><b>Registration</b><span>FREE</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="rpst-note">
+      <strong>Note:</strong> Test timing, duration, eligibility, syllabus, scholarship percentage/amount, result process and offline venue details will be published through the official RPST 2027 updates.
+    </div>
+  </div>
+</section>
+
+<section class="rpst-section">
+  <div class="container">
+    <div class="rpst-about-grid">
+      <article class="rpst-about-card">
+        <div class="rpst-kicker">About RPST</div>
+        <h3>What is RPST 2027?</h3>
+        <p>RANJAN'S PHYSICS SCHOLARSHIP TEST (RPST) 2027 is a scholarship-focused academic test created to provide students an opportunity to demonstrate their preparation and compete for scholarship benefits.</p>
+        <p style="margin-top:12px">The test is available in both online and offline modes and is organised across two phases.</p>
+
+        <div class="rpst-highlight">
+          <div><strong>2</strong><span>Test Phases</span></div>
+          <div><strong>2</strong><span>Test Modes</span></div>
+        </div>
+      </article>
+
+      <article class="rpst-about-card">
+        <div class="rpst-kicker">Why Participate?</div>
+        <h3>Showcase Your Talent</h3>
+        <p>RPST gives students a structured opportunity to test themselves, understand their academic standing and pursue scholarship opportunities through their performance.</p>
+        <div class="rpst-highlight">
+          <div><strong>FREE</strong><span>Registration</span></div>
+          <div><strong>2027</strong><span>Scholarship Test</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="rpst-section alt">
+  <div class="container">
+    <div class="rpst-head">
+      <div class="rpst-kicker">Simple Process</div>
+      <h2>Steps to Get Scholarship</h2>
+      <p>PW NSAT ke information architecture ki tarah simple three-step journey.</p>
+    </div>
+
+    <div class="rpst-steps">
+      <article class="rpst-step">
+        <div class="rpst-step-num">01</div>
+        <h3>Register</h3>
+        <p>Free registration form fill karke RPST 2027 ke liye apna registration complete karein.</p>
+      </article>
+      <article class="rpst-step">
+        <div class="rpst-step-num">02</div>
+        <h3>Take the Test</h3>
+        <p>Available phase mein Online ya Offline mode ke through scholarship test attempt karein.</p>
+      </article>
+      <article class="rpst-step">
+        <div class="rpst-step-num">03</div>
+        <h3>Unlock Scholarship</h3>
+        <p>Test performance ke according scholarship opportunity ke liye qualify karne ka chance paayein.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="rpst-section">
+  <div class="container">
+    <div class="rpst-head">
+      <div class="rpst-kicker">Frequently Asked Questions</div>
+      <h2>RPST 2027 FAQs</h2>
+    </div>
+
+    <div class="rpst-faq">
+      <details>
+        <summary>RPST 2027 kya hai?</summary>
+        <p>RPST 2027 — RANJAN'S PHYSICS SCHOLARSHIP TEST — ek scholarship-focused academic test hai jisme students apni preparation aur talent showcase kar sakte hain.</p>
+      </details>
+      <details>
+        <summary>RPST 2027 kab hoga?</summary>
+        <p>Phase 01: 1 October se 15 October. Phase 02: 20 November se 5 December.</p>
+      </details>
+      <details>
+        <summary>Kya Online aur Offline dono modes available hain?</summary>
+        <p>Haan. Dono phases ke liye Online aur Offline modes available hain.</p>
+      </details>
+      <details>
+        <summary>Registration ke liye koi fee hai?</summary>
+        <p>Nahi. RPST 2027 registration FREE hai.</p>
+      </details>
+      <details>
+        <summary>Scholarship kitni milegi?</summary>
+        <p>Scholarship percentage/amount ki official details abhi announce nahi ki gayi hain. Official update ke baad is page par details add ki ja sakti hain.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="rpst-bottom-cta">
+  <div class="container">
+    <h2>Ready to Showcase Your Talent?</h2>
+    <p>RPST 2027 ke liye free registration kijiye aur apni academic journey mein ek strong step lijiye.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener">REGISTER FOR FREE →</a>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <a href="../index.html" class="footer-logo" aria-label="Home">
+        <img src="../logo.png" alt="Ranjan's Physics">
+      </a>
+
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../courses/courses.html">Courses</a>
+        <a href="../study material/study material.html">Study Material</a>
+        <a href="../faculty.html">Faculty</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Ranjan's Physics. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="floating">
+  <a href="tel:+919065050637" class="float-btn" aria-label="Call">☎</a>
+  <a href="https://wa.me/919065050637" target="_blank" rel="noopener" class="float-btn" aria-label="WhatsApp">◔</a>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", function(){
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+</script>
+
+</body>
+</html>
