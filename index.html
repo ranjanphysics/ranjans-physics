@@ -2439,6 +2439,35 @@ a[data-home-link="true"]{cursor:pointer}
 }
 
 
+/* ===== RPST 2027 HOME SCHOLARSHIP BANNER ===== */
+.rp-scholarship-link{
+  display:block;
+  width:100%;
+  max-width:760px;
+  border-radius:18px;
+  overflow:hidden;
+  line-height:0;
+  background:#fff;
+  box-shadow:0 12px 32px rgba(7,27,59,.10);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.rp-scholarship-link:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(7,27,59,.15);
+}
+.rp-scholarship-image{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
+@media(max-width:850px){
+  .rp-scholarship-link{
+    max-width:100%;
+    border-radius:14px;
+  }
+}
+
 /* ===== HARD-LOCK HERO PHOTO AGAINST TYPING REPAINT ===== */
 .hero h1{
   min-height:2.15em;
@@ -2877,6 +2906,375 @@ a[data-home-link="true"]{cursor:pointer}
 })();
 </script>
 
+
+<style id="rpst-hero-final-layout">
+/* =====================================================
+   RPST HERO — SINGLE FOCAL BANNER
+   Keeps the existing site content intact.
+   Removes the competing teacher image from the hero.
+===================================================== */
+
+.hero-grid{
+  grid-template-columns:1fr !important;
+  gap:0 !important;
+}
+
+.hero-main-content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-main-content .eyebrow{
+  margin-bottom:16px;
+}
+
+/* =====================================================
+   HOME PROMOTIONAL CAROUSEL — NO CROP
+   Source artwork is displayed in its complete aspect ratio.
+   Works on desktop, tablet and mobile.
+===================================================== */
+.hero-carousel{
+  position:relative;
+  width:min(1120px,100%);
+  max-width:1120px;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  margin:0 auto 22px;
+  overflow:hidden;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 14px 38px rgba(7,27,59,.11);
+}
+
+.carousel-track{
+  display:flex;
+  width:100%;
+  height:auto !important;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+
+.carousel-slide{
+  flex:0 0 100%;
+  width:100%;
+  height:auto !important;
+  display:block;
+  line-height:0;
+}
+
+.carousel-slide img{
+  width:100%;
+  height:auto !important;
+  min-height:0 !important;
+  display:block;
+  object-fit:contain !important;
+  object-position:center;
+}
+
+.carousel-prev,
+.carousel-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:4;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:50%;
+  background:rgba(255,255,255,.88);
+  color:#123B66;
+  box-shadow:0 8px 22px rgba(7,27,59,.16);
+  font-size:27px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .2s ease,background .2s ease;
+}
+
+.carousel-prev{left:14px}
+.carousel-next{right:14px}
+
+.carousel-prev:hover,
+.carousel-next:hover{
+  transform:translateY(-50%) scale(1.06);
+  background:#fff;
+}
+
+.carousel-dots{
+  position:absolute;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+  z-index:5;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:rgba(7,27,59,.20);
+  backdrop-filter:blur(5px);
+}
+
+.carousel-dots .dot{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  opacity:.58;
+  cursor:pointer;
+  transition:transform .2s ease,opacity .2s ease;
+}
+
+.carousel-dots .dot.active{
+  opacity:1;
+  transform:scale(1.3);
+}
+
+@media (min-width:601px) and (max-width:1100px){
+  .hero-carousel{
+    width:100%;
+    margin-bottom:20px;
+    border-radius:16px;
+  }
+}
+
+@media (max-width:600px){
+  .hero-carousel{
+    width:100%;
+    margin-bottom:18px;
+    border-radius:13px;
+    box-shadow:0 9px 25px rgba(7,27,59,.10);
+  }
+
+  .carousel-prev,
+  .carousel-next{
+    width:34px;
+    height:34px;
+    font-size:22px;
+  }
+
+  .carousel-prev{left:8px}
+  .carousel-next{right:8px}
+
+  .carousel-dots{
+    bottom:8px;
+  }
+}
+
+.hero-main-content .hybrid-line{
+  white-space:normal;
+  max-width:900px;
+}
+
+.hero-main-content .hero-text{
+  max-width:760px;
+}
+
+.hero-main-content .actions{
+  justify-content:center;
+}
+
+/* Tablet */
+@media (min-width:601px) and (max-width:1100px){
+  .hero{
+    padding:28px 0 30px;
+  }
+
+  .hero-carousel{
+    width:100%;
+    margin-bottom:20px;
+    border-radius:16px;
+  }
+}
+
+/* Mobile */
+@media (max-width:600px){
+  .hero{
+    padding:22px 0 28px !important;
+  }
+
+  .hero-main-content .eyebrow{
+    font-size:10px;
+    letter-spacing:1px;
+    line-height:1.45;
+    margin-bottom:12px;
+  }
+
+  .hero-carousel{
+    width:100%;
+    margin-bottom:18px;
+    border-radius:13px;
+    box-shadow:0 9px 25px rgba(7,27,59,.10);
+  }
+
+  .hero-main-content .hybrid-line{
+    font-size:18px;
+    line-height:1.35;
+    margin-top:0;
+  }
+
+  .hero-main-content .hero-text{
+    font-size:15px;
+    line-height:1.55;
+    margin:14px 0 20px;
+  }
+
+  .hero-main-content .actions{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+
+  .hero-main-content .actions .btn{
+    width:100%;
+    min-height:47px;
+    padding:0 9px;
+    font-size:13px;
+  }
+
+  .hero-main-content .actions .btn-light{
+    grid-column:1 / -1;
+  }
+}
+
+/* Small phones */
+@media (max-width:380px){
+  .hero-main-content .actions{
+    grid-template-columns:1fr;
+  }
+
+  .hero-main-content .actions .btn-light{
+    grid-column:auto;
+  }
+}
+
+/* The old two-column teacher visual is intentionally hidden only in HERO.
+   Other images/sections remain untouched. */
+.hero > .container > .hero-visual{
+  display:none !important;
+}
+</style>
+
+
+<style id="rp-carousel-no-crop-final">
+/* FINAL CAROUSEL PATCH — NEVER CROP THE ORIGINAL BANNER */
+.hero-carousel{
+  width:min(1120px,100%) !important;
+  max-width:1120px !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+}
+
+.carousel-track{
+  height:auto !important;
+  align-items:flex-start;
+}
+
+.carousel-slide{
+  height:auto !important;
+  flex:0 0 100% !important;
+}
+
+.carousel-slide img{
+  width:100% !important;
+  height:auto !important;
+  max-width:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Tablet */
+@media (min-width:601px) and (max-width:1100px){
+  .hero-carousel{
+    width:100% !important;
+    max-width:100% !important;
+    margin-bottom:20px !important;
+    border-radius:16px;
+  }
+}
+
+/* Mobile */
+@media (max-width:600px){
+  .hero-carousel{
+    width:100% !important;
+    max-width:100% !important;
+    margin-bottom:18px !important;
+    border-radius:12px;
+  }
+
+  .carousel-prev,
+  .carousel-next{
+    width:32px;
+    height:32px;
+    font-size:21px;
+  }
+
+  .carousel-prev{left:7px}
+  .carousel-next{right:7px}
+
+  .carousel-dots{
+    bottom:7px;
+  }
+}
+</style>
+
+
+<style id="carousel-natural-size-final">
+/* =========================================================
+   CAROUSEL NATURAL IMAGE SIZE
+   - Never crops an uploaded banner
+   - Preserves the exact original aspect ratio
+   - Automatically adapts height for each slide
+   - Responsive on desktop / tablet / mobile
+========================================================= */
+.hero-carousel{
+  width:min(1120px, 100%) !important;
+  max-width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  overflow:hidden;
+}
+
+.carousel-track{
+  width:100% !important;
+  height:auto !important;
+  align-items:flex-start;
+}
+
+.carousel-slide{
+  flex:0 0 100% !important;
+  width:100% !important;
+  height:auto !important;
+  line-height:0;
+}
+
+.carousel-slide a{
+  display:block;
+  width:100%;
+  line-height:0;
+}
+
+.carousel-slide img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:none !important;
+  object-fit:initial !important;
+  object-position:initial !important;
+}
+</style>
+
 </head>
 
 
@@ -2921,12 +3319,12 @@ a[data-home-link="true"]{cursor:pointer}
 </div>
 
 <div class="nav-dropdown">
-  <a href="material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
+  <a href="study material/study material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
   <div class="dropdown-menu">
-    <a href="material.html?class=9">Class 9th</a>
-    <a href="material.html?class=10">Class 10th</a>
-    <a href="material.html?class=11">Class 11th</a>
-    <a href="material.html?class=12">Class 12th</a>
+    <a href="study material/class-9.html">Class 9th</a>
+    <a href="study material/class-10.html">Class 10th</a>
+    <a href="study material/class-11.html">Class 11th</a>
+    <a href="study material/class-12.html">Class 12th</a>
   </div>
 </div>
 
@@ -2988,10 +3386,10 @@ a[data-home-link="true"]{cursor:pointer}
   <details class="mobile-nav-dropdown">
     <summary>Study Material <span>⌄</span></summary>
     <div class="mobile-submenu">
-      <a href="material.html?class=9">Class 9th</a>
-      <a href="material.html?class=10">Class 10th</a>
-      <a href="material.html?class=11">Class 11th</a>
-      <a href="material.html?class=12">Class 12th</a>
+      <a href="study material/class-9.html">Class 9th</a>
+      <a href="study material/class-10.html">Class 10th</a>
+      <a href="study material/class-11.html">Class 11th</a>
+      <a href="study material/class-12.html">Class 12th</a>
     </div>
   </details>
 
@@ -3020,88 +3418,80 @@ a[data-home-link="true"]{cursor:pointer}
 <div class="container hero-grid">
 
 
-<div>
+<div class="hero-main-content">
 
 <div class="eyebrow">
 Where Quality Education Meets Next-Gen Technology
 </div>
 
+<div class="hero-carousel" aria-label="Ranjan's Physics promotional banners">
+  <div class="carousel-track">
 
-<h1>
-<span id="rpTypingText" class="rp-typing-text" aria-live="polite"></span>
-</h1>
+    <a href="scholarship/scholarship.html"
+       class="carousel-slide"
+       aria-label="Open RPST 2027 Scholarship details">
+      <img src="scholarship/carousel-01.png"
+           alt="RPST 2027 Scholarship Test">
+    </a>
+
+    <a href="#"
+       class="carousel-slide"
+       aria-label="Promotional banner 2">
+      <img src="scholarship/carousel-02.png"
+           alt="Ranjan's Physics promotion">
+    </a>
+
+    <a href="scholarship/scholarship.html"
+       class="carousel-slide"
+       aria-label="Promotional banner 3">
+      <img src="scholarship/carousel-03.png"
+           alt="Ranjan's Physics promotion">
+    </a>
+
+  </div>
+
+  <button class="carousel-prev" type="button" aria-label="Previous banner">‹</button>
+  <button class="carousel-next" type="button" aria-label="Next banner">›</button>
+
+  <div class="carousel-dots" aria-label="Banner navigation">
+    <button class="dot active" type="button" aria-label="Go to banner 1"></button>
+    <button class="dot" type="button" aria-label="Go to banner 2"></button>
+    <button class="dot" type="button" aria-label="Go to banner 3"></button>
+  </div>
+</div>
 
 <p class="hybrid-line">
 Online + Offline • One Complete Learning System
 </p>
 
-
 <p class="hero-text">
-
 Concept-focused education for school students and serious
 aspirants preparing for Board Exams, IIT-JEE and NEET.
-
 </p>
-
 
 <div class="actions">
 
 <a
 href="#contact"
 class="btn btn-primary">
-
 Enquire Now
-
 </a>
-
 
 <a
 href="tel:+919065050637"
 class="btn btn-dark">
-
 Call 90650 50637
-
 </a>
-
 
 <a
 href="https://maps.app.goo.gl/2Ke24z2RGYDs7oyn6"
 target="_blank"
 rel="noopener"
 class="btn btn-light">
-
 Google Maps
-
 </a>
 
 </div>
-
-</div>
-
-
-
-<div class="hero-visual">
-
-<div class="hero-circle"></div>
-
-
-<div class="hero-card">
-
-<strong>
-Classes 9th–12th
-</strong>
-
-<span>
-Foundation • Boards • JEE • NEET
-</span>
-
-</div>
-
-
-<img
-src="./teacher_app.png"
-alt="Ranjan's Physics Faculty"
-class="hero-teacher">
 
 </div>
 
@@ -3250,21 +3640,21 @@ Consistent assessment, revision and mentorship.
 
 <div class="programs-modern-grid">
 
-<a class="program-modern-card" href="courses.html#jee">
+<a class="program-modern-card" href="courses/courses.html#jee">
 <div class="program-modern-number">01</div>
 <h3>JEE Course</h3>
 <p>Structured preparation for Class 11th &amp; 12th with concepts, practice and exam-focused learning.</p>
 <div class="program-modern-link">Explore JEE →</div>
 </a>
 
-<a class="program-modern-card" href="courses.html#neet">
+<a class="program-modern-card" href="courses/courses.html#neet">
 <div class="program-modern-number">02</div>
 <h3>NEET Course</h3>
 <p>Focused Class 11th &amp; 12th preparation with strong concepts, practice and revision.</p>
 <div class="program-modern-link">Explore NEET →</div>
 </a>
 
-<a class="program-modern-card" href="courses.html#foundation">
+<a class="program-modern-card" href="courses/courses.html#foundation">
 <div class="program-modern-number">03</div>
 <h3>Foundation</h3>
 <p>Strong Class 9th &amp; 10th fundamentals for Boards, Olympiads and future competitive preparation.</p>
@@ -3792,7 +4182,7 @@ Class 9
 <p>
 For strong foundation building.
 </p>
-<a href="material.html?class=Class%209" class="batch-material-btn">
+<a href="study material/class-9.html" class="batch-material-btn">
 Study Material →
 </a>
 
@@ -3813,7 +4203,7 @@ Class 10
 <p>
 For Board preparation.
 </p>
-<a href="material.html?class=Class%2010" class="batch-material-btn">
+<a href="study material/class-10.html" class="batch-material-btn">
 Study Material →
 </a>
 
@@ -3834,7 +4224,7 @@ Class 11
 <p>
 For advanced concepts.
 </p>
-<a href="material.html?class=Class%2011" class="batch-material-btn">
+<a href="study material/class-11.html" class="batch-material-btn">
 Study Material →
 </a>
 
@@ -3855,7 +4245,7 @@ Class 12
 <p>
 For the final push to achieve your goals.
 </p>
-<a href="material.html?class=Class%2012" class="batch-material-btn">
+<a href="study material/class-12.html" class="batch-material-btn">
 Study Material →
 </a>
 
@@ -3900,7 +4290,7 @@ Study Material →
 <div class="academic-panel academic-cta">
 <h3>Learn Smarter. Practice Better.</h3>
 <p>Explore courses, batches and learning resources designed for focused academic preparation.</p>
-<a href="courses.html" class="btn btn-light">Explore Courses</a>
+<a href="courses/courses.html" class="btn btn-light">Explore Courses</a>
 </div>
 
 </div>
@@ -3999,7 +4389,7 @@ allowfullscreen>
 <div class="resource-modern-icon">PDF</div>
 <h3>Study Material</h3>
 <p>Class-wise PDFs, chapters and lecture resources.</p>
-<a href="material.html">Explore Study Material →</a>
+<a href="study material/study material.html">Explore Study Material →</a>
 </div>
 
 <div class="resource-modern-card">
@@ -4622,7 +5012,7 @@ Why Us
 Study Material
 </a>
 
-<a href="material.html#blog">
+<a href="study material/study material.html#blog">
 Blog
 </a>
 
@@ -4858,7 +5248,6 @@ document.addEventListener("DOMContentLoaded",function(){
   if(!el)return;
 
   const phrases=[
-    {text:"Sasaram’s First Hybrid Classroom",color:"#111111"},
     {text:"Concept-Based Learning",color:"#123B66"},
     {text:"Board + JEE + NEET Preparation",color:"#E53935"}
   ];
@@ -4901,6 +5290,147 @@ document.addEventListener("DOMContentLoaded",function(){
     });
   }
 });
+</script>
+
+
+<script id="rp-home-carousel-js">
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".hero-carousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".carousel-track");
+  const slides = carousel.querySelectorAll(".carousel-slide");
+  const dots = carousel.querySelectorAll(".carousel-dots .dot");
+  const prev = carousel.querySelector(".carousel-prev");
+  const next = carousel.querySelector(".carousel-next");
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + (current * 100) + "%)";
+
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === current);
+      dot.setAttribute("aria-current", i === current ? "true" : "false");
+    });
+  }
+
+  function restartAutoPlay() {
+    clearInterval(timer);
+    timer = setInterval(function () {
+      showSlide(current + 1);
+    }, 5000);
+  }
+
+  prev.addEventListener("click", function () {
+    showSlide(current - 1);
+    restartAutoPlay();
+  });
+
+  next.addEventListener("click", function () {
+    showSlide(current + 1);
+    restartAutoPlay();
+  });
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener("click", function () {
+      showSlide(i);
+      restartAutoPlay();
+    });
+  });
+
+  carousel.addEventListener("mouseenter", function () {
+    clearInterval(timer);
+  });
+
+  carousel.addEventListener("mouseleave", function () {
+    restartAutoPlay();
+  });
+
+  showSlide(0);
+  restartAutoPlay();
+});
+</script>
+
+
+<script id="carousel-natural-size-js">
+(function () {
+  function setupNaturalCarousel(carousel) {
+    if (!carousel || carousel.dataset.naturalSizeReady === "1") return;
+    carousel.dataset.naturalSizeReady = "1";
+
+    const track = carousel.querySelector(".carousel-track");
+    const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+    if (!track || !slides.length) return;
+
+    function activeIndex() {
+      const matrix = getComputedStyle(track).transform;
+      if (!matrix || matrix === "none") return 0;
+      const match = matrix.match(/matrix\(([^)]+)\)/);
+      if (!match) return 0;
+      const values = match[1].split(",").map(Number);
+      const tx = values[4] || 0;
+      const slideWidth = carousel.clientWidth || 1;
+      return Math.max(0, Math.min(slides.length - 1, Math.round(Math.abs(tx) / slideWidth)));
+    }
+
+    function fitToImage(index) {
+      const slide = slides[index];
+      if (!slide) return;
+      const img = slide.querySelector("img");
+      if (!img) return;
+
+      const apply = function () {
+        if (!img.naturalWidth || !img.naturalHeight) return;
+        const width = carousel.clientWidth;
+        if (!width) return;
+
+        /* Exact natural aspect ratio: displayed height = width × H/W */
+        const height = width * (img.naturalHeight / img.naturalWidth);
+        carousel.style.height = Math.ceil(height) + "px";
+      };
+
+      if (img.complete) apply();
+      else img.addEventListener("load", apply, { once: true });
+    }
+
+    function fitCurrent() {
+      requestAnimationFrame(function () {
+        fitToImage(activeIndex());
+      });
+    }
+
+    /* Watch the existing carousel transform without changing its controls,
+       auto-slide logic, links, or other website code. */
+    const observer = new MutationObserver(fitCurrent);
+    observer.observe(track, { attributes: true, attributeFilter: ["style", "class"] });
+
+    window.addEventListener("resize", fitCurrent, { passive: true });
+
+    slides.forEach(function (slide, index) {
+      const img = slide.querySelector("img");
+      if (img) {
+        img.addEventListener("load", function () {
+          if (index === activeIndex()) fitToImage(index);
+        });
+      }
+    });
+
+    fitCurrent();
+  }
+
+  function init() {
+    document.querySelectorAll(".hero-carousel").forEach(setupNaturalCarousel);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
 </script>
 
 </body>
