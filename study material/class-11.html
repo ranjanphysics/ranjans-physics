@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Class 11th Study Material — chapter-wise PDFs and video learning resources from Ranjan's Physics.">
+<title>Class 11th Study Material | Ranjan's Physics</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--navy:#071b3b;--blue:#1769b0;--blue2:#237ac4;--muted:#617083;--line:#dce8f5;--bg:#f7faff;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#111827;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:9999;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand img,.footer-logo img{width:56px;height:56px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;white-space:nowrap}
+.nav-links>a,.nav-drop-link{transition:.2s}.nav-links>a:hover,.nav-drop-link:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff!important;padding:11px 18px;border-radius:30px}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:100%}.nav-drop-link{display:flex;align-items:center;gap:5px}.nav-arrow{font-size:13px}
+.dropdown-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-8px);min-width:240px;padding:10px;background:#fff;border:1px solid #e3ebf4;border-radius:15px;box-shadow:0 20px 50px rgba(7,27,59,.17);opacity:0;visibility:hidden;pointer-events:none;transition:.18s;z-index:10000}
+.nav-dropdown:hover>.dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.dropdown-menu a{display:block;padding:11px 13px;border-radius:9px;color:var(--navy);font-size:12px;font-weight:800}.dropdown-menu a:hover{background:#edf6ff;color:var(--blue)}
+.mega-menu{min-width:620px;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mega-column{padding:4px 6px;border-right:1px solid #edf1f6}.mega-column:last-child{border:0}.mega-title{padding:8px 12px 10px;color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.mobile-header,.mobile-menu{display:none}
+.hero{padding:66px 0 54px;background:linear-gradient(135deg,#f7fbff,#e7f2ff)}
+.crumb{font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.hero h1{font-size:clamp(40px,5vw,62px);line-height:1.06;letter-spacing:-1.6px;color:var(--navy)}.hero h1 span{color:var(--blue)}
+.hero p{max-width:760px;color:var(--muted);font-size:18px;margin-top:17px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 17px;border-radius:11px;font-weight:800;font-size:13px;transition:.2s}.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--blue);color:#fff}.dark{background:var(--navy);color:#fff}.light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.section{padding:54px 0}.section-head{text-align:center;max-width:780px;margin:0 auto 28px}.tag{font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue)}
+.section-head h2{font-size:clamp(30px,4vw,45px);line-height:1.1;color:var(--navy);margin:8px 0 10px}.section-head p{color:var(--muted)}
+.status{text-align:center;margin:0 auto 24px;color:var(--muted);font-size:14px}
+.material-wrap{display:grid;gap:18px}
+.subject{background:#fff;border:1px solid var(--line);border-radius:23px;padding:24px;box-shadow:0 9px 28px rgba(7,27,59,.06)}
+.subject-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.subject-title{font-size:25px;color:var(--navy)}.subject-badge{font-size:11px;font-weight:900;color:var(--blue);background:#eaf4ff;padding:7px 11px;border-radius:20px}
+.chapter{border:1px solid #e7eef6;border-radius:17px;margin-top:12px;overflow:hidden}
+.chapter-head{padding:15px 17px;background:#f7fbff;color:var(--navy);font-size:17px;font-weight:900}
+.lecture-list{display:grid}
+.lecture{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 17px;border-top:1px solid #edf2f7}
+.lecture-info h4{font-size:15px;color:#172b45}.lecture-meta{font-size:12px;color:var(--muted);margin-top:3px}
+.lecture-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.small-btn{min-height:38px;padding:0 13px;border-radius:9px;font-size:12px}
+.empty{background:#fff;border:1px dashed #bfd1e5;border-radius:20px;padding:34px 20px;text-align:center;color:var(--muted)}
+.note-strip{background:var(--navy);color:#fff;padding:30px 0}.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.note-card{border:1px solid rgba(255,255,255,.13);border-radius:17px;padding:18px;background:rgba(255,255,255,.04)}.note-card strong{display:block;font-size:17px}.note-card span{display:block;color:#c7d8ea;font-size:12px;margin-top:4px}
+footer{background:#06172f;color:#cbd9ea;padding:28px 0 18px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-links{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}.footer-links a:hover{color:#fff}.copyright{border-top:1px solid rgba(255,255,255,.1);text-align:center;margin-top:22px;padding-top:18px;font-size:12px}
+@media(max-width:900px){
+ .nav-links{display:none}.nav{display:none}
+ .mobile-header{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:10px;width:100%;min-height:72px;padding:10px 14px}
+ .mobile-menu-toggle{width:48px;height:48px;border:1px solid var(--line);border-radius:13px;background:#fff;font-size:27px;color:var(--navy);cursor:pointer}
+ .mobile-brand{justify-self:center;width:50px;height:50px}.mobile-brand img{width:50px;height:50px;object-fit:contain}
+ .mobile-contact{padding:11px 16px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;white-space:nowrap}
+ .mobile-menu{position:absolute;top:72px;left:0;right:0;display:block;max-height:0;overflow:hidden;background:#fff;box-shadow:0 16px 30px rgba(7,27,59,.14);transition:max-height .28s ease}
+ .mobile-menu.open{max-height:900px;overflow-y:auto;padding:10px 16px 18px}
+ .mobile-menu>a,.mobile-menu summary{display:flex;justify-content:space-between;align-items:center;width:100%;padding:14px 10px;border-radius:10px;color:var(--navy);font-weight:800;list-style:none}
+ .mobile-submenu{display:flex;flex-direction:column;padding:3px 8px 8px 24px}.mobile-submenu a{padding:9px 10px;color:#29435f;font-size:13px;font-weight:700}
+ .mobile-subtitle{padding:9px 10px 4px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+ .note-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .container{width:calc(100% - 32px)}.hero{padding:45px 0 40px}.hero h1{font-size:39px}.hero p{font-size:16px}.section{padding:42px 0}
+ .subject{padding:17px;border-radius:19px}.subject-head{align-items:flex-start}.subject-title{font-size:21px}.lecture{align-items:flex-start;flex-direction:column}.lecture-actions{width:100%;justify-content:flex-start}.small-btn{flex:1;min-width:120px}
+ .footer-row{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a href="../index.html" class="brand"><img src="../logo.png" alt="Ranjan's Physics Logo"></a>
+<nav class="nav-links">
+<a href="../index.html">Home</a>
+<div class="nav-dropdown">
+<a href="../courses/courses.html" class="nav-drop-link">Courses <span class="nav-arrow">⌄</span></a>
+<div class="dropdown-menu mega-menu">
+<div class="mega-column"><div class="mega-title">JEE</div><a href="../courses/jee-11.html">Class 11th</a><a href="../courses/jee-12.html">Class 12th</a></div>
+<div class="mega-column"><div class="mega-title">NEET</div><a href="../courses/neet-11.html">Class 11th</a><a href="../courses/neet-12.html">Class 12th</a></div>
+<div class="mega-column"><div class="mega-title">Foundation</div><a href="../courses/foundation-9.html">Class 9th</a><a href="../courses/foundation-10.html">Class 10th</a></div>
+</div></div>
+<div class="nav-dropdown">
+<a href="study material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
+<div class="dropdown-menu"><a href="class-9.html">Class 9th</a><a href="class-10.html">Class 10th</a><a href="class-11.html">Class 11th</a><a href="class-12.html">Class 12th</a></div>
+</div>
+<a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
+<div class="nav-dropdown">
+<a href="../about.html" class="nav-drop-link">About Us <span class="nav-arrow">⌄</span></a>
+<div class="dropdown-menu"><a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a></div>
+</div>
+<a href="../contact.html" class="nav-cta">Contact Us</a>
+</nav>
+</div>
+<div class="mobile-header">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+<a class="mobile-brand" href="../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
+<a class="mobile-contact" href="../contact.html">Contact Us</a>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="../index.html">Home</a>
+<details><summary>Courses <span>⌄</span></summary><div class="mobile-submenu">
+<div class="mobile-subtitle">JEE</div><a href="../courses/jee-11.html">Class 11th</a><a href="../courses/jee-12.html">Class 12th</a>
+<div class="mobile-subtitle">NEET</div><a href="../courses/neet-11.html">Class 11th</a><a href="../courses/neet-12.html">Class 12th</a>
+<div class="mobile-subtitle">Foundation</div><a href="../courses/foundation-9.html">Class 9th</a><a href="../courses/foundation-10.html">Class 10th</a>
+</div></details>
+<details><summary>Study Material <span>⌄</span></summary><div class="mobile-submenu">
+<a href="class-9.html">Class 9th</a><a href="class-10.html">Class 10th</a><a href="class-11.html">Class 11th</a><a href="class-12.html">Class 12th</a>
+</div></details>
+<a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
+<details><summary>About Us <span>⌄</span></summary><div class="mobile-submenu">
+<a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a>
+</div></details>
+</div>
+</header>
+
+<section class="hero"><div class="container">
+<div class="crumb">Ranjan's Physics • Study Material • Class 11th</div>
+<h1>Class 11th <span>Study Material</span></h1>
+<p>Chapter-wise learning resources, PDFs and video materials for Class 11th — organized for clear concepts, practice and revision.</p>
+<div class="actions">
+<a class="btn primary" href="#materials">Explore Material</a>
+<a class="btn dark" href="study material.html">All Classes</a>
+<a class="btn light" href="../index.html">Home</a>
+</div>
+</div></section>
+
+<section class="section" id="materials">
+<div class="container">
+<div class="section-head"><div class="tag">Student Resources</div><h2>Class 11th Learning Resources</h2><p>Only material published through the Admin Panel is shown here.</p></div>
+<div class="status" id="status">Loading published study material...</div>
+<div class="material-wrap" id="materials"><div class="empty">Loading...</div></div>
+</div>
+</section>
+
+<section class="note-strip"><div class="container"><div class="note-grid">
+<div class="note-card"><strong>Chapter-wise</strong><span>Resources arranged for easy navigation.</span></div>
+<div class="note-card"><strong>PDF + Video</strong><span>Open available learning resources directly.</span></div>
+<div class="note-card"><strong>Admin Managed</strong><span>Published material updates automatically.</span></div>
+</div></div></section>
+
+<footer><div class="container">
+<div class="footer-row">
+<a class="footer-logo" href="../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
+<div class="footer-links"><a href="../index.html">Home</a><a href="../courses/courses.html">Courses</a><a href="study material.html">Study Material</a><a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a><a href="../about.html">About Us</a><a href="../contact.html">Contact</a></div>
+</div>
+<div class="copyright">© <span id="year"></span> Ranjan's Physics. All Rights Reserved.</div>
+</div></footer>
+
+<script>
+const SUPABASE_URL="https://jeahylkdcuxkybgcjycs.supabase.co";
+const SUPABASE_KEY="sb_publishable_RqSEKI8mif1Wqftf0KJAZA_tX07MrgW";
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const DB_CLASS="11th";
+const PUBLIC_CLASS="Class 11";
+
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]);}
+function safeUrl(v){try{const u=new URL(v);return ["http:","https:"].includes(u.protocol)?u.href:"#"}catch(e){return "#"}}
+
+async function loadMaterials(){
+ const status=document.getElementById("status"),wrap=document.getElementById("materials");
+ status.textContent="Loading published study material...";
+ wrap.innerHTML='<div class="empty">Please wait...</div>';
+
+ const {data,error}=await db.from("study_materials")
+   .select("id,title,class_name,subject,chapter,lecture_no,pdf_url,youtube_url,published")
+   .eq("published",true)
+   .in("class_name",[DB_CLASS,PUBLIC_CLASS])
+   .order("id",{ascending:true});
+
+ if(error){
+   console.error(error);
+   status.textContent="Unable to load study material right now.";
+   wrap.innerHTML='<div class="empty">Study material could not be loaded. Please try again later.</div>';
+   return;
+ }
+ if(!data?.length){
+   status.textContent="No published material available yet.";
+   wrap.innerHTML='<div class="empty">Study material for Class 11th has not been published yet. Please check again soon.</div>';
+   return;
+ }
+
+ const subjects={};
+ data.forEach(item=>{
+   const subject=item.subject||"Physics";
+   const chapter=item.chapter||"General";
+   if(!subjects[subject])subjects[subject]={};
+   if(!subjects[subject][chapter])subjects[subject][chapter]=[];
+   subjects[subject][chapter].push(item);
+ });
+
+ let html="";
+ Object.entries(subjects).forEach(([subject,chapters],si)=>{
+   let chapterHtml="";
+   let chapterCount=0;
+   Object.entries(chapters).forEach(([chapter,items])=>{
+     chapterCount++;
+     const lectures=items.map((item,i)=>{
+       const no=item.lecture_no||i+1;
+       const pdf=item.pdf_url?'<a class="btn primary small-btn" href="'+esc(safeUrl(item.pdf_url))+'" target="_blank" rel="noopener">Open PDF</a>':"";
+       const yt=item.youtube_url?'<a class="btn light small-btn" href="'+esc(safeUrl(item.youtube_url))+'" target="_blank" rel="noopener">Watch Video</a>':"";
+       return '<div class="lecture"><div class="lecture-info"><h4>Lecture '+String(no).padStart(2,"0")+' — '+esc(item.title||"Untitled")+'</h4><div class="lecture-meta">'+esc(item.subject||"Physics")+' · '+esc(item.chapter||"General")+'</div></div><div class="lecture-actions">'+(pdf+yt||'<span class="lecture-meta">Resource coming soon</span>')+'</div></div>';
+     }).join("");
+     chapterHtml+='<div class="chapter"><div class="chapter-head">📚 '+esc(chapter)+'</div><div class="lecture-list">'+lectures+'</div></div>';
+   });
+   html+='<article class="subject"><div class="subject-head"><h3 class="subject-title">'+esc(subject)+'</h3><span class="subject-badge">'+chapterCount+' Chapter'+(chapterCount===1?"":"s")+'</span></div>'+chapterHtml+'</article>';
+ });
+ wrap.innerHTML=html;
+ status.textContent=data.length+" published material"+(data.length===1?"":"s")+" available for Class 11th.";
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+document.addEventListener("DOMContentLoaded",()=>{
+ const t=document.querySelector(".mobile-menu-toggle"),m=document.getElementById("mobileMenu");
+ if(t&&m)t.addEventListener("click",()=>{const o=m.classList.toggle("open");t.textContent=o?"✕":"☰";t.setAttribute("aria-expanded",o?"true":"false")});
+});
+loadMaterials();
+</script>
+</body>
+</html>
