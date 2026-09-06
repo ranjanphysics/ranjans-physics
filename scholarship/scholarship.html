@@ -845,6 +845,40 @@ footer{
   .scholarship-banner{border-radius:14px;margin-bottom:24px}
 }
 
+/* ================= GOOGLE FORM ================= */
+.google-form-section{
+  padding:70px 0;
+  background:#fff;
+}
+.google-form-wrap{
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:10px;
+  box-shadow:0 15px 40px rgba(7,27,59,.07);
+  overflow:hidden;
+}
+.google-form-wrap iframe{
+  display:block;
+  width:100%;
+  min-height:2658px;
+  border:0;
+}
+@media(max-width:700px){
+  .google-form-section{padding:52px 0}
+  .google-form-wrap{
+    padding:0;
+    border-radius:15px;
+    border-left:0;
+    border-right:0;
+    box-shadow:none;
+  }
+  .google-form-wrap iframe{min-height:2900px}
+}
+
 </style>
 </head>
 
@@ -966,7 +1000,7 @@ footer{
 <section class="rpst-hero">
   <div class="container">
     <div class="scholarship-banner">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener" aria-label="Register for RPST 2027">
+    <a href="#registration-form" aria-label="Register for RPST 2027">
       <img src="scholarship-banner.png" alt="RPST 2027 Scholarship Test">
     </a>
 </div>
@@ -983,7 +1017,7 @@ footer{
       <p class="lead">A scholarship test designed to give students an opportunity to showcase their academic potential, evaluate their preparation and take the next step in their learning journey.</p>
 
       <div class="rpst-hero-actions">
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener">REGISTER FOR FREE →</a>
+        <a class="btn btn-primary" href="#registration-form">REGISTER FOR FREE →</a>
         <a class="btn btn-secondary" href="#exam-details">VIEW EXAM DETAILS</a>
       </div>
 
@@ -1178,11 +1212,34 @@ footer{
   </div>
 </section>
 
+
+<section class="google-form-section" id="registration-form">
+  <div class="container">
+    <div class="rpst-head">
+      <div class="rpst-kicker">RPST 2027 Registration</div>
+      <h2>Register for Free</h2>
+      <p>Fill in the registration form below to participate in RANJAN'S PHYSICS SCHOLARSHIP TEST.</p>
+    </div>
+
+    <div class="google-form-wrap">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?embedded=true"
+        width="100%"
+        height="2658"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <section class="rpst-bottom-cta">
   <div class="container">
     <h2>Ready to Showcase Your Talent?</h2>
     <p>RPST 2027 ke liye free registration kijiye aur apni academic journey mein ek strong step lijiye.</p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?usp=publish-editor" target="_blank" rel="noopener">REGISTER FOR FREE →</a>
+    <a class="btn" href="#registration-form">REGISTER FOR FREE →</a>
   </div>
 </section>
 
