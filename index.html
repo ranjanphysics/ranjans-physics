@@ -2769,6 +2769,18 @@ a[data-home-link="true"]{cursor:pointer}
   header > .mobile-menu{top:72px !important;}
 }
 
+
+
+/* Embedded Talk With Ranjan Sir form */
+.rp-form-wrap{background:#fff;}
+.rp-form-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #e4edf5;color:#123b66;font-size:14px;}
+.rp-form-head button{border:0;background:#eef5fb;color:#123b66;border-radius:8px;padding:7px 10px;font-weight:700;cursor:pointer;}
+.rp-form-wrap iframe{display:block;width:100%;height:560px;border:0;background:#fff;}
+.rp-popup-card:has(.rp-form-wrap:not([hidden])){width:min(700px,100%);}
+@media(max-width:600px){
+  .rp-form-wrap iframe{height:70vh;min-height:500px;}
+  .rp-popup-card:has(.rp-form-wrap:not([hidden])){width:100%;max-height:94vh;}
+}
 </style>
 
 
@@ -3280,6 +3292,48 @@ a[data-home-link="true"]{cursor:pointer}
 .rpst-2027-link{display:inline-block;font-weight:700;text-decoration:none;margin:4px 8px;padding:7px 12px;border-radius:6px;}
 .rpst-2027-link:hover{text-decoration:underline;}
 </style>
+
+<style id="rp-join-popup-style">
+#rpJoinPopup{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(8,18,35,.72);backdrop-filter:blur(5px);}
+#rpJoinPopup[hidden]{display:none!important;}
+.rp-popup-card{position:relative;width:min(460px,100%);background:#fff;border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,.28);overflow:hidden;border:1px solid rgba(18,59,102,.12);}
+.rp-popup-top{padding:28px 26px 24px;text-align:center;background:linear-gradient(180deg,#eef8ff 0%,#fff 100%);}
+.rp-popup-badge{display:inline-block;padding:7px 13px;border-radius:999px;background:#123b66;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.rp-popup-card h2{margin:0;color:#123b66;font-size:30px;line-height:1.15;}
+.rp-popup-card h3{margin:9px 0 8px;color:#e53935;font-size:18px;}
+.rp-popup-card p{margin:0 auto;color:#536579;font-size:14px;line-height:1.65;max-width:370px;}
+.rp-popup-actions{padding:20px 26px 26px;display:grid;gap:10px;}
+.rp-popup-btn{display:block;text-align:center;text-decoration:none;padding:13px 16px;border-radius:11px;font-weight:800;font-size:14px;transition:.2s;}
+.rp-popup-primary{background:#123b66;color:#fff;}
+.rp-popup-primary:hover{background:#0d2d4f;transform:translateY(-1px);}
+.rp-popup-secondary{background:#eef5fb;color:#123b66;border:1px solid #d5e4f1;}
+.rp-popup-close{position:absolute;right:13px;top:11px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(18,59,102,.08);color:#123b66;font-size:22px;line-height:1;cursor:pointer;}
+.rp-popup-note{text-align:center;color:#7b8794;font-size:11px;margin-top:2px;}
+@media(max-width:600px){.rp-popup-card h2{font-size:25px}.rp-popup-top{padding:25px 20px 21px}.rp-popup-actions{padding:17px 20px 22px}}
+</style>
+
+
+<style>
+/* Compact responsive TALK WITH RANJAN SIR form popup */
+#rpFormModal .rp-form-dialog, #rpFormPopup .rp-form-dialog {
+  width: min(92vw, 520px) !important;
+  max-width: 520px !important;
+  max-height: 88vh !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+.rp-form-iframe {
+  display:block; width:100%; height:500px; border:0;
+}
+@media (max-width: 768px) {
+  #rpFormModal .rp-form-dialog, #rpFormPopup .rp-form-dialog { width:92vw !important; max-width:480px !important; max-height:86vh !important; }
+  .rp-form-iframe { height:460px; }
+}
+@media (max-width: 480px) {
+  #rpFormModal .rp-form-dialog, #rpFormPopup .rp-form-dialog { width:94vw !important; max-width:380px !important; border-radius:14px !important; }
+  .rp-form-iframe { height:430px; }
+}
+</style>
 </head>
 
 
@@ -3483,9 +3537,9 @@ Enquire Now
 </a>
 
 <a
-href="tel:+919065050637"
+href="tel:+919122557077"
 class="btn btn-dark">
-Call 90650 50637
+Call 91225 57077
 </a>
 
 <a
@@ -4787,7 +4841,7 @@ Call Us
 </strong>
 
 <span>
-90650 50637 · 91225 57077
+91225 57077 · 91225 57077
 </span>
 
 </div>
@@ -5029,7 +5083,7 @@ Social
 Location
 </a>
 
-<a href="tel:+919065050637">
+<a href="tel:+919122557077">
 Call
 </a>
 
@@ -5061,7 +5115,7 @@ Ranjan's Physics. All Rights Reserved.
 
 
 <a
-href="tel:+919065050637"
+href="tel:+919122557077"
 class="float-btn"
 aria-label="Call">
 
@@ -5071,7 +5125,7 @@ aria-label="Call">
 
 
 <a
-href="https://wa.me/919065050637"
+href="https://wa.me/919122557077"
 target="_blank"
 rel="noopener"
 class="float-btn"
@@ -5190,7 +5244,7 @@ message || "Admission enquiry"
 
 
 window.open(
-"https://wa.me/919065050637?text=" +
+"https://wa.me/919122557077?text=" +
 text,
 "_blank"
 );
@@ -5436,6 +5490,80 @@ document.addEventListener("DOMContentLoaded", function () {
     init();
   }
 })();
+</script>
+
+
+<!-- JOIN WITH RANJAN SIR POPUP -->
+<div id="rpJoinPopup" role="dialog" aria-modal="true" aria-labelledby="rpJoinTitle">
+  <div class="rp-popup-card">
+    <button type="button" class="rp-popup-close" id="rpJoinClose" aria-label="Close">&times;</button>
+
+    <div class="rp-popup-top" id="rpPopupIntro">
+      <div class="rp-popup-badge">RANJAN'S PHYSICS</div>
+      <h2 id="rpJoinTitle">TALK WITH RANJAN SIR</h2>
+      <h3>RPST 2027 • Scholarship Opportunity</h3>
+      <p>Admission, courses aur scholarship ke liye directly Ranjan Sir se connect karein.</p>
+    </div>
+
+    <div class="rp-popup-actions" id="rpPopupActions">
+      <button type="button" class="rp-popup-btn rp-popup-primary" id="rpTalkBtn">TALK WITH RANJAN SIR</button>
+      <a class="rp-popup-btn rp-popup-secondary" href="scholarship/scholarship.html">VIEW SCHOLARSHIP DETAILS</a>
+      <div class="rp-popup-note">Form isi website ke popup mein open hoga.</div>
+    </div>
+
+    <div class="rp-form-wrap" id="rpFormWrap" hidden>
+      <div class="rp-form-head">
+        <strong>TALK WITH RANJAN SIR</strong>
+        <button type="button" id="rpFormBack">← Back</button>
+      </div>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd5fbcHrns1mxGZGf7ZSRfghxQsX-Wt_u4SwGLRz0_7Qve2og/viewform?embedded=true"
+        title="Talk with Ranjan Sir"
+        loading="lazy"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+</div>
+
+<script id="rp-join-popup-js">
+document.addEventListener("DOMContentLoaded",function(){
+  const popup=document.getElementById("rpJoinPopup");
+  const close=document.getElementById("rpJoinClose");
+  const talk=document.getElementById("rpTalkBtn");
+  const actions=document.getElementById("rpPopupActions");
+  const intro=document.getElementById("rpPopupIntro");
+  const formWrap=document.getElementById("rpFormWrap");
+  const back=document.getElementById("rpFormBack");
+  if(!popup||!close)return;
+
+  function hide(){
+    popup.hidden=true;
+    document.body.style.overflow="";
+  }
+  function show(){
+    popup.hidden=false;
+    document.body.style.overflow="hidden";
+  }
+  function openForm(){
+    if(intro) intro.hidden=true;
+    if(actions) actions.hidden=true;
+    if(formWrap) formWrap.hidden=false;
+  }
+  function closeForm(){
+    if(formWrap) formWrap.hidden=true;
+    if(intro) intro.hidden=false;
+    if(actions) actions.hidden=false;
+  }
+
+  if(talk) talk.addEventListener("click",openForm);
+  if(back) back.addEventListener("click",closeForm);
+  close.addEventListener("click",hide);
+  popup.addEventListener("click",function(e){if(e.target===popup)hide();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")hide();});
+  show();
+});
 </script>
 
 </body>
