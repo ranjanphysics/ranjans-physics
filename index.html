@@ -3325,8 +3325,107 @@ a[data-home-link="true"]{cursor:pointer}
 .ty-recent-body h4{font-size:14px;line-height:1.35;color:#23395d;margin:0 0 6px;}
 .ty-recent-body p{font-size:11px;color:#7a8798;margin:0;}
 .ty-error{color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:12px;font-size:13px;text-align:center;}
-@media(max-width:900px){.ty-main-grid{grid-template-columns:1fr}.ty-recent-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.top-youtube-content{padding:44px 0 48px}.ty-card{display:block}.ty-thumb{width:100%;margin-bottom:12px}.ty-panel{padding:15px;border-radius:17px}.ty-recent-grid{grid-template-columns:1fr}.ty-list{max-height:none}.ty-list-thumb{width:105px;flex-basis:105px}.ty-header h2{font-size:30px;}.ty-panel-title h3{font-size:18px;}}
+.ty-live-only-grid{grid-template-columns:minmax(0,1fr);margin-bottom:30px;}
+.ty-live-only-grid .ty-panel{max-width:980px;margin:0 auto;width:100%;}
+.ty-playlist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.ty-playlist-card{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(7,27,59,.06);transition:transform .2s ease,box-shadow .2s ease;}
+.ty-playlist-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(7,27,59,.10);}
+.ty-playlist-thumb{position:relative;aspect-ratio:16/9;background:#e8eef5;overflow:hidden;}
+.ty-playlist-thumb img{width:100%;height:100%;object-fit:cover;}
+.ty-playlist-overlay{position:absolute;left:12px;bottom:12px;padding:6px 9px;border-radius:8px;background:rgba(0,0,0,.78);color:#fff;font-size:11px;font-weight:800;}
+.ty-playlist-body{padding:14px 15px 16px;}
+.ty-playlist-body h4{margin:0 0 7px;color:#23395d;font-size:15px;line-height:1.35;}
+.ty-playlist-meta{font-size:11px;color:#7a8798;}
+
+@media(max-width:900px){.ty-main-grid{grid-template-columns:1fr}.ty-playlist-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.top-youtube-content{padding:44px 0 48px}.ty-card{display:block}.ty-thumb{width:100%;margin-bottom:12px}.ty-panel{padding:15px;border-radius:17px}.ty-playlist-grid{grid-template-columns:1fr}.ty-header h2{font-size:30px;}.ty-panel-title h3{font-size:18px;}}
+
+/* =====================================================
+   YOUTUBE UPDATE — RESPONSIVE CARD SYSTEM
+===================================================== */
+.top-youtube-content .container{max-width:1180px;margin:auto;padding:0 20px}
+.top-youtube-content .ty-header{text-align:center;margin-bottom:28px}
+.top-youtube-content .ty-header h2{letter-spacing:-.5px}
+.ty-live-only-grid{display:block!important;margin-bottom:34px}
+.ty-live-only-grid .ty-panel{max-width:100%;margin:0 auto;width:100%;padding:20px}
+.ty-panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+.ty-panel-title h3{margin:0}
+.ty-card{
+  display:grid!important;
+  grid-template-columns:minmax(280px,42%) 1fr;
+  gap:24px;
+  align-items:center;
+  background:#fff;
+  border:1px solid rgba(26,63,105,.12);
+  border-radius:22px;
+  padding:14px;
+  box-shadow:0 12px 35px rgba(10,35,70,.08);
+  overflow:hidden;
+}
+.ty-card .ty-thumb{
+  width:100%;
+  min-height:220px;
+  aspect-ratio:16/9;
+  margin:0!important;
+  border-radius:15px;
+  overflow:hidden;
+  background:#edf3f8;
+}
+.ty-card .ty-info{padding:12px 18px 12px 4px}
+.ty-card .ty-info h4{font-size:22px;line-height:1.3;margin:0 0 10px}
+.ty-card .ty-meta{margin-bottom:18px}
+.ty-playlist-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+}
+.ty-playlist-card{
+  position:relative;
+  display:flex!important;
+  flex-direction:column;
+  height:100%;
+  background:#fff;
+  border:1px solid rgba(26,63,105,.12);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 26px rgba(10,35,70,.07);
+}
+.ty-playlist-card:hover{transform:translateY(-4px)}
+.ty-playlist-thumb{aspect-ratio:16/9;flex:none}
+.ty-playlist-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:92px}
+.ty-playlist-body h4{font-size:15px}
+.ty-section-label{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin:0 0 16px;
+}
+.ty-section-label h3{margin:0}
+.ty-section-label a{font-size:13px;font-weight:700;text-decoration:none}
+@media (max-width:1050px){
+  .ty-playlist-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width:800px){
+  .top-youtube-content .container{padding:0 16px}
+  .ty-card{grid-template-columns:1fr;gap:14px;padding:12px}
+  .ty-card .ty-thumb{min-height:0}
+  .ty-card .ty-info{padding:6px 8px 12px}
+  .ty-card .ty-info h4{font-size:19px}
+  .ty-playlist-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+}
+@media (max-width:480px){
+  .top-youtube-content .container{padding:0 12px}
+  .ty-panel{padding:12px!important}
+  .ty-panel-title h3{font-size:18px}
+  .ty-card{border-radius:17px}
+  .ty-card .ty-info h4{font-size:17px}
+  .ty-section-label{align-items:flex-start}
+  .ty-section-label a{font-size:11px}
+  .ty-playlist-grid{grid-template-columns:1fr;gap:13px}
+  .ty-playlist-card{border-radius:16px}
+}
+
 </style>
 
 </head>
@@ -3558,18 +3657,21 @@ Google Maps
 
 
 <!-- =====================================================
-     TOP YOUTUBE CONTENT — LIVE / UPCOMING / COMPLETED
+     YOUTUBE CONTENT — LIVE CLASS + PLAYLISTS
 ===================================================== -->
 <section id="top-youtube" class="top-youtube-content reveal">
   <div class="container">
     <div class="ty-header">
       <div class="section-tag">Ranjan's Physics on YouTube</div>
-      <h2>Top YouTube Content</h2>
-      <p>Live classes, upcoming live sessions and recently completed classes — automatically updated from YouTube.</p>
-      <div class="ty-status" id="tyStatus"><span class="ty-dot" id="tyDot"></span><span id="tyStatusText">Checking YouTube…</span></div>
+      <h2>YouTube Update</h2>
+      <p>Latest live class and important playlists from Ranjan's Physics.</p>
+      <div class="ty-status" id="tyStatus">
+        <span class="ty-dot" id="tyDot"></span>
+        <span id="tyStatusText">Checking YouTube…</span>
+      </div>
     </div>
 
-    <div class="ty-main-grid">
+    <div class="ty-main-grid ty-live-only-grid">
       <div class="ty-panel">
         <div class="ty-panel-title">
           <h3>Live Class</h3>
@@ -3577,19 +3679,15 @@ Google Maps
         </div>
         <div id="tyLiveArea" class="ty-empty">Checking for a live class…</div>
       </div>
-
-      <div class="ty-panel">
-        <div class="ty-panel-title"><h3>Upcoming Live</h3></div>
-        <div id="tyUpcomingArea" class="ty-list"><div class="ty-empty">Loading upcoming classes…</div></div>
-      </div>
     </div>
 
     <div class="ty-section-label">
-      <h3>Recently Completed Classes</h3>
-      <a href="https://www.youtube.com/@RANJANPHYSICS" target="_blank" rel="noopener">View YouTube Channel →</a>
+      <h3>Playlists</h3>
+      <a href="https://www.youtube.com/@RANJANPHYSICS/playlists" target="_blank" rel="noopener">View All Playlists →</a>
     </div>
-    <div id="tyRecentArea" class="ty-recent-grid">
-      <div class="ty-empty">Loading recent classes…</div>
+
+    <div id="tyPlaylistArea" class="ty-playlist-grid">
+      <div class="ty-empty">Loading playlists…</div>
     </div>
   </div>
 </section>
@@ -5458,97 +5556,149 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script id="top-youtube-content-js">
 (function(){
-  const API_KEY = "AIzaSyAyOfG6wF5L9BFOvDXkC3_OKsZ-Wlt69wA";
-  const HANDLE = "@RANJANPHYSICS";
-  const API = "https://www.googleapis.com/youtube/v3/";
+  /* IMPORTANT: no Google/YouTube API key is stored in this HTML. */
+  const API_PROXY = "https://script.google.com/macros/s/AKfycbwhuc1VfqDFg3J4RAe_aik91nWUDTpWyb_ZHq5FEZvzj1p3nTi8EjEWo1uevc7XNlTQig/exec";
+
   const liveArea = document.getElementById("tyLiveArea");
-  const upcomingArea = document.getElementById("tyUpcomingArea");
-  const recentArea = document.getElementById("tyRecentArea");
+  const playlistArea = document.getElementById("tyPlaylistArea");
   const statusText = document.getElementById("tyStatusText");
   const statusDot = document.getElementById("tyDot");
   const liveBadge = document.getElementById("tyLiveBadge");
-  if(!liveArea || !upcomingArea || !recentArea) return;
+  if(!liveArea || !playlistArea) return;
 
-  const esc = s => String(s || "").replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-  const dateText = d => { try { return new Date(d).toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}); } catch(e){ return ''; } };
-  const thumb = item => (item.snippet && item.snippet.thumbnails && (item.snippet.thumbnails.high || item.snippet.thumbnails.medium || item.snippet.thumbnails.default || {})).url || '';
+  const esc = s => String(s || "").replace(/[&<>'"]/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'
+  }[c]));
+
+  const thumb = item => (
+    item && item.snippet && item.snippet.thumbnails &&
+    (item.snippet.thumbnails.high ||
+     item.snippet.thumbnails.medium ||
+     item.snippet.thumbnails.default || {})
+  ).url || '';
+
   const videoId = item => item && item.id && (item.id.videoId || item.id);
-  const title = item => item && item.snippet ? item.snippet.title : 'Ranjan\'s Physics Class';
-  const watchUrl = id => 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
 
-  async function getJson(url){
-    const r = await fetch(url);
-    const data = await r.json();
-    if(!r.ok || data.error) throw new Error(data.error && data.error.message ? data.error.message : 'YouTube API error');
-    return data;
+  const title = item => item && item.snippet
+    ? item.snippet.title
+    : "Ranjan's Physics Class";
+
+  const watchUrl = id =>
+    'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
+
+  const playlistUrl = id =>
+    'https://www.youtube.com/playlist?list=' + encodeURIComponent(id);
+
+  function render(data){
+    if(!data || !data.ok){
+      throw new Error(data && data.error ? data.error : 'YouTube proxy error');
+    }
+
+    const live = data.live || null;
+    const playlists = data.playlists || [];
+
+    if(live){
+      const id = videoId(live);
+      liveBadge.hidden = false;
+      statusDot.classList.add('live');
+      statusText.textContent = 'Live class is running now';
+
+      liveArea.innerHTML =
+        '<div class="ty-card">' +
+          '<a class="ty-thumb" href="' + watchUrl(id) + '" target="_blank" rel="noopener">' +
+            '<img src="' + esc(thumb(live)) + '" alt="' + esc(title(live)) + '">' +
+            '<span class="ty-play">▶</span>' +
+          '</a>' +
+          '<div class="ty-info">' +
+            '<h4>' + esc(title(live)) + '</h4>' +
+            '<div class="ty-meta">Live on YouTube right now</div>' +
+            '<a class="ty-btn" href="' + watchUrl(id) + '" target="_blank" rel="noopener">WATCH LIVE →</a>' +
+          '</div>' +
+        '</div>';
+    } else {
+      liveBadge.hidden = true;
+      statusDot.classList.remove('live');
+      statusText.textContent = 'No live class right now';
+
+      liveArea.innerHTML =
+        '<div class="ty-empty">' +
+          'No class is live at this moment. Please check again during class time.' +
+        '</div>';
+    }
+
+    if(playlists.length){
+      playlistArea.innerHTML = playlists.map(item => {
+        const id = item.id;
+        const count = item.contentDetails && item.contentDetails.itemCount;
+        return '<a class="ty-playlist-card" href="' + playlistUrl(id) + '" target="_blank" rel="noopener">' +
+          '<div class="ty-playlist-thumb">' +
+            '<img src="' + esc(thumb(item)) + '" alt="' + esc(title(item)) + '">' +
+            '<span class="ty-playlist-overlay">▶ WATCH PLAYLIST</span>' +
+          '</div>' +
+          '<div class="ty-playlist-body">' +
+            '<h4>' + esc(title(item)) + '</h4>' +
+            '<div class="ty-playlist-meta">' +
+              (count != null ? esc(count) + ' videos' : 'YouTube Playlist') +
+            '</div>' +
+          '</div>' +
+        '</a>';
+      }).join('');
+    } else {
+      playlistArea.innerHTML =
+        '<div class="ty-empty">No playlists found right now.</div>';
+    }
   }
 
-  async function load(){
-    if(!API_KEY || API_KEY === "PASTE_YOUR_API_KEY_HERE"){
-      statusText.textContent = "Add your restricted YouTube API key";
-      liveArea.innerHTML = '<div class="ty-error">YouTube content is ready, but the API key still needs to be added in the HTML.</div>';
-      upcomingArea.innerHTML = '<div class="ty-empty">API key required for automatic updates.</div>';
-      recentArea.innerHTML = '<div class="ty-empty">API key required for automatic updates.</div>';
+  function showError(message){
+    statusText.textContent = 'YouTube update unavailable';
+    liveArea.innerHTML =
+      '<div class="ty-error">' + esc(message) + '</div>';
+    playlistArea.innerHTML =
+      '<div class="ty-empty">Please check the secure YouTube connection.</div>';
+  }
+
+  function load(){
+    if(!API_PROXY || API_PROXY.indexOf('PASTE_YOUR_') === 0){
+      showError('Secure YouTube connection is not configured yet.');
       return;
     }
 
-    try{
-      const channelUrl = API + 'channels?part=snippet,contentDetails&forHandle=' + encodeURIComponent(HANDLE) + '&key=' + encodeURIComponent(API_KEY);
-      const channelData = await getJson(channelUrl);
-      const channel = channelData.items && channelData.items[0];
-      if(!channel) throw new Error('YouTube channel not found');
-      const channelId = channel.id;
-      const uploads = channel.contentDetails.relatedPlaylists.uploads;
+    statusText.textContent = 'Checking YouTube…';
 
-      const [liveData, upcomingData, recentData] = await Promise.all([
-        getJson(API + 'search?part=snippet&channelId=' + encodeURIComponent(channelId) + '&eventType=live&type=video&order=date&maxResults=3&key=' + encodeURIComponent(API_KEY)),
-        getJson(API + 'search?part=snippet&channelId=' + encodeURIComponent(channelId) + '&eventType=upcoming&type=video&order=date&maxResults=6&key=' + encodeURIComponent(API_KEY)),
-        getJson(API + 'playlistItems?part=snippet,contentDetails&playlistId=' + encodeURIComponent(uploads) + '&maxResults=9&key=' + encodeURIComponent(API_KEY))
-      ]);
+    const callback =
+      '__rpYT_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
 
-      const live = (liveData.items || [])[0];
-      const upcoming = upcomingData.items || [];
-      const recent = (recentData.items || []).filter(x => x && x.snippet && x.snippet.resourceId && x.snippet.resourceId.videoId);
+    const script = document.createElement('script');
+    let finished = false;
 
-      if(live){
-        const id = videoId(live);
-        liveBadge.hidden = false;
-        statusDot.classList.add('live');
-        statusText.textContent = 'Live class is running now';
-        liveArea.innerHTML = '<div class="ty-card">' +
-          '<a class="ty-thumb" href="' + watchUrl(id) + '" target="_blank" rel="noopener"><img src="' + esc(thumb(live)) + '" alt="' + esc(title(live)) + '"><span class="ty-play">▶</span></a>' +
-          '<div class="ty-info"><h4>' + esc(title(live)) + '</h4><div class="ty-meta">Live on YouTube right now</div><a class="ty-btn" href="' + watchUrl(id) + '" target="_blank" rel="noopener">WATCH LIVE →</a></div>' +
-        '</div>';
-      }else{
-        liveBadge.hidden = true;
-        statusDot.classList.remove('live');
-        statusText.textContent = 'No live class right now';
-        liveArea.innerHTML = '<div class="ty-empty">No class is live at this moment. Check the upcoming schedule below.</div>';
+    window[callback] = function(data){
+      finished = true;
+      try {
+        render(data);
+      } catch(err) {
+        console.error(err);
+        showError('YouTube content could not be loaded right now.');
       }
+      cleanup();
+    };
 
-      upcomingArea.innerHTML = upcoming.length ? upcoming.map(item => {
-        const id = videoId(item), d = item.snippet && item.snippet.publishedAt;
-        return '<a class="ty-list-item" href="' + watchUrl(id) + '" target="_blank" rel="noopener">' +
-          '<div class="ty-list-thumb"><img src="' + esc(thumb(item)) + '" alt=""></div>' +
-          '<div><div class="ty-list-title">' + esc(title(item)) + '</div><div class="ty-list-meta">Upcoming • ' + esc(dateText(d)) + '</div></div>' +
-        '</a>';
-      }).join('') : '<div class="ty-empty">No upcoming live class is scheduled right now.</div>';
-
-      recentArea.innerHTML = recent.slice(0,9).map(item => {
-        const id = item.snippet.resourceId.videoId;
-        return '<article class="ty-recent-card"><a href="' + watchUrl(id) + '" target="_blank" rel="noopener">' +
-          '<div class="ty-recent-thumb"><img src="' + esc(thumb(item)) + '" alt="' + esc(title(item)) + '"></div>' +
-          '<div class="ty-recent-body"><h4>' + esc(title(item)) + '</h4><p>Completed • ' + esc(dateText(item.snippet.publishedAt)) + '</p></div>' +
-        '</a></article>';
-      }).join('') || '<div class="ty-empty">No recent classes found.</div>';
-
-    }catch(err){
-      console.error(err);
-      statusText.textContent = 'YouTube update unavailable';
-      liveArea.innerHTML = '<div class="ty-error">YouTube content could not be loaded right now.</div>';
-      upcomingArea.innerHTML = '<div class="ty-empty">Please check the API key, API restriction and website restriction.</div>';
-      recentArea.innerHTML = '<div class="ty-empty">Please check the YouTube Data API v3 connection.</div>';
+    function cleanup(){
+      try { delete window[callback]; }
+      catch(e) { window[callback] = undefined; }
+      if(script.parentNode) script.parentNode.removeChild(script);
     }
+
+    script.onerror = function(){
+      if(finished) return;
+      showError('Secure YouTube connection could not be reached.');
+      cleanup();
+    };
+
+    script.src =
+      API_PROXY.replace(/\?$/, '') +
+      '?callback=' + encodeURIComponent(callback);
+
+    document.head.appendChild(script);
   }
 
   load();
