@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CBSE Class 10 Science Crash Course 2027 by RANJAN’S PHYSICS. Daily 90-minute classes Monday to Friday from 1 November 2026, with a test every Saturday.">
+<title>CBSE Class 10 Science Crash Course 2027 | RANJAN’S PHYSICS</title>
+
+<style>
+:root{
+  --navy:#071b3b;
+  --blue:#1769b0;
+  --blue2:#237ac4;
+  --light:#f5f9ff;
+  --line:#e3ebf4;
+  --text:#52627a;
+  --white:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  background:#f7faff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* ================= HEADER ================= */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10000;
+  box-shadow:0 4px 18px rgba(7,27,59,.04);
+}
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.brand img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  display:block;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  white-space:nowrap;
+  font-size:14px;
+  font-weight:800;
+}
+.nav-links>a,
+.nav-drop-link{
+  transition:.2s ease;
+}
+.nav-links>a:hover,
+.nav-drop-link:hover{color:var(--blue)}
+
+.nav-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:78px;
+}
+.nav-drop-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.nav-arrow{font-size:13px;transition:.2s}
+.nav-dropdown:hover .nav-arrow{transform:rotate(180deg)}
+
+.dropdown-menu{
+  position:absolute;
+  left:50%;
+  top:calc(100% - 2px);
+  transform:translate(-50%,-8px);
+  min-width:245px;
+  padding:10px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 20px 50px rgba(7,27,59,.16);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.18s ease;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0);
+}
+.dropdown-menu:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:-12px;height:12px;
+}
+.dropdown-menu a{
+  display:block;
+  padding:11px 13px;
+  border-radius:9px;
+  font-size:13px;
+}
+.dropdown-menu a:hover{
+  background:#edf6ff;
+  color:var(--blue);
+}
+.courses-menu{
+  min-width:600px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.mega-column{
+  padding:4px 8px;
+  border-right:1px solid #edf1f6;
+}
+.mega-column:last-child{border-right:0}
+.mega-title{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:7px 12px 9px;
+}
+.nav-cta{
+  background:var(--blue);
+  color:#fff !important;
+  padding:11px 19px;
+  border-radius:25px;
+  box-shadow:0 8px 20px rgba(23,105,176,.18);
+}
+.nav-cta:hover{
+  background:var(--navy);
+  transform:translateY(-1px);
+}
+
+/* ================= MOBILE HEADER ================= */
+.mobile-header,.mobile-menu{display:none}
+@media(max-width:850px){
+  header>.nav{display:none}
+  .mobile-header{
+    min-height:72px;
+    padding:10px 14px;
+    display:grid;
+    grid-template-columns:48px 1fr auto;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+  }
+  .mobile-menu-toggle{
+    width:48px;height:48px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    cursor:pointer;
+  }
+  .mobile-menu-toggle span{
+    width:22px;height:2px;
+    background:var(--navy);
+    border-radius:2px;
+  }
+  .mobile-brand{
+    justify-self:center;
+    width:52px;height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-brand img{width:50px;height:50px;object-fit:contain}
+  .mobile-contact{
+    background:var(--blue);
+    color:#fff;
+    padding:11px 16px;
+    border-radius:24px;
+    font-size:14px;
+    font-weight:800;
+    white-space:nowrap;
+  }
+  .mobile-menu{
+    flex-direction:column;
+    gap:3px;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:0 16px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease,padding .25s ease;
+  }
+  .mobile-menu.open{
+    display:flex;
+    max-height:600px;
+    padding:10px 16px 16px;
+  }
+  .mobile-menu>a,
+  .mobile-menu summary{
+    padding:12px 14px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:800;
+    list-style:none;
+    cursor:pointer;
+  }
+  .mobile-menu>a:hover,
+  .mobile-menu summary:hover{background:#edf6ff}
+  .mobile-submenu{
+    display:flex;
+    flex-direction:column;
+    padding:0 0 5px 20px;
+  }
+  .mobile-submenu a{
+    padding:8px 12px;
+    color:var(--text);
+    font-size:14px;
+    font-weight:700;
+  }
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:78px 0 55px;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(35,122,196,.13),transparent 30%),
+    linear-gradient(180deg,#fff 0%,#f5f9ff 100%);
+  text-align:center;
+}
+.eyebrow{
+  display:inline-block;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  color:var(--navy);
+}
+.hero h1 span{color:var(--blue)}
+.hero p{
+  max-width:760px;
+  margin:18px auto 0;
+  color:var(--text);
+  font-size:17px;
+}
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 25px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:900;
+  transition:.2s ease;
+}
+.btn-primary{
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(23,105,176,.20);
+}
+.btn-primary:hover{transform:translateY(-2px);background:var(--navy)}
+.btn-secondary{
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--navy);
+}
+.btn-secondary:hover{border-color:#a9c8e4;color:var(--blue)}
+
+/* ================= CONTENT ================= */
+.section{padding:65px 0}
+.section.alt{background:#fff}
+.section-head{text-align:center;margin-bottom:32px}
+.section-kicker{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.section-head h2{
+  margin-top:7px;
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.12;
+}
+.section-head p{
+  color:var(--text);
+  max-width:700px;
+  margin:10px auto 0;
+}
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+  transition:.2s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 42px rgba(7,27,59,.10);
+}
+.card-icon{
+  width:44px;height:44px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#edf6ff;
+  color:var(--blue);
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+.card h3{font-size:20px;margin-bottom:7px}
+.card p{color:var(--text);font-size:14px}
+
+.details-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.details-panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+}
+.details-panel h3{font-size:25px;margin-bottom:16px}
+.detail-list{list-style:none}
+.detail-list li{
+  display:flex;
+  gap:12px;
+  padding:11px 0;
+  border-bottom:1px solid #edf1f6;
+  color:var(--text);
+  font-size:14px;
+}
+.detail-list li:last-child{border-bottom:0}
+.tick{
+  color:var(--blue);
+  font-weight:900;
+  flex:0 0 auto;
+}
+
+.cta{
+  padding:70px 0;
+  background:linear-gradient(135deg,#071b3b,#1769b0);
+  color:#fff;
+  text-align:center;
+}
+.cta h2{font-size:clamp(30px,4vw,48px);line-height:1.1}
+.cta p{
+  color:#dcecff;
+  max-width:650px;
+  margin:12px auto 0;
+}
+.cta .btn-primary{
+  background:#fff;
+  color:var(--navy);
+  margin-top:25px;
+  box-shadow:none;
+}
+.cta .btn-primary:hover{background:#edf6ff}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#06172f;
+  color:#cbd9ea;
+  padding:35px 0 20px;
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+.footer-logo img{width:60px;height:60px;object-fit:contain}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:17px;
+  font-size:13px;
+}
+.footer-links a:hover{color:#fff}
+.copyright{
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  margin-top:25px;
+  padding-top:20px;
+  font-size:13px;
+}
+
+/* ================= FLOATING ================= */
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.float-btn{
+  width:50px;height:50px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 10px 25px rgba(7,27,59,.16);
+  display:grid;
+  place-items:center;
+  color:var(--blue);
+  font-size:20px;
+}
+.float-btn:hover{background:var(--blue);color:#fff}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:850px){
+  .hero{padding:52px 0 42px}
+  .hero p{font-size:16px}
+  .info-grid,.details-box{grid-template-columns:1fr}
+  .section{padding:50px 0}
+  .details-panel{padding:23px}
+}
+@media(max-width:520px){
+  .container{width:calc(100% - 30px)}
+  .mobile-contact{padding:10px 13px;font-size:13px}
+  .hero h1{letter-spacing:-1.2px}
+  .hero-actions .btn{width:100%}
+  .card{padding:22px}
+  .footer-grid{flex-direction:column;align-items:flex-start}
+  .footer-links{gap:12px}
+  .floating{right:12px;bottom:12px}
+}
+
+/* ===== CBSE CRASH COURSE 2027 — PREMIUM LAYOUT ===== */
+.rpst-hero{
+  position:relative;
+  overflow:hidden;
+  padding:76px 0 58px;
+  background:
+    radial-gradient(circle at 90% 12%,rgba(35,122,196,.16),transparent 28%),
+    radial-gradient(circle at 5% 90%,rgba(23,105,176,.08),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f5f9ff 100%);
+}
+.rpst-hero:before{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;
+  border:1px solid rgba(23,105,176,.10);
+  border-radius:50%;
+  right:-190px;top:-180px;
+}
+.rpst-hero .container{position:relative;z-index:1}
+.rpst-hero-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  align-items:center;
+  gap:55px;
+}
+.rpst-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid #dbe8f5;
+  border-radius:999px;
+  background:#fff;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  box-shadow:0 8px 25px rgba(7,27,59,.05);
+}
+.rpst-eyebrow i{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 5px rgba(23,105,176,.10);
+}
+.rpst-hero h1{
+  margin-top:20px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,5.3vw,72px);
+  line-height:.98;
+  letter-spacing:-2.5px;
+  font-style:italic;
+  font-weight:900;
+  color:var(--navy);
+}
+.rpst-hero h1 span{
+  display:block;
+  color:var(--blue);
+  font-size:.62em;
+  letter-spacing:1px;
+  margin-top:10px;
+}
+.rpst-animated{
+  background:linear-gradient(90deg,var(--navy),var(--blue),var(--navy),var(--blue));
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent!important;
+  animation:rpstShimmer 7s linear infinite;
+}
+@keyframes rpstShimmer{to{background-position:300% center}}
+.rpst-hero .lead{
+  max-width:650px;
+  margin:20px 0 0;
+  color:var(--text);
+  font-size:17px;
+}
+.rpst-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:27px;
+}
+.rpst-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:23px;
+}
+.rpst-point{
+  padding:8px 11px;
+  border-radius:9px;
+  background:#edf6ff;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:900;
+}
+.rpst-hero-card{
+  background:#fff;
+  border:1px solid #dce8f4;
+  border-radius:26px;
+  padding:25px;
+  box-shadow:0 25px 65px rgba(7,27,59,.11);
+}
+.rpst-hero-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:19px;
+}
+.rpst-mini-title{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.13em;
+  color:var(--blue);
+  text-transform:uppercase;
+}
+.rpst-free{
+  padding:7px 10px;
+  border-radius:8px;
+  background:#eaf8f0;
+  color:#1b7b45;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.rpst-phase{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:17px;
+}
+.rpst-phase + .rpst-phase{margin-top:12px}
+.rpst-phase-label{
+  font-size:10px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.rpst-phase-date{
+  margin-top:3px;
+  font-size:21px;
+  line-height:1.2;
+  font-weight:950;
+  color:var(--navy);
+}
+.rpst-phase-mode{
+  margin-top:6px;
+  font-size:12px;
+  color:var(--text);
+  font-weight:800;
+}
+.rpst-mode-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:16px;
+}
+.rpst-mode{
+  text-align:center;
+  padding:11px;
+  border-radius:11px;
+  background:#f5f9ff;
+  border:1px solid #e4edf6;
+  font-size:12px;
+  font-weight:900;
+  color:var(--navy);
+}
+.rpst-section{padding:70px 0}
+.rpst-section.alt{background:#fff}
+.rpst-head{text-align:center;max-width:760px;margin:0 auto 35px}
+.rpst-kicker{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.rpst-head h2{
+  margin-top:7px;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.08;
+  letter-spacing:-1px;
+}
+.rpst-head p{margin:12px auto 0;color:var(--text);font-size:15px}
+.rpst-feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.rpst-feature{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:23px;
+  box-shadow:0 12px 32px rgba(7,27,59,.055);
+  transition:.22s ease;
+}
+.rpst-feature:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(7,27,59,.10)}
+.rpst-icon{
+  width:45px;height:45px;
+  display:grid;place-items:center;
+  border-radius:13px;
+  background:#edf6ff;
+  color:var(--blue);
+  font-weight:950;
+  margin-bottom:15px;
+}
+.rpst-feature h3{font-size:18px;margin-bottom:5px}
+.rpst-feature p{font-size:13px;color:var(--text)}
+.rpst-exam-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.rpst-exam-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:27px;
+  box-shadow:0 12px 35px rgba(7,27,59,.06);
+}
+.rpst-exam-card.online{border-top:4px solid var(--blue)}
+.rpst-exam-card.offline{border-top:4px solid var(--navy)}
+.rpst-exam-card h3{font-size:25px}
+.rpst-exam-sub{color:var(--text);font-size:13px;margin-top:3px}
+.rpst-exam-table{margin-top:19px}
+.rpst-exam-row{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  gap:15px;
+  padding:12px 0;
+  border-bottom:1px solid #edf1f6;
+}
+.rpst-exam-row:last-child{border-bottom:0}
+.rpst-exam-row b{font-size:12px;color:var(--text);text-transform:uppercase;letter-spacing:.05em}
+.rpst-exam-row span{font-size:14px;font-weight:850;color:var(--navy)}
+.rpst-about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:22px;
+  align-items:stretch;
+}
+.rpst-about-card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:23px;
+  padding:30px;
+}
+.rpst-about-card h3{font-size:26px;margin-bottom:11px}
+.rpst-about-card p{color:var(--text);font-size:14px}
+.rpst-highlight{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px;
+}
+.rpst-highlight div{
+  padding:17px;
+  border-radius:15px;
+  background:#f5f9ff;
+}
+.rpst-highlight strong{display:block;font-size:20px;color:var(--blue)}
+.rpst-highlight span{font-size:11px;color:var(--text);font-weight:800}
+.rpst-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.rpst-step{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:21px;
+  padding:27px;
+  box-shadow:0 12px 32px rgba(7,27,59,.055);
+}
+.rpst-step-num{
+  width:42px;height:42px;
+  border-radius:12px;
+  display:grid;place-items:center;
+  background:var(--navy);
+  color:#fff;
+  font-size:13px;
+  font-weight:950;
+  margin-bottom:15px;
+}
+.rpst-step h3{font-size:20px;margin-bottom:5px}
+.rpst-step p{font-size:13px;color:var(--text)}
+.rpst-faq{
+  max-width:850px;
+  margin:auto;
+}
+.rpst-faq details{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  margin-bottom:11px;
+  overflow:hidden;
+}
+.rpst-faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:18px 20px;
+  font-weight:900;
+  font-size:14px;
+}
+.rpst-faq summary::-webkit-details-marker{display:none}
+.rpst-faq details p{
+  padding:0 20px 18px;
+  color:var(--text);
+  font-size:13px;
+}
+.rpst-bottom-cta{
+  padding:68px 0;
+  background:linear-gradient(135deg,#071b3b,#1769b0);
+  color:#fff;
+  text-align:center;
+}
+.rpst-bottom-cta h2{font-size:clamp(31px,4vw,49px);line-height:1.05}
+.rpst-bottom-cta p{color:#dcecff;margin:12px auto 0;max-width:650px}
+.rpst-bottom-cta .btn{
+  background:#fff;
+  color:var(--navy);
+  margin-top:24px;
+}
+.rpst-note{
+  max-width:850px;
+  margin:25px auto 0;
+  padding:15px 18px;
+  border-radius:13px;
+  background:#edf6ff;
+  border:1px solid #d8e9f8;
+  color:#38516a;
+  font-size:12px;
+}
+@media(max-width:950px){
+  .rpst-hero-grid,.rpst-about-grid{grid-template-columns:1fr}
+  .rpst-feature-grid{grid-template-columns:repeat(2,1fr)}
+  .rpst-hero-card{max-width:650px}
+}
+@media(max-width:700px){
+  .rpst-hero{padding:55px 0 45px}
+  .rpst-hero-grid{gap:35px}
+  .rpst-hero h1{letter-spacing:-1.5px}
+  .rpst-feature-grid,.rpst-exam-grid,.rpst-steps{grid-template-columns:1fr}
+  .rpst-section{padding:52px 0}
+}
+@media(max-width:520px){
+  .rpst-hero h1{font-size:42px}
+  .rpst-hero .lead{font-size:15px}
+  .rpst-hero-actions .btn{width:100%}
+  .rpst-mode-row,.rpst-highlight{grid-template-columns:1fr}
+  .rpst-exam-card,.rpst-about-card,.rpst-step{padding:22px}
+}
+
+
+/* ================= CBSE SCIENCE HORIZONTAL BANNER ================= */
+.course-page-banner{
+  width:100%;
+  margin:0 auto 28px;
+  line-height:0;
+  overflow:hidden;
+  background:#fff;
+}
+.course-page-banner img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:2172 / 391;
+  object-fit:contain;
+}
+@media(max-width:520px){
+  .course-page-banner{margin-bottom:20px}
+}
+
+/* ================= GOOGLE FORM ================= */
+.google-form-section{
+  padding:70px 0;
+  background:#fff;
+}
+.google-form-wrap{
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:10px;
+  box-shadow:0 15px 40px rgba(7,27,59,.07);
+  overflow:hidden;
+}
+.google-form-wrap iframe{
+  display:block;
+  width:100%;
+  min-height:2658px;
+  border:0;
+}
+@media(max-width:700px){
+  .google-form-section{padding:52px 0}
+  .google-form-wrap{
+    padding:0;
+    border-radius:15px;
+    border-left:0;
+    border-right:0;
+    box-shadow:none;
+  }
+  .google-form-wrap iframe{min-height:2900px}
+}
+
+
+/* ===== Crash Course Schedule & Syllabus Details ===== */
+.crash-schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}
+.crash-schedule-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px;box-shadow:0 10px 28px rgba(7,27,59,.05)}
+.crash-schedule-card .big{font-size:30px;font-weight:950;color:#d92332;line-height:1.15;margin-bottom:8px}
+.crash-schedule-card h3{font-size:18px;margin-bottom:7px}
+.crash-schedule-card p{font-size:14px;color:var(--text)}
+.crash-red{color:#d92332!important}
+.crash-subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.crash-subject{border:1px solid var(--line);background:#fff;border-radius:16px;padding:20px}
+.crash-subject h3{margin-bottom:7px}
+.crash-subject p{font-size:14px;color:var(--text)}
+.crash-note{margin-top:20px;padding:16px 18px;background:#fff4f4;border:1px solid #ffd5d8;border-radius:14px;color:#6c2630;font-size:13px}
+.crash-checklist{list-style:none;margin-top:12px}
+.crash-checklist li{padding:10px 0;border-bottom:1px solid #edf1f6;color:var(--text);font-size:14px}
+.crash-checklist li:last-child{border-bottom:0}
+.crash-checklist li:before{content:"✓";font-weight:900;color:#d92332;margin-right:10px}
+.crash-start-strip{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px auto 0;padding:14px 18px;max-width:650px;background:#fff0f1;border:1px solid #ffcbd0;border-radius:14px;color:#7c1821;font-weight:900}
+.crash-start-strip strong{color:#d92332}
+@media(max-width:850px){.crash-schedule-grid,.crash-subjects{grid-template-columns:1fr}.crash-schedule-card,.crash-subject{padding:20px}}
+
+
+/* Registration form beside course intro for easy access */
+.registration-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.88fr);gap:26px;align-items:start}
+.registration-info{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 12px 35px rgba(7,27,59,.06)}
+.registration-info h3{font-size:25px;margin:0 0 10px}
+.registration-info p{color:var(--text);font-size:14px}
+.registration-info .detail-list{margin-top:12px}
+.registration-form-column .rpst-head{text-align:left;margin:0 0 18px}
+.registration-form-column .rpst-head p{margin-left:0}
+.registration-form-column .google-form-wrap{padding:6px;border-radius:18px}
+.registration-form-column .google-form-wrap iframe{min-height:1700px}
+@media(max-width:850px){.registration-layout{grid-template-columns:1fr}.registration-form-column{order:-1}.registration-form-column .google-form-wrap iframe{min-height:2200px}}
+
+
+/* ===== High-conversion landing hero with form beside content ===== */
+.landing-hero{padding:34px 0 48px;background:linear-gradient(180deg,#f4f9ff 0%,#fff 100%)}
+.landing-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:28px;align-items:start}
+.landing-copy{padding:22px 8px 18px 0}
+.landing-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:#e7f3ff;color:#145c9e;font-size:12px;font-weight:900;letter-spacing:.08em}
+.landing-copy h1{font-size:clamp(34px,4.3vw,58px);line-height:1.04;letter-spacing:-1.6px;margin:18px 0 16px;color:#071b3b}
+.landing-copy h1 span{display:block;color:#d92332}
+.landing-copy .landing-lead{font-size:17px;color:#52627a;max-width:650px}
+.landing-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.landing-point{display:flex;gap:10px;align-items:flex-start;padding:13px;background:#fff;border:1px solid #e3ebf4;border-radius:14px;font-size:13px;font-weight:800;box-shadow:0 7px 20px rgba(7,27,59,.04)}
+.landing-point b{display:block;color:#071b3b;font-size:14px}
+.landing-point small{display:block;color:#52627a;font-size:12px;font-weight:600;margin-top:2px}
+.landing-timing{border-left:4px solid #d92332;padding:13px 16px;background:#fff1f2;border-radius:0 13px 13px 0;color:#6c2630;font-size:14px}
+.landing-form-card{background:#fff;border:1px solid #dbe7f3;border-radius:22px;overflow:hidden;box-shadow:0 22px 60px rgba(7,27,59,.13)}
+.landing-form-head{padding:20px 22px;background:#071b3b;color:#fff}
+.landing-form-head .eyeline{font-size:11px;font-weight:900;letter-spacing:.14em;color:#9ed3ff;text-transform:uppercase}
+.landing-form-head h2{font-size:25px;line-height:1.15;margin-top:5px}
+.landing-form-head p{font-size:13px;color:#dcecff;margin-top:6px}
+.landing-form-body{padding:8px 12px 0}
+.landing-form-body .google-form-wrap{padding:0;border:0;border-radius:0;box-shadow:none;max-width:none;overflow:hidden}
+.landing-form-body iframe{display:block;width:100%;height:1420px;min-height:1420px;border:0}
+.landing-form-foot{padding:12px 18px 17px;border-top:1px solid #edf1f6;font-size:12px;color:#52627a;text-align:center}
+.landing-form-foot a{color:#1769b0;font-weight:900}
+@media(max-width:850px){
+ .landing-hero{padding:22px 0 34px}
+ .landing-grid{grid-template-columns:1fr;gap:22px}
+ .landing-copy{padding:8px 0 0}
+ .landing-copy h1{font-size:clamp(34px,8vw,48px)}
+ .landing-points{gap:9px}
+ .landing-form-card{max-width:650px;width:100%;margin:0 auto}
+ .landing-form-body iframe{height:1700px;min-height:1700px}
+}
+@media(max-width:480px){
+ .landing-points{grid-template-columns:1fr 1fr}
+ .landing-point{padding:10px;font-size:12px}
+ .landing-point b{font-size:13px}
+ .landing-point small{font-size:11px}
+ .landing-form-head{padding:18px}
+ .landing-form-body{padding:4px 6px 0}
+ .landing-form-body iframe{height:2100px;min-height:2100px}
+}
+
+
+/* ===== Unit-wise Science syllabus below Admissions Open ===== */
+.landing-syllabus{
+  margin-top:18px;
+  padding:20px;
+  background:#fff;
+  border:1px solid #dbe7f3;
+  border-radius:18px;
+  box-shadow:0 10px 28px rgba(7,27,59,.06);
+}
+.landing-syllabus-head{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #e8eef6;
+}
+.landing-syllabus-head h2{font-size:21px;line-height:1.2;color:#071b3b}
+.landing-syllabus-head span{
+  flex:0 0 auto;padding:5px 9px;border-radius:7px;background:#eaf4ff;
+  color:#1769b0;font-size:10px;font-weight:900;letter-spacing:.06em;
+}
+.syllabus-units{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.syllabus-unit{
+  padding:13px;border:1px solid #e4edf6;border-radius:12px;background:#fbfdff;
+  min-width:0;
+}
+.syllabus-unit h3{font-size:13px;line-height:1.4;color:#1769b0;margin-bottom:7px}
+.syllabus-unit h3 small{display:block;font-size:10px;letter-spacing:.04em;color:#d92332;text-transform:uppercase}
+.syllabus-unit ul{padding-left:17px;color:#52627a;font-size:12px;line-height:1.55}
+.syllabus-unit li{margin:2px 0}
+.syllabus-extra{margin-top:10px;border:1px solid #e4edf6;border-radius:11px;overflow:hidden}
+.syllabus-extra summary{
+  padding:11px 13px;cursor:pointer;list-style:none;font-size:12px;font-weight:900;color:#071b3b;
+  background:#f5f9ff;
+}
+.syllabus-extra summary::-webkit-details-marker{display:none}
+.syllabus-extra summary:after{content:"+";float:right;color:#1769b0;font-size:16px;line-height:1}
+.syllabus-extra[open] summary:after{content:"−"}
+.syllabus-extra-content{padding:11px 13px;color:#52627a;font-size:12px}
+.syllabus-extra-content ul{padding-left:17px}
+.syllabus-extra-content li{margin:4px 0}
+.syllabus-assessment{margin-top:10px;padding:12px 13px;border-radius:11px;background:#fff4f4;border:1px solid #ffd9dc;color:#6c2630;font-size:12px}
+.syllabus-assessment strong{color:#d92332}
+@media(max-width:520px){
+  .landing-syllabus{padding:15px}
+  .landing-syllabus-head h2{font-size:19px}
+  .syllabus-units{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand" aria-label="Ranjan's Physics Home">
+      <img src="../logo.png" alt="Ranjan's Physics Logo">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="#registration-form" class="nav-cta">📝 Register Now</a>
+    </nav>
+  </div>
+
+  <div class="mobile-header">
+    <button class="mobile-menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="mobile-brand" href="../index.html" aria-label="Home">
+      <img src="../logo.png" alt="Ranjan's Physics">
+    </a>
+
+    <a class="mobile-contact" href="#registration-form">Register Now</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+  </div>
+</header>
+
+
+
+<main>
+  <section class="course-page-banner" aria-label="CBSE Class 10 Science Crash Course 2027">
+    <img src="cbse-science.png" alt="CBSE Class 10 Science Crash Course 2027 — batch starts 1 November 2026">
+  </section>
+
+  <section class="landing-hero" id="registration-form">
+    <div class="container landing-grid">
+      <div class="landing-copy">
+        <div class="landing-badge">CBSE CLASS 10 · 2027 BOARD EXAM</div>
+        <h1>Science <span>Crash Course 2027</span></h1>
+        <p class="landing-lead">Build strong concepts, revise the syllabus and practise board-oriented questions with RANJAN’S PHYSICS.</p>
+        <div class="landing-points">
+          <div class="landing-point"><span>📅</span><div><b>Starts 1 November</b><small>New crash course batch</small></div></div>
+          <div class="landing-point"><span>⏱️</span><div><b>90-Minute Classes</b><small>Monday to Friday</small></div></div>
+          <div class="landing-point"><span>📝</span><div><b>Weekly Test</b><small>Every Saturday</small></div></div>
+          <div class="landing-point"><span>🔬</span><div><b>Physics · Chemistry · Biology</b><small>Class 10 Science</small></div></div>
+        </div>
+        <div class="landing-timing"><strong>Admissions Open</strong><br>Fill in the registration form to express your interest. Exact class and test timings will be shared by the institute.</div>
+
+        <section class="landing-syllabus" aria-labelledby="unit-syllabus-title">
+          <div class="landing-syllabus-head">
+            <h2 id="unit-syllabus-title">Unit-wise Syllabus</h2>
+            <span>CLASS 10 SCIENCE</span>
+          </div>
+          <div class="syllabus-units">
+            <article class="syllabus-unit">
+              <h3><small>Unit I · Chemistry</small>Chemical Substances – Nature and Behaviour</h3>
+              <ul>
+                <li>Chemical Reactions and Equations</li>
+                <li>Acids, Bases, and Salts</li>
+                <li>Metals and Non-metals</li>
+                <li>Carbon and Its Compounds (Preparation, Properties, Uses)</li>
+              </ul>
+            </article>
+            <article class="syllabus-unit">
+              <h3><small>Unit II · Biology</small>The World of the Living</h3>
+              <ul>
+                <li>Life Processes</li>
+                <li>Control and Coordination (in Plants and Animals)</li>
+                <li>Reproduction</li>
+                <li>Heredity</li>
+              </ul>
+            </article>
+            <article class="syllabus-unit">
+              <h3><small>Unit III · Physics</small>Light</h3>
+              <ul>
+                <li>Reflection of Light</li>
+                <li>Refraction of Light</li>
+                <li>Lenses</li>
+                <li>Human Eye and Optical Phenomena</li>
+                <li>Optical Effects</li>
+              </ul>
+            </article>
+            <article class="syllabus-unit">
+              <h3><small>Unit IV · Physics</small>Effects of Current</h3>
+              <ul>
+                <li>Electricity</li>
+                <li>Electric Circuits</li>
+                <li>Heating Effect of Current</li>
+                <li>Electric Power</li>
+                <li>Magnetic Effects of Current</li>
+                <li>AC and DC</li>
+                <li>Domestic Electric Circuits</li>
+              </ul>
+            </article>
+            <article class="syllabus-unit">
+              <h3><small>Unit V · Environmental Science</small>Natural Resources</h3>
+              <ul>
+                <li>Our Environment</li>
+                <li>Waste Management</li>
+              </ul>
+            </article>
+          </div>
+
+          <details class="syllabus-extra">
+            <summary>Practical Work · Experiments Included</summary>
+            <div class="syllabus-extra-content">
+              <ul>
+                <li>Properties of acids and bases: litmus test, reactions with zinc and sodium carbonate</li>
+                <li>Combination, decomposition, displacement and double displacement reactions</li>
+                <li>Reactivity series: Zn, Fe, Cu and Al with salt solutions</li>
+                <li>Electrical experiments: V–I characteristics of a resistor, series and parallel circuits</li>
+                <li>Light experiments: refraction through glass slabs and lens experiments</li>
+                <li>Biological experiments: stomata observation, CO₂ release during respiration and leaf peel mounts</li>
+                <li>Soap cleaning efficiency in soft and hard water</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="syllabus-assessment">
+            <strong>Examination & Assessment</strong><br>
+            Theory: 80 marks · 3 hours<br>
+            Internal Assessment / Practical: 20 marks<br>
+            Some topics may be assessed formatively only and may not contribute to year-end exam marks; students should still understand them for conceptual clarity.
+          </div>
+        </section>
+
+      </div>
+      <div class="landing-form-card">
+        <div class="landing-form-head">
+          <div class="eyeline">Admissions · 2027</div>
+          <h2>Register for the Crash Course</h2>
+          <p>Complete the form below to get started.</p>
+        </div>
+        <div class="landing-form-body">
+          <div class="google-form-wrap">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeY1etMiqHfDVMov0uFR3z9fGx8y9hTLKwqJ4pCFLrMj9eIaQ/viewform?embedded=true" title="CBSE Crash Course Registration Form" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="landing-form-foot">Need help? Call / WhatsApp <a href="https://wa.me/919112257077">9112257077</a></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="rpst-section" id="batch-schedule">
+    <div class="container">
+      <div class="rpst-head">
+        <div class="rpst-kicker">Batch Plan</div>
+        <h2>Learn Every Week. Test Every Saturday.</h2>
+        <p>A simple, consistent weekly routine designed around Class 10 Science board preparation.</p>
+      </div>
+      <div class="crash-schedule-grid">
+        <article class="crash-schedule-card">
+          <div class="big">01 NOV</div>
+          <h3>Batch Starts</h3>
+          <p>Classes begin on 1 November 2026. Join the course and start your structured board preparation.</p>
+        </article>
+        <article class="crash-schedule-card">
+          <div class="big">90 MIN</div>
+          <h3>Monday to Friday</h3>
+          <p>Daily class of 1 hour 30 minutes focused on concepts, chapter revision and exam-oriented practice.</p>
+        </article>
+        <article class="crash-schedule-card">
+          <div class="big">TEST DAY</div>
+          <h3>Every Saturday</h3>
+          <p>Weekly test to practise questions, check understanding and identify topics that need more revision.</p>
+        </article>
+      </div>
+      <div class="crash-note"><strong>Important:</strong> Exact class timing, test timing and detailed chapter-wise timetable will be shared by the institute. This page does not assume a specific clock time.</div>
+    </div>
+  </section>
+
+  <section class="rpst-section alt">
+    <div class="container">
+      <div class="rpst-head">
+        <div class="rpst-kicker">Course Highlights</div>
+        <h2>Prepare for the CBSE Science Board Exam with a Plan</h2>
+        <p>Stay consistent with regular classes, guided practice and weekly assessment.</p>
+      </div>
+      <div class="rpst-feature-grid">
+        <article class="rpst-feature"><div class="rpst-icon">01</div><h3>Concept Clarity</h3><p>Build understanding of key Science concepts before moving to exam-style questions.</p></article>
+        <article class="rpst-feature"><div class="rpst-icon">02</div><h3>Chapter Revision</h3><p>Revise important topics from the Class 10 Science syllabus in a structured way.</p></article>
+        <article class="rpst-feature"><div class="rpst-icon">03</div><h3>Question Practice</h3><p>Practise board-oriented questions and learn to present answers clearly.</p></article>
+        <article class="rpst-feature"><div class="rpst-icon">04</div><h3>Weekly Tests</h3><p>Every Saturday, test your preparation and identify areas for improvement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rpst-section">
+    <div class="container">
+      <div class="rpst-head">
+        <div class="rpst-kicker">What You Will Work On</div>
+        <h2>Class 10 Science Preparation</h2>
+        <p>Course learning will focus on the Science areas prescribed for the applicable CBSE Class 10 syllabus.</p>
+      </div>
+      <div class="crash-subjects">
+        <article class="crash-subject"><h3>Physics</h3><p>Concept understanding, numerical practice, diagrams and important board-style questions.</p></article>
+        <article class="crash-subject"><h3>Chemistry</h3><p>Key concepts, chemical equations, reactions and exam-focused question practice.</p></article>
+        <article class="crash-subject"><h3>Biology</h3><p>Processes, diagrams, definitions and structured answers for board preparation.</p></article>
+      </div>
+      <div class="crash-note">The exact chapter sequence and coverage will follow the applicable CBSE Class 10 Science syllabus and the institute’s announced course plan.</div>
+    </div>
+  </section>
+
+  <section class="rpst-section alt">
+    <div class="container">
+      <div class="rpst-head">
+        <div class="rpst-kicker">Weekly Learning Cycle</div>
+        <h2>How the Crash Course Works</h2>
+      </div>
+      <div class="rpst-steps">
+        <article class="rpst-step"><div class="rpst-step-num">01</div><h3>Attend Classes</h3><p>Attend the daily 90-minute classes from Monday to Friday for guided learning and revision.</p></article>
+        <article class="rpst-step"><div class="rpst-step-num">02</div><h3>Practise & Revise</h3><p>Revise the concepts covered in class and practise the assigned questions during the week.</p></article>
+        <article class="rpst-step"><div class="rpst-step-num">03</div><h3>Take Saturday Test</h3><p>Attempt the weekly test to assess preparation and focus on topics that need improvement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rpst-section">
+    <div class="container">
+      <div class="rpst-head">
+        <div class="rpst-kicker">Frequently Asked Questions</div>
+        <h2>CBSE Crash Course FAQs</h2>
+      </div>
+      <div class="rpst-faq">
+        <details><summary>When does the crash course start?</summary><p>The CBSE Class 10 Science Crash Course starts on 1 November 2026.</p></details>
+        <details><summary>How long is each class?</summary><p>Each class is 1 hour and 30 minutes (90 minutes), Monday to Friday.</p></details>
+        <details><summary>Will there be a test every week?</summary><p>Yes. A test will be held every Saturday to practise and assess your preparation.</p></details>
+        <details><summary>Which subject is covered?</summary><p>This crash course is for CBSE Class 10 Science, with preparation across Physics, Chemistry and Biology according to the applicable syllabus and course plan.</p></details>
+        <details><summary>What are the class and test timings?</summary><p>The exact daily class time and Saturday test time will be shared by the institute.</p></details>
+        <details><summary>How can I register?</summary><p>Complete the registration form below. The institute can update the form link when required.</p></details>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+  <section class="rpst-bottom-cta">
+    <div class="container">
+      <h2>Start Your Board Preparation with Confidence</h2>
+      <p>Join RANJAN’S PHYSICS CBSE Class 10 Science Crash Course from 1 November 2026.</p>
+      <a class="btn" href="#registration-form">REGISTER NOW →</a>
+    </div>
+  </section>
+</main>
+
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <a href="../index.html" class="footer-logo" aria-label="Home">
+        <img src="../logo.png" alt="Ranjan's Physics">
+      </a>
+
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../courses/courses.html">Courses</a>
+        <a href="../study material/study material.html">Study Material</a>
+        <a href="../faculty.html">Faculty</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Ranjan's Physics. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="floating">
+  <a href="tel:+919112257077" class="float-btn" aria-label="Call">☎</a>
+  <a href="https://wa.me/919112257077" target="_blank" rel="noopener" class="float-btn" aria-label="WhatsApp">◔</a>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", function(){
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+</script>
+
+</body>
+</html>
