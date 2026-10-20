@@ -340,54 +340,262 @@ img,iframe{max-width:100%}
   }
 }
 </style>
+<style id="homepage-shared-header-css">
+header{position:sticky;top:0;z-index:10000;width:100%;background:rgba(255,255,255,.97);border-bottom:1px solid #dce8f5;backdrop-filter:blur(12px)}
+header .container.nav{width:min(1180px,92%);margin:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand img{width:56px;height:56px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;white-space:nowrap}
+.nav-links>a,.nav-drop-link{transition:.2s}.nav-links>a:hover,.nav-drop-link:hover{color:#1769b0}
+.nav-cta{background:#1769b0;color:#fff!important;padding:11px 18px;border-radius:30px}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:100%}.nav-drop-link{display:flex;align-items:center;gap:5px}.nav-arrow{font-size:13px;transition:.2s}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translate(-50%,-8px);min-width:240px;padding:10px;background:#fff;border:1px solid #e3ebf4;border-radius:15px;box-shadow:0 20px 50px rgba(7,27,59,.17);opacity:0;visibility:hidden;pointer-events:none;transition:.18s;z-index:10000}
+.nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.dropdown-menu a{display:block;padding:11px 13px;margin:2px 0;border-radius:9px;color:#071b3b;font-size:12px;font-weight:800}.dropdown-menu a:hover{background:#edf6ff;color:#1769b0}
+.mega-menu{min-width:620px;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mega-column{padding:4px 6px;border-right:1px solid #edf1f6}.mega-column:last-child{border-right:0}.mega-title{padding:8px 12px 10px;color:#1769b0;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.menu-toggle{display:none}.mobile-header,.mobile-menu{display:none}
+@media(max-width:1000px){.nav-links{gap:12px;font-size:12px}.rpst-2027-link{display:none!important}.mega-menu{min-width:540px}}
+@media(max-width:850px){header,header .container.nav{width:100%}header>.container.nav{display:none!important}.nav-links{display:none!important}.mobile-header{display:grid!important;grid-template-columns:48px 1fr auto;align-items:center;gap:10px;width:100%;min-height:72px;padding:10px 14px;box-sizing:border-box;background:#fff}.mobile-menu-toggle{grid-column:1;display:flex!important;align-items:center;justify-content:center;width:48px;height:48px;min-width:48px;padding:0;margin:0;border:1px solid #dbe5ef;border-radius:13px;background:#fff;color:#071b3b;font-size:28px;line-height:1;cursor:pointer}.mobile-brand{grid-column:2;justify-self:center;width:52px;height:52px;display:flex!important;align-items:center;justify-content:center;overflow:hidden}.mobile-brand img{width:50px;height:50px;object-fit:contain}.mobile-contact{grid-column:3;display:flex!important;align-items:center;justify-content:center;padding:11px 16px;min-height:48px;border-radius:13px;background:#1976c5;color:#fff!important;font-size:14px;font-weight:800;white-space:nowrap}.mobile-menu{position:absolute;top:72px;left:0;right:0;display:block;max-height:0;overflow:hidden;background:#fff;border-top:1px solid #edf2f7;box-shadow:0 16px 30px rgba(7,27,59,.14);transition:max-height .28s ease;z-index:10001}.mobile-menu.open{max-height:80vh;overflow-y:auto;padding:10px 16px 18px}.mobile-menu>a,.mobile-nav-dropdown>summary{width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:14px 10px;border-radius:10px;color:#071b3b;font-weight:800;text-decoration:none}.mobile-nav-dropdown{width:100%;border:0}.mobile-nav-dropdown summary{list-style:none;cursor:pointer}.mobile-nav-dropdown summary::-webkit-details-marker{display:none}.mobile-nav-dropdown summary span{transition:transform .2s}.mobile-nav-dropdown[open]>summary{background:#f1f7ff;color:#1769b0}.mobile-nav-dropdown[open]>summary span{transform:rotate(180deg)}.mobile-submenu{display:flex;flex-direction:column;padding:3px 8px 8px 24px}.mobile-submenu a{display:block;padding:9px 10px;color:#29435f;font-size:14px;font-weight:700;border-radius:8px}.mobile-subtitle{padding:9px 10px 4px;color:#1769b0;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}}
+@media(min-width:851px){header>.mobile-header,header>.mobile-menu{display:none!important}}
+.diwali-theme header{background:rgba(255,250,238,.97);border-bottom-color:#ecd7a7}.diwali-theme .mobile-header{background:#fffaf0}.diwali-theme .mobile-menu{background:#fffaf0;border-color:#ecd7a7}.diwali-theme .mobile-menu>a,.diwali-theme .mobile-nav-dropdown>summary{color:#563813}.diwali-theme .mobile-contact,.diwali-theme .nav-cta{background:#a66a0b!important}
+</style>
+<style id="diwali-seasonal-theme">
+/* Temporary Diwali theme: automatically returns to the original design after 16 Nov 2026 */
+.diwali-theme {
+  --navy: #10254a;
+  --blue: #b77916;
+  --blue-light: #fff6df;
+  --text: #17233a;
+  --muted: #667085;
+  --white: #fffdf8;
+  --line: #ead9b4;
+  background: #fffdf8;
+}
+.diwali-theme body { background:#fffdf8; color:#17233a; }
+.diwali-theme .diwali-greeting {
+  display:flex; flex-direction:column; align-items:stretch; justify-content:center; gap:4px;
+  min-height:54px; padding:6px 14px; text-align:center;
+  background:linear-gradient(100deg,#0b1d3b,#17345e,#0b1d3b); color:#fff4d2; border-bottom:1px solid #d6a84b;
+  font-size:12px; font-weight:700; letter-spacing:.25px; overflow:hidden;
+  box-shadow:0 3px 16px rgba(16,37,74,.12);
+}
+.diwali-theme .diwali-greeting .greeting-line { display:flex; align-items:center; justify-content:center; gap:9px; }
+.diwali-theme .diwali-greeting .diya { color:#ffd36a; font-size:17px; line-height:1; animation:diwali-diya-glow 2s ease-in-out infinite alternate; }
+.diwali-theme .diwali-ticker { width:100%; overflow:hidden; white-space:nowrap; position:relative; color:#ffe6a3; font-size:11px; line-height:1.5; }
+.diwali-theme .diwali-ticker-track { display:flex; width:max-content; animation:diwali-ticker-scroll 25s linear infinite; will-change:transform; }
+.diwali-theme .diwali-ticker-track a { color:#fff4d2; text-decoration:none; padding-right:56px; font-weight:800; }
+.diwali-theme .diwali-ticker-track a:hover { color:#ffd36a; text-decoration:underline; }
+.diwali-theme .diwali-ticker:hover .diwali-ticker-track { animation-play-state:paused; }
+@keyframes diwali-ticker-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes diwali-diya-glow { from { text-shadow:0 0 2px rgba(255,211,106,.35); transform:scale(1); } to { text-shadow:0 0 12px rgba(255,211,106,.95); transform:scale(1.12); } }
+@keyframes diwali-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+.diwali-theme .hero-circle { animation:diwali-float 5s ease-in-out infinite; }
+.diwali-theme .crash-course-hero-btn { box-shadow:0 5px 18px rgba(183,121,22,.23); animation:diwali-cta-glow 2.6s ease-in-out infinite; }
+@keyframes diwali-cta-glow { 0%,100% { box-shadow:0 5px 18px rgba(183,121,22,.20); } 50% { box-shadow:0 6px 24px rgba(183,121,22,.42); } }
+@media(prefers-reduced-motion:reduce){
+  .diwali-theme .diwali-ticker-track,.diwali-theme .diwali-greeting .diya,.diwali-theme .hero-circle,.diwali-theme .crash-course-hero-btn { animation:none!important; }
+  .diwali-theme .diwali-ticker { overflow-x:auto; }
+}
+.diwali-theme header {
+  background:rgba(255,253,248,.97);
+  border-bottom:1px solid #e8d5a9;
+  box-shadow:0 4px 18px rgba(16,37,74,.05);
+}
+.diwali-theme .nav-links a:hover,
+.diwali-theme .section-tag,
+.diwali-theme .eyebrow { color:#a66a0b; }
+.diwali-theme .nav-cta,
+.diwali-theme .btn-primary { background:#b77916; color:#fff !important; }
+.diwali-theme .btn-dark { background:#10254a; color:#fff; }
+.diwali-theme .hero {
+  background:linear-gradient(120deg,#fffaf0 0%,#fff3d5 58%,#f8e5b6 100%);
+}
+.diwali-theme .hero-circle { background:#f5dfaa; }
+.diwali-theme .hero h1,
+.diwali-theme .section-head h2 { color:#10254a; }
+.diwali-theme .hero h1 span { color:#b77916; }
+.diwali-theme .hero-card,
+.diwali-theme .card,
+.diwali-theme .course-card,
+.diwali-theme .feature-card,
+.diwali-theme .quick-card,
+.diwali-theme .rp-quick-card {
+  border-color:#ead9b4;
+}
+.diwali-theme .hero-card { box-shadow:0 12px 32px rgba(98,65,11,.12); }
+.diwali-theme .rp-mobile-bottom {
+  background:rgba(255,253,248,.98); border-top-color:#ead9b4;
+}
+.diwali-theme .rp-mobile-bottom a.active,
+.diwali-theme .rp-mobile-bottom a:focus-visible { color:#a66a0b; }
+.diwali-theme a:focus-visible,
+.diwali-theme button:focus-visible { outline:2px solid #d6a84b; outline-offset:3px; }
+@media(max-width:600px){
+  .diwali-theme .diwali-greeting { min-height:48px; font-size:11px; gap:3px; padding:6px 8px; }
+  .diwali-theme .diwali-ticker { font-size:10px; }
+}
+</style>
+<style id="diwali-fireworks-styles">
+/* Lightweight festive fireworks layer; transparent and non-interactive. */
+#diwaliFireworksCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99990;opacity:.92;mix-blend-mode:screen}
+@media(max-width:600px){#diwaliFireworksCanvas{opacity:.82}}
+</style>
+<style id="diwali-welcome-styles">
+.diwali-welcome{position:fixed;inset:0;z-index:1000000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at center,rgba(18,38,79,.82),rgba(3,9,25,.94));backdrop-filter:blur(7px);animation:diwaliOverlayIn .45s ease-out both}
+.diwali-welcome-card{position:relative;overflow:hidden;width:min(92vw,510px);padding:34px 22px 27px;text-align:center;color:#fff9e9;border:1px solid rgba(255,214,120,.75);border-radius:26px;background:linear-gradient(145deg,#10264d 0%,#08152e 70%,#241a31 100%);box-shadow:0 20px 80px rgba(0,0,0,.5),0 0 38px rgba(255,190,67,.22);animation:diwaliCardIn .65s cubic-bezier(.2,.8,.2,1) both}
+.diwali-welcome-card:before,.diwali-welcome-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(38px);opacity:.18;pointer-events:none;background:#ffb703;animation:diwaliGlow 3s ease-in-out infinite alternate}
+.diwali-welcome-card:before{left:-80px;top:-90px}.diwali-welcome-card:after{right:-90px;bottom:-100px;background:#59d7ff}
+.welcome-diyas{position:relative;font-size:32px;letter-spacing:8px;animation:diwaliFloat 2.4s ease-in-out infinite}
+.welcome-kicker{margin-top:13px;color:#f9d77b;font-size:11px;font-weight:800;letter-spacing:3px}
+.diwali-welcome-card h1{position:relative;margin:7px 0 4px;font-size:clamp(39px,9vw,62px);line-height:1.08;font-weight:900;letter-spacing:-1.5px;background:linear-gradient(180deg,#fff8d8,#ffd166 60%,#f6a623);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 28px rgba(255,192,63,.18)}
+.diwali-welcome-card p{position:relative;margin:12px 0 8px;font-size:clamp(16px,4vw,21px);font-weight:700}
+.welcome-crackers{position:relative;margin:15px 0 12px;font-size:clamp(35px,8vw,48px);letter-spacing:8px;animation:diwaliCrackers 1.7s ease-in-out infinite}
+.diwali-welcome-card small{position:relative;color:#dce8ff;font-size:12px;letter-spacing:2px}
+.diwali-welcome-card button{position:relative;display:block;margin:23px auto 0;padding:12px 25px;border:1px solid #ffe5a1;border-radius:999px;background:linear-gradient(135deg,#ffe5a1,#f7b733);color:#172442;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 6px 22px rgba(255,185,48,.22)}
+.welcome-firework{position:absolute;color:#ffd166;font-size:48px;animation:diwaliSpark 1.8s ease-in-out infinite}.welcome-firework-one{top:25px;left:22px}.welcome-firework-two{top:60px;right:28px;color:#75e4ff;animation-delay:.5s}
+@keyframes diwaliOverlayIn{from{opacity:0}to{opacity:1}}@keyframes diwaliCardIn{from{opacity:0;transform:translateY(22px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes diwaliGlow{from{transform:scale(.85);opacity:.12}to{transform:scale(1.2);opacity:.28}}@keyframes diwaliFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes diwaliCrackers{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(255,204,85,0))}50%{transform:scale(1.07);filter:drop-shadow(0 0 13px rgba(255,204,85,.65))}}@keyframes diwaliSpark{0%,100%{transform:scale(.75) rotate(0);opacity:.45}50%{transform:scale(1.2) rotate(25deg);opacity:1}}
+@media(max-width:480px){.diwali-welcome-card{padding:29px 16px 23px;border-radius:22px}.welcome-firework-one{left:12px;top:18px}.welcome-firework-two{right:14px;top:45px}}
+@media(prefers-reduced-motion:reduce){.diwali-welcome,.diwali-welcome-card,.welcome-diyas,.welcome-crackers,.welcome-firework{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
 </head><body>
+<div id="diwaliWelcome" class="diwali-welcome" aria-label="Happy Diwali welcome" role="dialog" aria-modal="true" style="display:none">
+  <div class="diwali-welcome-card">
+    <div class="welcome-firework welcome-firework-one">✺</div><div class="welcome-firework welcome-firework-two">✦</div>
+    <div class="welcome-diyas" aria-hidden="true">🪔 ✨ 🪔</div>
+    <div class="welcome-kicker">RANJAN’S PHYSICS</div>
+    <h2>Happy Diwali!</h2>
+    <p>दीपावली की हार्दिक शुभकामनाएँ</p>
+    <div class="welcome-crackers" aria-hidden="true">🎆 💥 🎇</div>
+    <small>रोशनी • ज्ञान • सफलता</small>
+    <button id="diwaliWelcomeClose" type="button">आगे बढ़ें ✨</button>
+  </div>
+</div>
+
+<div class="diwali-greeting" id="diwaliGreeting" role="region" aria-label="Diwali wishes and crash course announcement" style="display:none">
+  <div class="greeting-line">
+    <span class="diya" aria-hidden="true">🪔</span>
+    <span>दीपावली की हार्दिक शुभकामनाएँ · रोशनी, सीख और सफलता</span>
+    <span class="diya" aria-hidden="true">🪔</span>
+  </div>
+  <div class="diwali-ticker" aria-label="Online Class 10 CBSE Science Crash Course 2027 starts 1 November 2026, classes on Google Meet and Google Classroom, fee 199 rupees per month">
+    <div class="diwali-ticker-track">
+      <a href="../crash%20course/cbse%20crash%20course.html">📢 CLASS 10 CBSE SCIENCE CRASH COURSE · नया बैच 1 नवंबर से शुरू · सिर्फ ₹199/महीना · अभी जुड़ें ↗</a>
+      <a href="../crash%20course/cbse%20crash%20course.html" aria-hidden="true" tabindex="-1">📢 CLASS 10 CBSE SCIENCE CRASH COURSE · नया बैच 1 नवंबर से शुरू · सिर्फ ₹199/महीना · अभी जुड़ें ↗</a>
+    </div>
+  </div>
+</div>
+
+<script id="diwali-theme-controller">
+(function () {
+  // Festive mode runs from 20 Oct through 16 Nov 2026; original theme returns on 17 Nov.
+  var today = new Date();
+  var localDate = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  if (localDate >= '2026-10-20' && localDate <= '2026-11-16') {
+    document.documentElement.classList.add('diwali-theme');
+    var greeting = document.getElementById('diwaliGreeting');
+    if (greeting) greeting.style.display = 'flex';
+    var welcome = document.getElementById('diwaliWelcome');
+    // Show the Happy Diwali popup only on the first visit in this browser.
+    var welcomeSeen = false;
+    try {
+      welcomeSeen = window.localStorage.getItem('rp_diwali_welcome_seen_2026') === '1';
+    } catch (e) {}
+    if (welcome && !welcomeSeen) {
+      welcome.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      try {
+        window.localStorage.setItem('rp_diwali_welcome_seen_2026', '1');
+      } catch (e) {}
+      var close = function(){welcome.style.opacity='0';welcome.style.transition='opacity .35s ease';window.setTimeout(function(){welcome.style.display='none';document.body.style.overflow='';},360);};
+      var closeButton = document.getElementById('diwaliWelcomeClose');
+      if (closeButton) closeButton.addEventListener('click', close, {once:true});
+      welcome.addEventListener('click', function(e){if(e.target===welcome) close();});
+      window.setTimeout(close, 4800);
+    }
+  }
+})();
+</script>
+
 <header>
-  <div class="container nav">
-    <a href="../index.html" class="brand"><img src="../logo.png" alt="Ranjan's Physics Logo"></a>
-    <nav class="nav-links">
-      <a href="../index.html">Home</a>
-      <div class="nav-dropdown">
-        <a href="courses.html" class="nav-drop-link">Courses <span class="nav-arrow">⌄</span></a>
-        <div class="dropdown-menu mega-menu">
-          <div class="mega-column"><div class="mega-title">JEE</div><a href="jee-11.html">Class 11th</a><a href="jee-12.html">Class 12th</a></div>
-          <div class="mega-column"><div class="mega-title">NEET</div><a href="neet-11.html">Class 11th</a><a href="neet-12.html">Class 12th</a></div>
-          <div class="mega-column"><div class="mega-title">Foundation</div><a href="foundation-9.html">Class 9th</a><a href="foundation-10.html">Class 10th</a></div>
-        </div>
-      </div>
-      <div class="nav-dropdown">
-        <a href="../study material/study material.html" class="nav-drop-link">Study Material <span class="nav-arrow">⌄</span></a>
-        <div class="dropdown-menu"><a href="../study material/class-9.html">Class 9th</a><a href="../study material/class-10.html">Class 10th</a><a href="../study material/class-11.html">Class 11th</a><a href="../study material/class-12.html">Class 12th</a></div>
-      </div>
-      <a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
-      <div class="nav-dropdown">
-        <a href="../about.html" class="nav-drop-link">About Us <span class="nav-arrow">⌄</span></a>
-        <div class="dropdown-menu"><a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a></div>
-      </div>
-      <a href="../contact.html" class="nav-cta">Contact Us</a>
-    </nav>
-  </div>
 
-  <div class="mobile-header">
-    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-    <a class="mobile-brand" href="../index.html"><img src="../logo.png" alt="Ranjan's Physics"></a>
-    <a class="mobile-contact" href="../contact.html">Contact Us</a>
-  </div>
+<div class="container nav">
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="../index.html">Home</a>
-    <details><summary>Courses <span>⌄</span></summary><div class="mobile-submenu">
-      <div class="mobile-subtitle">JEE</div><a href="jee-11.html">Class 11th</a><a href="jee-12.html">Class 12th</a>
-      <div class="mobile-subtitle">NEET</div><a href="neet-11.html">Class 11th</a><a href="neet-12.html">Class 12th</a>
-      <div class="mobile-subtitle">Foundation</div><a href="foundation-9.html">Class 9th</a><a href="foundation-10.html">Class 10th</a>
-    </div></details>
-    <details><summary>Study Material <span>⌄</span></summary><div class="mobile-submenu">
-      <a href="../study material/class-9.html">Class 9th</a><a href="../study material/class-10.html">Class 10th</a><a href="../study material/class-11.html">Class 11th</a><a href="../study material/class-12.html">Class 12th</a>
-    </div></details>
-    <a href="../faculty.html">Faculty</a><a href="../gallery.html">Gallery</a>
-    <details><summary>About Us <span>⌄</span></summary><div class="mobile-submenu">
-      <a href="../about.html">Why Ranjan's Physics</a><a href="../about-ranjan-sir.html">About Ranjan Sir</a><a href="../academic-team.html">Academic Team</a><a href="../e-brochure.html">E-Brochure</a>
-    </div></details>
+<a href="../index.html" data-home-link="true"  class="brand">
+<img src="../logo.png" alt="Ranjan's Physics Logo">
+</a>
+
+<nav class="nav-links">
+    <a href="../crash%20course/cbse%20crash%20course.html" class="rpst-2027-link" aria-label="Class 10 Science Crash Course 2027">Class 10 Science Crash Course 2027</a>
+
+
+<a href="../index.html" data-home-link="true">Home</a>
+
+<div class="nav-dropdown">
+  <a href="courses.html" class="nav-drop-link">Courses <span class="nav-arrow">⌄</span></a>
+  <div class="dropdown-menu mega-menu">
+    <div class="mega-column">
+      <div class="mega-title">JEE</div>
+      <a href="jee-11.html">Class 11th</a>
+      <a href="jee-12.html">Class 12th</a>
+    </div>
+    <div class="mega-column">
+      <div class="mega-title">NEET</div>
+      <a href="neet-11.html">Class 11th</a>
+      <a href="neet-12.html">Class 12th</a>
+    </div>
+    <div class="mega-column">
+      <div class="mega-title">Foundation</div>
+      <a href="foundation-9.html">Class 9th</a>
+      <a href="../crash%20course/cbse%20crash%20course.html">Class 10th</a>
+    </div>
   </div>
+</div>
+
+<a href="../about.html">About Us</a>
+<a href="../contact.html" class="nav-cta">Contact Us</a>
+
+</nav>
+
+<button class="menu-toggle" type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+</div>
+
+
+<div class="mobile-header">
+  <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+  <a class="mobile-brand" href="../index.html" data-home-link="true" aria-label="Ranjan's Physics Home">
+    <img src="../logo.png" alt="Ranjan's Physics">
+  </a>
+  <a class="mobile-contact" href="../crash%20course/cbse%20crash%20course.html">Join Batch</a>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" data-home-link="true">Home</a>
+
+  <details class="mobile-nav-dropdown">
+    <summary>Courses <span>⌄</span></summary>
+    <div class="mobile-submenu">
+      <div class="mobile-subtitle">JEE</div>
+      <a href="jee-11.html">Class 11th</a>
+      <a href="jee-12.html">Class 12th</a>
+      <div class="mobile-subtitle">NEET</div>
+      <a href="neet-11.html">Class 11th</a>
+      <a href="neet-12.html">Class 12th</a>
+      <div class="mobile-subtitle">Foundation</div>
+      <a href="foundation-9.html">Class 9th</a>
+      <a href="../crash%20course/cbse%20crash%20course.html">Class 10th</a>
+    </div>
+  </details>
+
+  <a href="../about.html">About Us</a>
+  <a href="../contact.html">Contact Us</a>
+</div>
 </header>
 
 <!-- Course Banner: directly below header -->
@@ -423,4 +631,5 @@ document.addEventListener("DOMContentLoaded",function(){
  m.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{m.classList.remove("open");t.textContent="☰";t.setAttribute("aria-expanded","false")}));}
 });
 </script>
+<script id="homepage-shared-mobile-menu-js">document.addEventListener('DOMContentLoaded',function(){var t=document.querySelector('.mobile-menu-toggle');var m=document.getElementById('mobileMenu');if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.textContent=open?'✕':'☰';t.setAttribute('aria-expanded',open?'true':'false');t.setAttribute('aria-label',open?'Close menu':'Open menu')});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');t.textContent='☰';t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu')})})}});</script>
 </body></html>
