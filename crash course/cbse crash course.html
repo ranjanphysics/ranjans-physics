@@ -4614,6 +4614,7 @@ footer{
 </div>
 </div>
 <a href="../about.html">About Us</a>
+<a href="#registration-form" class="desktop-join-batch">Join Batch</a>
 <a class="nav-cta" href="../contact.html">Contact Us</a>
 </nav>
 <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="menu-toggle" type="button">
@@ -5088,3 +5089,38 @@ document.addEventListener("DOMContentLoaded",function(){
 </script>
 </body>
 </html>
+
+
+<style id="final-desktop-tablet-navigation-fix">
+/* Reliable clickable navigation on desktop and tablet; preserve the approved mobile header. */
+header{position:sticky;top:0;z-index:20000;isolation:isolate;}
+header .container.nav{position:relative;z-index:20001;}
+header .nav-links, header .nav-links a, header .nav-dropdown, header .nav-drop-link{position:relative;pointer-events:auto;}
+header .nav-links{z-index:20002;}
+header .dropdown-menu{z-index:20010;}
+header .brand, header .brand img{position:relative;z-index:20003;pointer-events:auto;}
+.desktop-join-batch{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:24px;background:#d92332;color:#fff!important;font-weight:800;white-space:nowrap;}
+.desktop-join-batch:hover{background:#b91c2b;color:#fff!important;}
+@media (min-width:1001px){
+  header > .container.nav{display:flex!important;}
+  header .nav-links{display:flex!important;align-items:center;gap:clamp(10px,1.25vw,20px);}
+  header > .mobile-header, header > .mobile-menu{display:none!important;}
+}
+/* Tablets use the same working hamburger navigation as mobile, avoiding the old 851–1000px dead zone. */
+@media (min-width:601px) and (max-width:1000px){
+  header > .container.nav{display:none!important;}
+  header > .mobile-header{display:grid!important;grid-template-columns:48px 1fr auto;align-items:center;gap:12px;width:100%;min-height:72px;padding:10px 18px;box-sizing:border-box;background:#fff;}
+  header .mobile-menu-toggle{display:flex!important;grid-column:1;align-items:center;justify-content:center;width:48px;height:48px;min-width:48px;border:1px solid #dbe5ef;border-radius:13px;background:#fff;color:#071b3b;font-size:28px;cursor:pointer;}
+  header .mobile-brand{display:flex!important;grid-column:2;justify-self:center;align-items:center;justify-content:center;width:56px;height:56px;min-width:0;}
+  header .mobile-brand img{display:block;width:54px;height:54px;object-fit:contain;}
+  header .mobile-contact{display:flex!important;grid-column:3;align-items:center;justify-content:center;padding:11px 17px;border-radius:13px;background:#1769b0;color:#fff!important;font-weight:800;white-space:nowrap;}
+  header > .mobile-menu{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20010;flex-direction:column;gap:4px;max-height:0;overflow:hidden;opacity:0;background:#fff;box-shadow:0 16px 30px rgba(7,27,59,.12);transition:max-height .25s ease,opacity .2s ease;}
+  header > .mobile-menu.open{max-height:75vh;overflow-y:auto;opacity:1;padding:8px 18px 14px;border-top:1px solid #e3ebf4;}
+  header > .mobile-menu a{display:block;padding:12px 14px;border-radius:9px;color:#071b3b;font-weight:700;}
+  header > .mobile-menu a:hover{background:#edf6ff;color:#1769b0;}
+  header .mobile-submenu{display:flex;flex-direction:column;padding-left:8px;}
+}
+@media (max-width:600px){
+  header .desktop-join-batch{display:none!important;}
+}
+</style>
